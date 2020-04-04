@@ -1,0 +1,171 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>@manniwatch/client-desktop</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.js" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">@manniwatch/client-desktop</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="globals.html">Globals</a>
+				</li>
+			</ul>
+			<h1>@manniwatch/client-desktop</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<a href="#desktop-client" id="desktop-client" style="color: inherit; text-decoration: none;">
+					<h1>Desktop Client</h1>
+				</a>
+				<p><img src="https://raw.githubusercontent.com/manniwatch/manniwatch/packages/client-desktop/master/assets/screenshot.png" alt="Sample Logo"></p>
+				<p><a href="https://codecov.io/gh/manniwatch/manniwatch/tree/master/packages/client-desktop"><img src="https://codecov.io/gh/manniwatch/manniwatch/branch/master/graph/badge.svg?flag=ClientDesktop" alt="codecov"></a> <a href="https://badge.fury.io/js/%40manniwatch%2Fclient-desktop"><img src="https://badge.fury.io/js/%40manniwatch%2Fclient-desktop.svg" alt="npm version"></a> <a href="https://david-dm.org/manniwatch/manniwatch?path=packages/client-desktop"><img src="https://david-dm.org/manniwatch/manniwatch/status.svg?path=packages/client-desktop" alt="dependencies Status"></a> <a href="https://david-dm.org/manniwatch/manniwatch?path=packages/client-desktop&amp;type=dev"><img src="https://david-dm.org/manniwatch/manniwatch/dev-status.svg?path=packages/client-desktop" alt="devDependencies Status"></a></p>
+				<a href="#setup-1-requires-node-install" id="setup-1-requires-node-install" style="color: inherit; text-decoration: none;">
+					<h2>Setup 1 (requires node install)</h2>
+				</a>
+				<ol>
+					<li>npm install -g @manniwatch/client-desktop</li>
+					<li>run: manniwatch-client [DOMAIN AND PATH OF THE SERVICE]</li>
+				</ol>
+				<a href="#setup-2-requires-node-install" id="setup-2-requires-node-install" style="color: inherit; text-decoration: none;">
+					<h2>Setup 2 (requires node install)</h2>
+				</a>
+				<ol>
+					<li>Clone ClientElectron</li>
+					<li>Install its dependencies</li>
+					<li>run ng build --aot --prod --base-href=./</li>
+					<li>copy the data inside the dist/client-ng folder to the dist/app folder inside this project</li>
+					<li>run &quot;npm run start -- [DOMAIN AND PATH OF THE SERVICE]&quot;</li>
+					<li>... it should work</li>
+				</ol>
+				<a href="#setup-3-requires-no-seperate-node-install" id="setup-3-requires-no-seperate-node-install" style="color: inherit; text-decoration: none;">
+					<h2>Setup 3 (requires no seperate node install)</h2>
+				</a>
+				<ol>
+					<li>Copy the latest app.asar file from the github releases page</li>
+					<li>And proceed with it as described in <a href="https://electronjs.org/docs/tutorial/application-distribution">https://electronjs.org/docs/tutorial/application-distribution</a></li>
+					<li>Now run this app with the first parameter being the domain where to gather the data from</li>
+				</ol>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="globals.html"><em>Globals</em></a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-class">
+						<a href="classes/apiserver.html" class="tsd-kind-icon">Api<wbr>Server</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/manniwatchapp.html" class="tsd-kind-icon">Manni<wbr>Watch<wbr>App</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/iapiserverconfig.html" class="tsd-kind-icon">IApi<wbr>Server<wbr>Config</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/iconfig.html" class="tsd-kind-icon">IConfig</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#argscallback" class="tsd-kind-icon">Args<wbr>Callback</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#api404handler" class="tsd-kind-icon">api404<wbr>Handler</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#appcallback" class="tsd-kind-icon">app<wbr>Callback</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#createapinotfoundrequesthandler" class="tsd-kind-icon">create<wbr>Api<wbr>Not<wbr>Found<wbr>Request<wbr>Handler</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#createerrorrequesthandler" class="tsd-kind-icon">create<wbr>Error<wbr>Request<wbr>Handler</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#parseargs" class="tsd-kind-icon">parse<wbr>Args</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>
