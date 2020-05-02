@@ -22,6 +22,9 @@ Docs for [client-ng](http://github.com/manniwatch/manniwatch/tree/master/package
 ## [express-utils](http://manniwatch.github.io/docs/express-utils/)
 Docs for [express-utils](http://github.com/manniwatch/manniwatch/tree/master/packages/express-utils/)
 
+## [pb-converter](http://manniwatch.github.io/docs/pb-converter/)
+Docs for [pb-converter](http://github.com/manniwatch/manniwatch/tree/master/packages/pb-converter/)
+
 ## [vehicle-cache](http://manniwatch.github.io/docs/vehicle-cache/)
 Docs for [vehicle-cache](http://github.com/manniwatch/manniwatch/tree/master/packages/vehicle-cache/)
 
