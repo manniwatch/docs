@@ -3,8 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>IBoundingBox | @manniwatch/api-client</title>
-	<meta name="description" content="Documentation for @manniwatch/api-client">
+	<title>ILocDefinitions | @manniwatch/pb-converter</title>
+	<meta name="description" content="Documentation for @manniwatch/pb-converter">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
 </head>
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title">@manniwatch/api-client</a>
+					<a href="../index.html" class="title">@manniwatch/pb-converter</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="iboundingbox.html">IBoundingBox</a>
+					<a href="ilocdefinitions.html">ILocDefinitions</a>
 				</li>
 			</ul>
-			<h1>Interface IBoundingBox</h1>
+			<h1>Interface ILocDefinitions</h1>
 		</div>
 	</div>
 </header>
@@ -70,7 +70,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">IBoundingBox</span>
+						<span class="target">ILocDefinitions</span>
 					</li>
 				</ul>
 			</section>
@@ -81,10 +81,10 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iboundingbox.html#bottom" class="tsd-kind-icon">bottom</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iboundingbox.html#left" class="tsd-kind-icon">left</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iboundingbox.html#right" class="tsd-kind-icon">right</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iboundingbox.html#top" class="tsd-kind-icon">top</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="ilocdefinitions.html#lat" class="tsd-kind-icon">lat</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="ilocdefinitions.html#latitude" class="tsd-kind-icon">latitude</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="ilocdefinitions.html#lon" class="tsd-kind-icon">lon</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="ilocdefinitions.html#longitude" class="tsd-kind-icon">longitude</a></li>
 							</ul>
 						</section>
 					</div>
@@ -93,42 +93,42 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="bottom" class="tsd-anchor"></a>
-					<h3>bottom</h3>
-					<div class="tsd-signature tsd-kind-icon">bottom<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="lat" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> lat</h3>
+					<div class="tsd-signature tsd-kind-icon">lat<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/c6b4e30/packages/api-client/src/manni-watch-api-client.ts#L26">manni-watch-api-client.ts:26</a></li>
+							<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/c6b4e30/packages/pb-converter/src/convert-location.ts#L7">convert-location.ts:7</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="left" class="tsd-anchor"></a>
-					<h3>left</h3>
-					<div class="tsd-signature tsd-kind-icon">left<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="latitude" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> latitude</h3>
+					<div class="tsd-signature tsd-kind-icon">latitude<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/c6b4e30/packages/api-client/src/manni-watch-api-client.ts#L27">manni-watch-api-client.ts:27</a></li>
+							<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/c6b4e30/packages/pb-converter/src/convert-location.ts#L7">convert-location.ts:7</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="right" class="tsd-anchor"></a>
-					<h3>right</h3>
-					<div class="tsd-signature tsd-kind-icon">right<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="lon" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> lon</h3>
+					<div class="tsd-signature tsd-kind-icon">lon<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/c6b4e30/packages/api-client/src/manni-watch-api-client.ts#L28">manni-watch-api-client.ts:28</a></li>
+							<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/c6b4e30/packages/pb-converter/src/convert-location.ts#L7">convert-location.ts:7</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="top" class="tsd-anchor"></a>
-					<h3>top</h3>
-					<div class="tsd-signature tsd-kind-icon">top<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="longitude" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> longitude</h3>
+					<div class="tsd-signature tsd-kind-icon">longitude<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/c6b4e30/packages/api-client/src/manni-watch-api-client.ts#L25">manni-watch-api-client.ts:25</a></li>
+							<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/c6b4e30/packages/pb-converter/src/convert-location.ts#L7">convert-location.ts:7</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -144,35 +144,41 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-class">
-						<a href="../classes/manniwatchapiclient.html" class="tsd-kind-icon">Manni<wbr>Watch<wbr>Api<wbr>Client</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="../classes/util.html" class="tsd-kind-icon">Util</a>
-					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface">
-						<a href="iboundingbox.html" class="tsd-kind-icon">IBounding<wbr>Box</a>
+						<a href="ilocdefinitions.html" class="tsd-kind-icon">ILoc<wbr>Definitions</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="iboundingbox.html#bottom" class="tsd-kind-icon">bottom</a>
+								<a href="ilocdefinitions.html#lat" class="tsd-kind-icon">lat</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="iboundingbox.html#left" class="tsd-kind-icon">left</a>
+								<a href="ilocdefinitions.html#latitude" class="tsd-kind-icon">latitude</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="iboundingbox.html#right" class="tsd-kind-icon">right</a>
+								<a href="ilocdefinitions.html#lon" class="tsd-kind-icon">lon</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="iboundingbox.html#top" class="tsd-kind-icon">top</a>
+								<a href="ilocdefinitions.html#longitude" class="tsd-kind-icon">longitude</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-variable">
-						<a href="../globals.html#default_user_agent" class="tsd-kind-icon">DEFAULT_<wbr>USER_<wbr>AGENT</a>
+					<li class=" tsd-kind-function">
+						<a href="../globals.html#convertdeletedvehicle" class="tsd-kind-icon">convert<wbr>Deleted<wbr>Vehicle</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="../globals.html#convertlocation" class="tsd-kind-icon">convert<wbr>Location</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="../globals.html#convertvehiclecategory" class="tsd-kind-icon">convert<wbr>Vehicle<wbr>Category</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="../globals.html#convertvehiclelocation" class="tsd-kind-icon">convert<wbr>Vehicle<wbr>Location</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="../globals.html#convertvehiclelocations" class="tsd-kind-icon">convert<wbr>Vehicle<wbr>Locations</a>
 					</li>
 				</ul>
 			</nav>
@@ -184,18 +190,7 @@
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
 			<ul class="tsd-legend">
-				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
-			</ul>
-			<ul class="tsd-legend">
 				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
 			</ul>
 		</div>
 	</div>
