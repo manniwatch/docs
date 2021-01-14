@@ -7,6 +7,7 @@
 	<meta name="description" content="Documentation for @manniwatch/api-client">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
+	<script async src="../assets/js/search.js" id="search-script"></script>
 </head>
 <body>
 <header>
@@ -40,8 +41,6 @@
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
 							<input type="checkbox" id="tsd-filter-externals" checked />
 							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
-							<input type="checkbox" id="tsd-filter-only-exported" />
-							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
 						</div>
 					</div>
 					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
@@ -53,7 +52,7 @@
 		<div class="container">
 			<ul class="tsd-breadcrumb">
 				<li>
-					<a href="../globals.html">Globals</a>
+					<a href="../modules.html">@manniwatch/api-client</a>
 				</li>
 				<li>
 					<a href="manniwatchapiclient.html">ManniWatchApiClient</a>
@@ -121,13 +120,13 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Manni<wbr>Watch<wbr>Api<wbr>Client<span class="tsd-signature-symbol">(</span>endpoint<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, proxies<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span>, randomUserAgent<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="manniwatchapiclient.html" class="tsd-signature-type">ManniWatchApiClient</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Manni<wbr>Watch<wbr>Api<wbr>Client<span class="tsd-signature-symbol">(</span>endpoint<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, proxies<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span>, randomUserAgent<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="manniwatchapiclient.html" class="tsd-signature-type" data-tsd-kind="Class">ManniWatchApiClient</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/57c46f6/packages/api-client/src/manni-watch-api-client.ts#L31">manni-watch-api-client.ts:31</a></li>
+									<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/f22a9dd/packages/api-client/src/manni-watch-api-client.ts#L31">manni-watch-api-client.ts:31</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -142,19 +141,17 @@
 								<li>
 									<h5>endpoint: <span class="tsd-signature-type">string</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<div class="lead">
-											<p>the endpoint base Url to query</p>
-										</div>
+										<p>the endpoint base Url to query</p>
 									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> proxies: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> randomUserAgent: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></h5>
+									<h5>randomUserAgent: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="manniwatchapiclient.html" class="tsd-signature-type">ManniWatchApiClient</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="manniwatchapiclient.html" class="tsd-signature-type" data-tsd-kind="Class">ManniWatchApiClient</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -166,44 +163,30 @@
 					<h3>endpoint</h3>
 					<div class="tsd-signature tsd-kind-icon">endpoint<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/57c46f6/packages/api-client/src/manni-watch-api-client.ts#L37">manni-watch-api-client.ts:37</a></li>
-						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>the endpoint base Url to query</p>
-						</div>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
 					<a name="httpclient" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagPrivate">Private</span> http<wbr>Client</h3>
-					<div class="tsd-signature tsd-kind-icon">http<wbr>Client<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">req.RequestAPI</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">reqp.RequestPromise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">reqp.RequestPromiseOptions</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">req.UriOptions</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<div class="tsd-signature tsd-kind-icon">http<wbr>Client<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">RequestAPI</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">RequestPromise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">RequestPromiseOptions</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">UriOptions</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/57c46f6/packages/api-client/src/manni-watch-api-client.ts#L31">manni-watch-api-client.ts:31</a></li>
+							<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/f22a9dd/packages/api-client/src/manni-watch-api-client.ts#L31">manni-watch-api-client.ts:31</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="proxies" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> proxies</h3>
-					<div class="tsd-signature tsd-kind-icon">proxies<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div>
+					<div class="tsd-signature tsd-kind-icon">proxies<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/57c46f6/packages/api-client/src/manni-watch-api-client.ts#L38">manni-watch-api-client.ts:38</a></li>
-						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="randomuseragent" class="tsd-anchor"></a>
 					<h3>random<wbr>User<wbr>Agent</h3>
-					<div class="tsd-signature tsd-kind-icon">random<wbr>User<wbr>Agent<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<div class="tsd-signature tsd-kind-icon">random<wbr>User<wbr>Agent<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></div>
 					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/57c46f6/packages/api-client/src/manni-watch-api-client.ts#L39">manni-watch-api-client.ts:39</a></li>
-						</ul>
 					</aside>
 				</section>
 			</section>
@@ -213,16 +196,16 @@
 					<a name="getproxy" class="tsd-anchor"></a>
 					<h3>get<wbr>Proxy</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Proxy<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Proxy<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/57c46f6/packages/api-client/src/manni-watch-api-client.ts#L49">manni-watch-api-client.ts:49</a></li>
+									<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/f22a9dd/packages/api-client/src/manni-watch-api-client.ts#L49">manni-watch-api-client.ts:49</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -230,13 +213,13 @@
 					<a name="getroutebyrouteid" class="tsd-anchor"></a>
 					<h3>get<wbr>Route<wbr>ByRoute<wbr>Id</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Route<wbr>ByRoute<wbr>Id<span class="tsd-signature-symbol">(</span>routeId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, direction<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">reqp.RequestPromise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">IVehiclePathInfo</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Route<wbr>ByRoute<wbr>Id<span class="tsd-signature-symbol">(</span>routeId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, direction<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">RequestPromise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">IVehiclePathInfo</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/57c46f6/packages/api-client/src/manni-watch-api-client.ts#L125">manni-watch-api-client.ts:125</a></li>
+									<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/f22a9dd/packages/api-client/src/manni-watch-api-client.ts#L125">manni-watch-api-client.ts:125</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -258,7 +241,7 @@
 									<h5>direction: <span class="tsd-signature-type">string</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">reqp.RequestPromise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">IVehiclePathInfo</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">RequestPromise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">IVehiclePathInfo</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -266,13 +249,13 @@
 					<a name="getroutebytripid" class="tsd-anchor"></a>
 					<h3>get<wbr>Route<wbr>ByTrip<wbr>Id</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Route<wbr>ByTrip<wbr>Id<span class="tsd-signature-symbol">(</span>tripId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">reqp.RequestPromise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">IVehiclePathInfo</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Route<wbr>ByTrip<wbr>Id<span class="tsd-signature-symbol">(</span>tripId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">RequestPromise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">IVehiclePathInfo</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/57c46f6/packages/api-client/src/manni-watch-api-client.ts#L94">manni-watch-api-client.ts:94</a></li>
+									<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/f22a9dd/packages/api-client/src/manni-watch-api-client.ts#L94">manni-watch-api-client.ts:94</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -291,7 +274,7 @@
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">reqp.RequestPromise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">IVehiclePathInfo</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">RequestPromise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">IVehiclePathInfo</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -299,13 +282,13 @@
 					<a name="getroutebyvehicleid" class="tsd-anchor"></a>
 					<h3>get<wbr>Route<wbr>ByVehicle<wbr>Id</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Route<wbr>ByVehicle<wbr>Id<span class="tsd-signature-symbol">(</span>vehicleId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">reqp.RequestPromise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">IVehiclePathInfo</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Route<wbr>ByVehicle<wbr>Id<span class="tsd-signature-symbol">(</span>vehicleId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">RequestPromise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">IVehiclePathInfo</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/57c46f6/packages/api-client/src/manni-watch-api-client.ts#L109">manni-watch-api-client.ts:109</a></li>
+									<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/f22a9dd/packages/api-client/src/manni-watch-api-client.ts#L109">manni-watch-api-client.ts:109</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -324,7 +307,7 @@
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">reqp.RequestPromise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">IVehiclePathInfo</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">RequestPromise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">IVehiclePathInfo</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -332,13 +315,13 @@
 					<a name="getsettings" class="tsd-anchor"></a>
 					<h3>get<wbr>Settings</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Settings<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">reqp.RequestPromise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ISettings</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Settings<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">RequestPromise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ISettings</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/57c46f6/packages/api-client/src/manni-watch-api-client.ts#L281">manni-watch-api-client.ts:281</a></li>
+									<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/f22a9dd/packages/api-client/src/manni-watch-api-client.ts#L281">manni-watch-api-client.ts:281</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -348,7 +331,7 @@
 									</dd>
 								</dl>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">reqp.RequestPromise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ISettings</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">RequestPromise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ISettings</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -356,13 +339,13 @@
 					<a name="getstopinfo" class="tsd-anchor"></a>
 					<h3>get<wbr>Stop<wbr>Info</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Stop<wbr>Info<span class="tsd-signature-symbol">(</span>stopId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">reqp.RequestPromise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">IStopInfo</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Stop<wbr>Info<span class="tsd-signature-symbol">(</span>stopId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">RequestPromise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">IStopInfo</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/57c46f6/packages/api-client/src/manni-watch-api-client.ts#L253">manni-watch-api-client.ts:253</a></li>
+									<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/f22a9dd/packages/api-client/src/manni-watch-api-client.ts#L253">manni-watch-api-client.ts:253</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -378,7 +361,7 @@
 									<h5>stopId: <span class="tsd-signature-type">string</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">reqp.RequestPromise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">IStopInfo</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">RequestPromise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">IStopInfo</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -386,13 +369,13 @@
 					<a name="getstoplocations" class="tsd-anchor"></a>
 					<h3>get<wbr>Stop<wbr>Locations</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Stop<wbr>Locations<span class="tsd-signature-symbol">(</span>box<span class="tsd-signature-symbol">?: </span><a href="../interfaces/iboundingbox.html" class="tsd-signature-type">IBoundingBox</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">reqp.RequestPromise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">IStopLocations</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Stop<wbr>Locations<span class="tsd-signature-symbol">(</span>box<span class="tsd-signature-symbol">?: </span><a href="../interfaces/iboundingbox.html" class="tsd-signature-type" data-tsd-kind="Interface">IBoundingBox</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">RequestPromise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">IStopLocations</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/57c46f6/packages/api-client/src/manni-watch-api-client.ts#L141">manni-watch-api-client.ts:141</a></li>
+									<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/f22a9dd/packages/api-client/src/manni-watch-api-client.ts#L141">manni-watch-api-client.ts:141</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -405,10 +388,10 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> box: <a href="../interfaces/iboundingbox.html" class="tsd-signature-type">IBoundingBox</a><span class="tsd-signature-symbol"> = {bottom: -324000000,left: -648000000,right: 648000000,top: 324000000,}</span></h5>
+									<h5>box: <a href="../interfaces/iboundingbox.html" class="tsd-signature-type" data-tsd-kind="Interface">IBoundingBox</a><span class="tsd-signature-symbol"> = ...</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">reqp.RequestPromise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">IStopLocations</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">RequestPromise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">IStopLocations</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -416,13 +399,13 @@
 					<a name="getstoppassages" class="tsd-anchor"></a>
 					<h3>get<wbr>Stop<wbr>Passages</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Stop<wbr>Passages<span class="tsd-signature-symbol">(</span>stopId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, mode<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">StopMode</span>, startTime<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span>, timeFrame<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">reqp.RequestPromise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">IStopPassage</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Stop<wbr>Passages<span class="tsd-signature-symbol">(</span>stopId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, mode<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">StopMode</span>, startTime<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span>, timeFrame<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">RequestPromise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">IStopPassage</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/57c46f6/packages/api-client/src/manni-watch-api-client.ts#L195">manni-watch-api-client.ts:195</a></li>
+									<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/f22a9dd/packages/api-client/src/manni-watch-api-client.ts#L195">manni-watch-api-client.ts:195</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -438,22 +421,22 @@
 									<h5>stopId: <span class="tsd-signature-type">string</span></h5>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> mode: <span class="tsd-signature-type">StopMode</span><span class="tsd-signature-symbol"> = &quot;departure&quot;</span></h5>
+									<h5>mode: <span class="tsd-signature-type">StopMode</span><span class="tsd-signature-symbol"> = &#x27;departure&#x27;</span></h5>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> startTime: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> startTime: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>milliseconds since epoch. now if undefined</p>
 									</div>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> timeFrame: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> timeFrame: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>time frame from startTime in minutes</p>
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">reqp.RequestPromise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">IStopPassage</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">RequestPromise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">IStopPassage</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -461,13 +444,13 @@
 					<a name="getstoppointinfo" class="tsd-anchor"></a>
 					<h3>get<wbr>Stop<wbr>Point<wbr>Info</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Stop<wbr>Point<wbr>Info<span class="tsd-signature-symbol">(</span>stopPointId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">reqp.RequestPromise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">IStopPointInfo</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Stop<wbr>Point<wbr>Info<span class="tsd-signature-symbol">(</span>stopPointId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">RequestPromise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">IStopPointInfo</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/57c46f6/packages/api-client/src/manni-watch-api-client.ts#L268">manni-watch-api-client.ts:268</a></li>
+									<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/f22a9dd/packages/api-client/src/manni-watch-api-client.ts#L268">manni-watch-api-client.ts:268</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -483,7 +466,7 @@
 									<h5>stopPointId: <span class="tsd-signature-type">string</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">reqp.RequestPromise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">IStopPointInfo</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">RequestPromise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">IStopPointInfo</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -491,13 +474,13 @@
 					<a name="getstoppointlocations" class="tsd-anchor"></a>
 					<h3>get<wbr>Stop<wbr>Point<wbr>Locations</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Stop<wbr>Point<wbr>Locations<span class="tsd-signature-symbol">(</span>box<span class="tsd-signature-symbol">?: </span><a href="../interfaces/iboundingbox.html" class="tsd-signature-type">IBoundingBox</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">reqp.RequestPromise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">IStopPointLocations</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Stop<wbr>Point<wbr>Locations<span class="tsd-signature-symbol">(</span>box<span class="tsd-signature-symbol">?: </span><a href="../interfaces/iboundingbox.html" class="tsd-signature-type" data-tsd-kind="Interface">IBoundingBox</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">RequestPromise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">IStopPointLocations</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/57c46f6/packages/api-client/src/manni-watch-api-client.ts#L159">manni-watch-api-client.ts:159</a></li>
+									<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/f22a9dd/packages/api-client/src/manni-watch-api-client.ts#L159">manni-watch-api-client.ts:159</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -510,10 +493,10 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> box: <a href="../interfaces/iboundingbox.html" class="tsd-signature-type">IBoundingBox</a><span class="tsd-signature-symbol"> = {bottom: -324000000,left: -648000000,right: 648000000,top: 324000000,}</span></h5>
+									<h5>box: <a href="../interfaces/iboundingbox.html" class="tsd-signature-type" data-tsd-kind="Interface">IBoundingBox</a><span class="tsd-signature-symbol"> = ...</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">reqp.RequestPromise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">IStopPointLocations</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">RequestPromise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">IStopPointLocations</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -521,13 +504,13 @@
 					<a name="getstoppointpassages" class="tsd-anchor"></a>
 					<h3>get<wbr>Stop<wbr>Point<wbr>Passages</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Stop<wbr>Point<wbr>Passages<span class="tsd-signature-symbol">(</span>stopPointId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, mode<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">StopMode</span>, startTime<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span>, timeFrame<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">reqp.RequestPromise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">IStopPassage</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Stop<wbr>Point<wbr>Passages<span class="tsd-signature-symbol">(</span>stopPointId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, mode<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">StopMode</span>, startTime<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span>, timeFrame<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">RequestPromise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">IStopPassage</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/57c46f6/packages/api-client/src/manni-watch-api-client.ts#L225">manni-watch-api-client.ts:225</a></li>
+									<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/f22a9dd/packages/api-client/src/manni-watch-api-client.ts#L225">manni-watch-api-client.ts:225</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -543,22 +526,22 @@
 									<h5>stopPointId: <span class="tsd-signature-type">string</span></h5>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> mode: <span class="tsd-signature-type">StopMode</span><span class="tsd-signature-symbol"> = &quot;departure&quot;</span></h5>
+									<h5>mode: <span class="tsd-signature-type">StopMode</span><span class="tsd-signature-symbol"> = &#x27;departure&#x27;</span></h5>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> startTime: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> startTime: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>milliseconds since epoch. now if undefined</p>
 									</div>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> timeFrame: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> timeFrame: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>time frame from startTime in minutes</p>
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">reqp.RequestPromise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">IStopPassage</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">RequestPromise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">IStopPassage</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -566,13 +549,13 @@
 					<a name="gettrippassages" class="tsd-anchor"></a>
 					<h3>get<wbr>Trip<wbr>Passages</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Trip<wbr>Passages<span class="tsd-signature-symbol">(</span>tripId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, mode<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">StopMode</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">reqp.RequestPromise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ITripPassages</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Trip<wbr>Passages<span class="tsd-signature-symbol">(</span>tripId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, mode<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">StopMode</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">RequestPromise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ITripPassages</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/57c46f6/packages/api-client/src/manni-watch-api-client.ts#L176">manni-watch-api-client.ts:176</a></li>
+									<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/f22a9dd/packages/api-client/src/manni-watch-api-client.ts#L176">manni-watch-api-client.ts:176</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -588,10 +571,10 @@
 									<h5>tripId: <span class="tsd-signature-type">string</span></h5>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> mode: <span class="tsd-signature-type">StopMode</span><span class="tsd-signature-symbol"> = &quot;departure&quot;</span></h5>
+									<h5>mode: <span class="tsd-signature-type">StopMode</span><span class="tsd-signature-symbol"> = &#x27;departure&#x27;</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">reqp.RequestPromise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ITripPassages</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">RequestPromise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ITripPassages</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -599,13 +582,13 @@
 					<a name="getvehiclelocations" class="tsd-anchor"></a>
 					<h3>get<wbr>Vehicle<wbr>Locations</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Vehicle<wbr>Locations<span class="tsd-signature-symbol">(</span>positionType<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">PositionType</span>, lastUpdate<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">reqp.RequestPromise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">IVehicleLocationList</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Vehicle<wbr>Locations<span class="tsd-signature-symbol">(</span>positionType<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">PositionType</span>, lastUpdate<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">RequestPromise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">IVehicleLocationList</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/57c46f6/packages/api-client/src/manni-watch-api-client.ts#L75">manni-watch-api-client.ts:75</a></li>
+									<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/f22a9dd/packages/api-client/src/manni-watch-api-client.ts#L75">manni-watch-api-client.ts:75</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -616,7 +599,7 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> positionType: <span class="tsd-signature-type">PositionType</span><span class="tsd-signature-symbol"> = &quot;CORRECTED&quot;</span></h5>
+									<h5>positionType: <span class="tsd-signature-type">PositionType</span><span class="tsd-signature-symbol"> = &#x27;CORRECTED&#x27;</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>coordinate type</p>
 									</div>
@@ -628,7 +611,7 @@
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">reqp.RequestPromise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">IVehicleLocationList</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">RequestPromise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">IVehicleLocationList</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -636,13 +619,13 @@
 					<a name="request" class="tsd-anchor"></a>
 					<h3>request</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter">
-						<li class="tsd-signature tsd-kind-icon">request&lt;T&gt;<span class="tsd-signature-symbol">(</span>reqOpts<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">req.OptionsWithUri</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">reqp.RequestPromise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">request&lt;T&gt;<span class="tsd-signature-symbol">(</span>reqOpts<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">OptionsWithUri</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">RequestPromise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/57c46f6/packages/api-client/src/manni-watch-api-client.ts#L58">manni-watch-api-client.ts:58</a></li>
+									<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/f22a9dd/packages/api-client/src/manni-watch-api-client.ts#L58">manni-watch-api-client.ts:58</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -654,10 +637,10 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>reqOpts: <span class="tsd-signature-type">req.OptionsWithUri</span></h5>
+									<h5>reqOpts: <span class="tsd-signature-type">OptionsWithUri</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">reqp.RequestPromise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">RequestPromise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -666,8 +649,8 @@
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 			<nav class="tsd-navigation primary">
 				<ul>
-					<li class="globals  ">
-						<a href="../globals.html"><em>Globals</em></a>
+					<li class=" ">
+						<a href="../modules.html">Exports</a>
 					</li>
 				</ul>
 			</nav>
@@ -744,9 +727,6 @@
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="../interfaces/iboundingbox.html" class="tsd-kind-icon">IBounding<wbr>Box</a>
-					</li>
-					<li class=" tsd-kind-variable">
-						<a href="../globals.html#default_user_agent" class="tsd-kind-icon">DEFAULT_<wbr>USER_<wbr>AGENT</a>
 					</li>
 				</ul>
 			</nav>
