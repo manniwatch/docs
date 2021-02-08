@@ -3,8 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>IBoundingBox | @manniwatch/api-client</title>
-	<meta name="description" content="Documentation for @manniwatch/api-client">
+	<title>IQuerySettings | @manniwatch/vehicle-cache</title>
+	<meta name="description" content="Documentation for @manniwatch/vehicle-cache">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
 	<script async src="../assets/js/search.js" id="search-script"></script>
@@ -23,7 +23,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title">@manniwatch/api-client</a>
+					<a href="../index.html" class="title">@manniwatch/vehicle-cache</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -52,13 +52,13 @@
 		<div class="container">
 			<ul class="tsd-breadcrumb">
 				<li>
-					<a href="../modules.html">@manniwatch/api-client</a>
+					<a href="../modules.html">@manniwatch/vehicle-cache</a>
 				</li>
 				<li>
-					<a href="iboundingbox.html">IBoundingBox</a>
+					<a href="iquerysettings.html">IQuerySettings</a>
 				</li>
 			</ul>
-			<h1>Interface IBoundingBox</h1>
+			<h1>Interface IQuerySettings</h1>
 		</div>
 	</div>
 </header>
@@ -69,7 +69,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">IBoundingBox</span>
+						<span class="target">IQuerySettings</span>
 					</li>
 				</ul>
 			</section>
@@ -80,10 +80,8 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iboundingbox.html#bottom" class="tsd-kind-icon">bottom</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iboundingbox.html#left" class="tsd-kind-icon">left</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iboundingbox.html#right" class="tsd-kind-icon">right</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iboundingbox.html#top" class="tsd-kind-icon">top</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iquerysettings.html#lastupdate" class="tsd-kind-icon">last<wbr>Update</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iquerysettings.html#type" class="tsd-kind-icon">type</a></li>
 							</ul>
 						</section>
 					</div>
@@ -92,42 +90,22 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="bottom" class="tsd-anchor"></a>
-					<h3>bottom</h3>
-					<div class="tsd-signature tsd-kind-icon">bottom<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="lastupdate" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> last<wbr>Update</h3>
+					<div class="tsd-signature tsd-kind-icon">last<wbr>Update<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/26482ba/packages/api-client/src/manni-watch-api-client.ts#L26">manni-watch-api-client.ts:26</a></li>
+							<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/26482ba/packages/vehicle-cache/src/types/query-settings.ts#L9">types/query-settings.ts:9</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="left" class="tsd-anchor"></a>
-					<h3>left</h3>
-					<div class="tsd-signature tsd-kind-icon">left<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="type" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> type</h3>
+					<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;CORRECTED&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;RAW&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/26482ba/packages/api-client/src/manni-watch-api-client.ts#L27">manni-watch-api-client.ts:27</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="right" class="tsd-anchor"></a>
-					<h3>right</h3>
-					<div class="tsd-signature tsd-kind-icon">right<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/26482ba/packages/api-client/src/manni-watch-api-client.ts#L28">manni-watch-api-client.ts:28</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="top" class="tsd-anchor"></a>
-					<h3>top</h3>
-					<div class="tsd-signature tsd-kind-icon">top<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/26482ba/packages/api-client/src/manni-watch-api-client.ts#L25">manni-watch-api-client.ts:25</a></li>
+							<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/26482ba/packages/vehicle-cache/src/types/query-settings.ts#L8">types/query-settings.ts:8</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -143,33 +121,66 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-class">
-						<a href="../classes/manniwatchapiclient.html" class="tsd-kind-icon">Manni<wbr>Watch<wbr>Api<wbr>Client</a>
+					<li class=" tsd-kind-enum">
+						<a href="../enums/cacheeventtype.html" class="tsd-kind-icon">Cache<wbr>Event<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="../enums/pollresultstatus.html" class="tsd-kind-icon">Poll<wbr>Result<wbr>Status</a>
 					</li>
 					<li class=" tsd-kind-class">
-						<a href="../classes/util.html" class="tsd-kind-icon">Util</a>
+						<a href="../classes/vehiclecache.html" class="tsd-kind-icon">Vehicle<wbr>Cache</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="icacheevent.html" class="tsd-kind-icon">ICache<wbr>Event</a>
 					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface">
-						<a href="iboundingbox.html" class="tsd-kind-icon">IBounding<wbr>Box</a>
+						<a href="iquerysettings.html" class="tsd-kind-icon">IQuery<wbr>Settings</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="iboundingbox.html#bottom" class="tsd-kind-icon">bottom</a>
+								<a href="iquerysettings.html#lastupdate" class="tsd-kind-icon">last<wbr>Update</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="iboundingbox.html#left" class="tsd-kind-icon">left</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="iboundingbox.html#right" class="tsd-kind-icon">right</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="iboundingbox.html#top" class="tsd-kind-icon">top</a>
+								<a href="iquerysettings.html#type" class="tsd-kind-icon">type</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
+					<li class=" tsd-kind-type-alias">
+						<a href="../modules.html#cacheentry" class="tsd-kind-icon">Cache<wbr>Entry</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="../modules.html#pollresult" class="tsd-kind-icon">Poll<wbr>Result</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="../modules.html#queryfactory" class="tsd-kind-icon">Query<wbr>Factory</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="../modules.html#convertpollresult" class="tsd-kind-icon">convert<wbr>Poll<wbr>Result</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="../modules.html#converttocacheentries" class="tsd-kind-icon">convert<wbr>ToCache<wbr>Entries</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="../modules.html#converttocacheentry" class="tsd-kind-icon">convert<wbr>ToCache<wbr>Entry</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="../modules.html#intervalvehiclelocationpoll" class="tsd-kind-icon">interval<wbr>Vehicle<wbr>Location<wbr>Poll</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="../modules.html#intervallpollvehicles" class="tsd-kind-icon">intervall<wbr>Poll<wbr>Vehicles</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="../modules.html#queryvehicles" class="tsd-kind-icon">query<wbr>Vehicles</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="../modules.html#queryvehiclesoperator" class="tsd-kind-icon">query<wbr>Vehicles<wbr>Operator</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="../modules.html#vehiclecacheoperator" class="tsd-kind-icon">vehicle<wbr>Cache<wbr>Operator</a>
+					</li>
 				</ul>
 			</nav>
 		</div>
@@ -185,13 +196,11 @@
 				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
 			</ul>
 			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
-			</ul>
-			<ul class="tsd-legend">
 				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
 			</ul>
 			<ul class="tsd-legend">
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
 			</ul>
 		</div>
 	</div>

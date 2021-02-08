@@ -50,7 +50,7 @@
 	</div>
 	<div class="tsd-page-title">
 		<div class="container">
-			<h1>Project @manniwatch/vehicle-cache</h1>
+			<h1>@manniwatch/vehicle-cache</h1>
 		</div>
 	</div>
 </header>
@@ -62,15 +62,44 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
+							<h3>Enumerations</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-enum"><a href="enums/cacheeventtype.html" class="tsd-kind-icon">Cache<wbr>Event<wbr>Type</a></li>
+								<li class="tsd-kind-enum"><a href="enums/pollresultstatus.html" class="tsd-kind-icon">Poll<wbr>Result<wbr>Status</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Classes</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-class"><a href="classes/vehiclecache.html" class="tsd-kind-icon">Vehicle<wbr>Cache</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Interfaces</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-interface"><a href="interfaces/icacheevent.html" class="tsd-kind-icon">ICache<wbr>Event</a></li>
+								<li class="tsd-kind-interface"><a href="interfaces/iquerysettings.html" class="tsd-kind-icon">IQuery<wbr>Settings</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
 							<h3>Type aliases</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-type-alias"><a href="modules.html#cacheentry" class="tsd-kind-icon">Cache<wbr>Entry</a></li>
+								<li class="tsd-kind-type-alias"><a href="modules.html#pollresult" class="tsd-kind-icon">Poll<wbr>Result</a></li>
 								<li class="tsd-kind-type-alias"><a href="modules.html#queryfactory" class="tsd-kind-icon">Query<wbr>Factory</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-function"><a href="modules.html#convertpollresult" class="tsd-kind-icon">convert<wbr>Poll<wbr>Result</a></li>
+								<li class="tsd-kind-function"><a href="modules.html#converttocacheentries" class="tsd-kind-icon">convert<wbr>ToCache<wbr>Entries</a></li>
+								<li class="tsd-kind-function"><a href="modules.html#converttocacheentry" class="tsd-kind-icon">convert<wbr>ToCache<wbr>Entry</a></li>
 								<li class="tsd-kind-function"><a href="modules.html#intervalvehiclelocationpoll" class="tsd-kind-icon">interval<wbr>Vehicle<wbr>Location<wbr>Poll</a></li>
+								<li class="tsd-kind-function"><a href="modules.html#intervallpollvehicles" class="tsd-kind-icon">intervall<wbr>Poll<wbr>Vehicles</a></li>
+								<li class="tsd-kind-function"><a href="modules.html#queryvehicles" class="tsd-kind-icon">query<wbr>Vehicles</a></li>
+								<li class="tsd-kind-function"><a href="modules.html#queryvehiclesoperator" class="tsd-kind-icon">query<wbr>Vehicles<wbr>Operator</a></li>
+								<li class="tsd-kind-function"><a href="modules.html#vehiclecacheoperator" class="tsd-kind-icon">vehicle<wbr>Cache<wbr>Operator</a></li>
 							</ul>
 						</section>
 					</div>
@@ -79,12 +108,32 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Type aliases</h2>
 				<section class="tsd-panel tsd-member tsd-kind-type-alias">
+					<a name="cacheentry" class="tsd-anchor"></a>
+					<h3>Cache<wbr>Entry</h3>
+					<div class="tsd-signature tsd-kind-icon">Cache<wbr>Entry<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">VehicleLocations</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-symbol">{ </span>lastUpdate<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/26482ba/packages/vehicle-cache/src/types/cache-entry.ts#L7">types/cache-entry.ts:7</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias">
+					<a name="pollresult" class="tsd-anchor"></a>
+					<h3>Poll<wbr>Result</h3>
+					<div class="tsd-signature tsd-kind-icon">Poll<wbr>Result<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>result<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IVehicleLocationList</span><span class="tsd-signature-symbol">; </span>type<span class="tsd-signature-symbol">: </span><a href="enums/pollresultstatus.html#success" class="tsd-signature-type" data-tsd-kind="Enumeration member">SUCCESS</a><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">{ </span>error<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>type<span class="tsd-signature-symbol">: </span><a href="enums/pollresultstatus.html#error" class="tsd-signature-type" data-tsd-kind="Enumeration member">ERROR</a><span class="tsd-signature-symbol"> }</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/26482ba/packages/vehicle-cache/src/operators/convert-poll-result.ts#L14">operators/convert-poll-result.ts:14</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias">
 					<a name="queryfactory" class="tsd-anchor"></a>
 					<h3>Query<wbr>Factory</h3>
 					<div class="tsd-signature tsd-kind-icon">Query<wbr>Factory<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>positionType<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">PositionType</span>, timestamp<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">IVehicleLocationList</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/752805c/packages/vehicle-cache/src/interval-vehicle-location-poll.ts#L25">interval-vehicle-location-poll.ts:25</a></li>
+							<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/26482ba/packages/vehicle-cache/src/interval-vehicle-location-poll.ts#L25">interval-vehicle-location-poll.ts:25</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -116,6 +165,57 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
 				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="convertpollresult" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> convert<wbr>Poll<wbr>Result</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">convert<wbr>Poll<wbr>Result<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">OperatorFunction</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">IVehicleLocationList</span><span class="tsd-signature-symbol">, </span><a href="modules.html#pollresult" class="tsd-signature-type" data-tsd-kind="Type alias">PollResult</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/26482ba/packages/vehicle-cache/src/operators/convert-poll-result.ts#L22">operators/convert-poll-result.ts:22</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">OperatorFunction</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">IVehicleLocationList</span><span class="tsd-signature-symbol">, </span><a href="modules.html#pollresult" class="tsd-signature-type" data-tsd-kind="Type alias">PollResult</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="converttocacheentries" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> convert<wbr>ToCache<wbr>Entries</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">convert<wbr>ToCache<wbr>Entries<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">OperatorFunction</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">IVehicleLocationList</span><span class="tsd-signature-symbol">, </span><a href="modules.html#cacheentry" class="tsd-signature-type" data-tsd-kind="Type alias">CacheEntry</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/26482ba/packages/vehicle-cache/src/operators/convert-to-cache-entries.ts#L10">operators/convert-to-cache-entries.ts:10</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">OperatorFunction</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">IVehicleLocationList</span><span class="tsd-signature-symbol">, </span><a href="modules.html#cacheentry" class="tsd-signature-type" data-tsd-kind="Type alias">CacheEntry</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="converttocacheentry" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> convert<wbr>ToCache<wbr>Entry</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">convert<wbr>ToCache<wbr>Entry<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">OperatorFunction</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">IVehicleLocationList</span><span class="tsd-signature-symbol">, </span><a href="modules.html#cacheentry" class="tsd-signature-type" data-tsd-kind="Type alias">CacheEntry</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/26482ba/packages/vehicle-cache/src/operators/convert-to-cache-entry.ts#L10">operators/convert-to-cache-entry.ts:10</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">OperatorFunction</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">IVehicleLocationList</span><span class="tsd-signature-symbol">, </span><a href="modules.html#cacheentry" class="tsd-signature-type" data-tsd-kind="Type alias">CacheEntry</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
 					<a name="intervalvehiclelocationpoll" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> interval<wbr>Vehicle<wbr>Location<wbr>Poll</h3>
 					<ul class="tsd-signatures tsd-kind-function">
@@ -125,7 +225,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/752805c/packages/vehicle-cache/src/interval-vehicle-location-poll.ts#L31">interval-vehicle-location-poll.ts:31</a></li>
+									<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/26482ba/packages/vehicle-cache/src/interval-vehicle-location-poll.ts#L31">interval-vehicle-location-poll.ts:31</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -152,6 +252,121 @@
 						</li>
 					</ul>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="intervallpollvehicles" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> intervall<wbr>Poll<wbr>Vehicles</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">intervall<wbr>Poll<wbr>Vehicles<span class="tsd-signature-symbol">(</span>queryFactory<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">QueryFactory</span>, refreshInterval<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><a href="modules.html#pollresult" class="tsd-signature-type" data-tsd-kind="Type alias">PollResult</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/26482ba/packages/vehicle-cache/src/observable/intervall-poll-vehicles.ts#L11">observable/intervall-poll-vehicles.ts:11</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>queryFactory: <span class="tsd-signature-type">QueryFactory</span></h5>
+								</li>
+								<li>
+									<h5>refreshInterval: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 60000</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><a href="modules.html#pollresult" class="tsd-signature-type" data-tsd-kind="Type alias">PollResult</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="queryvehicles" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> query<wbr>Vehicles</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">query<wbr>Vehicles<span class="tsd-signature-symbol">(</span>client<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ManniWatchApiClient</span>, type<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">&quot;CORRECTED&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;RAW&quot;</span>, lastUpdate<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">IVehicleLocationList</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/26482ba/packages/vehicle-cache/src/observable/query-vehicles.ts#L15">observable/query-vehicles.ts:15</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Wraps the ManniWatchApiClient getVehicleLocations method into an Observable</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>client: <span class="tsd-signature-type">ManniWatchApiClient</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>ManniWatchApiClient instance</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> type: <span class="tsd-signature-type">&quot;CORRECTED&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;RAW&quot;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>PositionType. Default &#39;RAW&#39;</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> lastUpdate: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>lastUpdate. Default 0</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Observable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">IVehicleLocationList</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="queryvehiclesoperator" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> query<wbr>Vehicles<wbr>Operator</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">query<wbr>Vehicles<wbr>Operator<span class="tsd-signature-symbol">(</span>client<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ManniWatchApiClient</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">OperatorFunction</span><span class="tsd-signature-symbol">&lt;</span><a href="interfaces/iquerysettings.html" class="tsd-signature-type" data-tsd-kind="Interface">IQuerySettings</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">IVehicleLocationList</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/26482ba/packages/vehicle-cache/src/operators/query-vehicles.ts#L11">operators/query-vehicles.ts:11</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>client: <span class="tsd-signature-type">ManniWatchApiClient</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">OperatorFunction</span><span class="tsd-signature-symbol">&lt;</span><a href="interfaces/iquerysettings.html" class="tsd-signature-type" data-tsd-kind="Interface">IQuerySettings</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">IVehicleLocationList</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="vehiclecacheoperator" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> vehicle<wbr>Cache<wbr>Operator</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">vehicle<wbr>Cache<wbr>Operator<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">MonoTypeOperatorFunction</span><span class="tsd-signature-symbol">&lt;</span><a href="modules.html#cacheentry" class="tsd-signature-type" data-tsd-kind="Type alias">CacheEntry</a><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/26482ba/packages/vehicle-cache/src/operators/vehicle-cache-operator.ts#L12">operators/vehicle-cache-operator.ts:12</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Operator keeping a cache and only emitting distinct and or new CacheEntries
+									Not using distinctUntilChanged as the hashmap is faster</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">MonoTypeOperatorFunction</span><span class="tsd-signature-symbol">&lt;</span><a href="modules.html#cacheentry" class="tsd-signature-type" data-tsd-kind="Type alias">CacheEntry</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
 			</section>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -164,11 +379,53 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-enum">
+						<a href="enums/cacheeventtype.html" class="tsd-kind-icon">Cache<wbr>Event<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/pollresultstatus.html" class="tsd-kind-icon">Poll<wbr>Result<wbr>Status</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/vehiclecache.html" class="tsd-kind-icon">Vehicle<wbr>Cache</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/icacheevent.html" class="tsd-kind-icon">ICache<wbr>Event</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/iquerysettings.html" class="tsd-kind-icon">IQuery<wbr>Settings</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#cacheentry" class="tsd-kind-icon">Cache<wbr>Entry</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#pollresult" class="tsd-kind-icon">Poll<wbr>Result</a>
+					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="modules.html#queryfactory" class="tsd-kind-icon">Query<wbr>Factory</a>
 					</li>
 					<li class=" tsd-kind-function">
+						<a href="modules.html#convertpollresult" class="tsd-kind-icon">convert<wbr>Poll<wbr>Result</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#converttocacheentries" class="tsd-kind-icon">convert<wbr>ToCache<wbr>Entries</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#converttocacheentry" class="tsd-kind-icon">convert<wbr>ToCache<wbr>Entry</a>
+					</li>
+					<li class=" tsd-kind-function">
 						<a href="modules.html#intervalvehiclelocationpoll" class="tsd-kind-icon">interval<wbr>Vehicle<wbr>Location<wbr>Poll</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#intervallpollvehicles" class="tsd-kind-icon">intervall<wbr>Poll<wbr>Vehicles</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#queryvehicles" class="tsd-kind-icon">query<wbr>Vehicles</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#queryvehiclesoperator" class="tsd-kind-icon">query<wbr>Vehicles<wbr>Operator</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="modules.html#vehiclecacheoperator" class="tsd-kind-icon">vehicle<wbr>Cache<wbr>Operator</a>
 					</li>
 				</ul>
 			</nav>
@@ -179,6 +436,18 @@
 	<div class="container">
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+			</ul>
 		</div>
 	</div>
 </footer>
