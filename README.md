@@ -19,11 +19,11 @@ Docs for [client-desktop](http://github.com/manniwatch/manniwatch/tree/master/pa
 ## [client-ng](http://manniwatch.github.io/docs/client-ng/index.html)
 Docs for [client-ng](http://github.com/manniwatch/manniwatch/tree/master/packages/client-ng/)
 
-## [express-utils](http://manniwatch.github.io/docs/express-utils/index.html)
-Docs for [express-utils](http://github.com/manniwatch/manniwatch/tree/master/packages/express-utils/)
-
 ## [pb-converter](http://manniwatch.github.io/docs/pb-converter/index.html)
 Docs for [pb-converter](http://github.com/manniwatch/manniwatch/tree/master/packages/pb-converter/)
+
+## [schemas](http://manniwatch.github.io/docs/schemas/index.html)
+Docs for [schemas](http://github.com/manniwatch/manniwatch/tree/master/packages/schemas/)
 
 ## [vehicle-cache](http://manniwatch.github.io/docs/vehicle-cache/index.html)
 Docs for [vehicle-cache](http://github.com/manniwatch/manniwatch/tree/master/packages/vehicle-cache/)
