@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>IGeoFenceSchema | @manniwatch/schemas</title>
+	<title>IGeoLocationSchema | @manniwatch/schemas</title>
 	<meta name="description" content="Documentation for @manniwatch/schemas">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -55,10 +55,10 @@
 					<a href="../modules.html">@manniwatch/schemas</a>
 				</li>
 				<li>
-					<a href="igeofenceschema.html">IGeoFenceSchema</a>
+					<a href="igeolocationschema.html">IGeoLocationSchema</a>
 				</li>
 			</ul>
-			<h1>Interface IGeoFenceSchema</h1>
+			<h1>Interface IGeoLocationSchema</h1>
 		</div>
 	</div>
 </header>
@@ -69,7 +69,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">IGeoFenceSchema</span>
+						<span class="target">IGeoLocationSchema</span>
 					</li>
 				</ul>
 			</section>
@@ -80,10 +80,8 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="igeofenceschema.html#bottom" class="tsd-kind-icon">bottom</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="igeofenceschema.html#left" class="tsd-kind-icon">left</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="igeofenceschema.html#right" class="tsd-kind-icon">right</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="igeofenceschema.html#top" class="tsd-kind-icon">top</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="igeolocationschema.html#lastupdate" class="tsd-kind-icon">last<wbr>Update</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="igeolocationschema.html#positiontype" class="tsd-kind-icon">position<wbr>Type</a></li>
 							</ul>
 						</section>
 					</div>
@@ -92,42 +90,22 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="bottom" class="tsd-anchor"></a>
-					<h3>bottom</h3>
-					<div class="tsd-signature tsd-kind-icon">bottom<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="lastupdate" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> last<wbr>Update</h3>
+					<div class="tsd-signature tsd-kind-icon">last<wbr>Update<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/0330bef/packages/schemas/src/geo-fence.ts#L9">geo-fence.ts:9</a></li>
+							<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/0330bef/packages/schemas/src/vehicle-location.ts#L11">vehicle-location.ts:11</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="left" class="tsd-anchor"></a>
-					<h3>left</h3>
-					<div class="tsd-signature tsd-kind-icon">left<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="positiontype" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> position<wbr>Type</h3>
+					<div class="tsd-signature tsd-kind-icon">position<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;CORRECTED&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;RAW&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/0330bef/packages/schemas/src/geo-fence.ts#L10">geo-fence.ts:10</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="right" class="tsd-anchor"></a>
-					<h3>right</h3>
-					<div class="tsd-signature tsd-kind-icon">right<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/0330bef/packages/schemas/src/geo-fence.ts#L11">geo-fence.ts:11</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="top" class="tsd-anchor"></a>
-					<h3>top</h3>
-					<div class="tsd-signature tsd-kind-icon">top<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/0330bef/packages/schemas/src/geo-fence.ts#L12">geo-fence.ts:12</a></li>
+							<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/0330bef/packages/schemas/src/vehicle-location.ts#L12">vehicle-location.ts:12</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -143,30 +121,24 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-interface">
+						<a href="igeofenceschema.html" class="tsd-kind-icon">IGeo<wbr>Fence<wbr>Schema</a>
+					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface">
-						<a href="igeofenceschema.html" class="tsd-kind-icon">IGeo<wbr>Fence<wbr>Schema</a>
+						<a href="igeolocationschema.html" class="tsd-kind-icon">IGeo<wbr>Location<wbr>Schema</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="igeofenceschema.html#bottom" class="tsd-kind-icon">bottom</a>
+								<a href="igeolocationschema.html#lastupdate" class="tsd-kind-icon">last<wbr>Update</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="igeofenceschema.html#left" class="tsd-kind-icon">left</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="igeofenceschema.html#right" class="tsd-kind-icon">right</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="igeofenceschema.html#top" class="tsd-kind-icon">top</a>
+								<a href="igeolocationschema.html#positiontype" class="tsd-kind-icon">position<wbr>Type</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-interface">
-						<a href="igeolocationschema.html" class="tsd-kind-icon">IGeo<wbr>Location<wbr>Schema</a>
-					</li>
 					<li class=" tsd-kind-interface">
 						<a href="istoppassagesschema.html" class="tsd-kind-icon">IStop<wbr>Passages<wbr>Schema</a>
 					</li>
