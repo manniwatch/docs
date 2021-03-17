@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>cli-commands | @manniwatch/client-desktop</title>
+	<title>main/api-handler | @manniwatch/client-desktop</title>
 	<meta name="description" content="Documentation for @manniwatch/client-desktop">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -55,10 +55,10 @@
 					<a href="../modules.html">@manniwatch/client-desktop</a>
 				</li>
 				<li>
-					<a href="cli_commands.html">cli-commands</a>
+					<a href="main_api_handler.html">main/api-handler</a>
 				</li>
 			</ul>
-			<h1>Module cli-commands</h1>
+			<h1>Module main/api-handler</h1>
 		</div>
 	</div>
 </header>
@@ -70,79 +70,33 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Interfaces</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/cli_commands.iconfig.html" class="tsd-kind-icon">IConfig</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section ">
-							<h3>Type aliases</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="cli_commands.html#argscallback" class="tsd-kind-icon">Args<wbr>Callback</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-module"><a href="cli_commands.html#parseargs" class="tsd-kind-icon">parse<wbr>Args</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="main_api_handler.html#createapihandler" class="tsd-kind-icon">create<wbr>Api<wbr>Handler</a></li>
 							</ul>
 						</section>
-					</div>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Type aliases</h2>
-				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
-					<a name="argscallback" class="tsd-anchor"></a>
-					<h3>Args<wbr>Callback</h3>
-					<div class="tsd-signature tsd-kind-icon">Args<wbr>Callback<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>config<span class="tsd-signature-symbol">: </span><a href="../interfaces/cli_commands.iconfig.html" class="tsd-signature-type" data-tsd-kind="Interface">IConfig</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/1147c19/packages/client-desktop/src/cli-commands.ts#L12">cli-commands.ts:12</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-type-declaration">
-						<h4>Type declaration</h4>
-						<ul class="tsd-parameters">
-							<li class="tsd-parameter-signature">
-								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-type-alias">
-									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>config<span class="tsd-signature-symbol">: </span><a href="../interfaces/cli_commands.iconfig.html" class="tsd-signature-type" data-tsd-kind="Interface">IConfig</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-								</ul>
-								<ul class="tsd-descriptions">
-									<li class="tsd-description">
-										<h4 class="tsd-parameters-title">Parameters</h4>
-										<ul class="tsd-parameters">
-											<li>
-												<h5>config: <a href="../interfaces/cli_commands.iconfig.html" class="tsd-signature-type" data-tsd-kind="Interface">IConfig</a></h5>
-											</li>
-										</ul>
-										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-									</li>
-								</ul>
-							</li>
-						</ul>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
-					<a name="parseargs" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> parse<wbr>Args</h3>
+					<a name="createapihandler" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> create<wbr>Api<wbr>Handler</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">parse<wbr>Args<span class="tsd-signature-symbol">(</span>cb<span class="tsd-signature-symbol">: </span><a href="cli_commands.html#argscallback" class="tsd-signature-type" data-tsd-kind="Type alias">ArgsCallback</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Api<wbr>Handler<span class="tsd-signature-symbol">(</span>client<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ManniWatchApiClient</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/1147c19/packages/client-desktop/src/cli-commands.ts#L13">cli-commands.ts:13</a></li>
+									<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/45b3d87/packages/client-desktop/src/main/api-handler.ts#L21">src/main/api-handler.ts:21</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>cb: <a href="cli_commands.html#argscallback" class="tsd-signature-type" data-tsd-kind="Type alias">ArgsCallback</a></h5>
+									<h5>client: <span class="tsd-signature-type">ManniWatchApiClient</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -158,41 +112,65 @@
 						<a href="../modules.html">Exports</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="api_server.html">api-<wbr>server</a>
+						<a href="environment_environment.html">environment/environment</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="api_server.html">api-<wbr>server</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="api_server_config.html">api-<wbr>server-<wbr>config</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="api_server_api_not_found_request_handler.html">api-<wbr>server/api-<wbr>not-<wbr>found-<wbr>request-<wbr>handler</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="api_server_server_error_request_handler.html">api-<wbr>server/server-<wbr>error-<wbr>request-<wbr>handler</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="app.html">app</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="app_callback.html">app-<wbr>callback</a>
+						<a href="environment_environment_prod.html">environment/environment.prod</a>
 					</li>
 					<li class="current tsd-kind-module">
-						<a href="cli_commands.html">cli-<wbr>commands</a>
+						<a href="main_api_handler.html">main/api-<wbr>handler</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="main_app.html">main/app</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="main_app_callback.html">main/app-<wbr>callback</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="main_cli.html">main/cli</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="main_cli_cli_config.html">main/cli/cli-<wbr>config</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="main_cli_handle_cli.html">main/cli/handle-<wbr>cli</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="main_config.html">main/config</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="main_config_config.html">main/config/config</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="main_config_load_config.html">main/config/load-<wbr>config</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="main_config_validate_file_config.html">main/config/validate-<wbr>file-<wbr>config</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="main_main.html">main/main</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="main_mw_file_protocol_handler.html">main/mw-<wbr>file-<wbr>protocol-<wbr>handler</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="main_mw_tiles_protocol_handler.html">main/mw-<wbr>tiles-<wbr>protocol-<wbr>handler</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="main_renderer.html">main/renderer</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="preload_manniwatch_api.html">preload/manniwatch-<wbr>api</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="preload_prerender.html">preload/prerender</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="../interfaces/cli_commands.iconfig.html" class="tsd-kind-icon">IConfig</a>
-					</li>
-					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
-						<a href="cli_commands.html#argscallback" class="tsd-kind-icon">Args<wbr>Callback</a>
-					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="cli_commands.html#parseargs" class="tsd-kind-icon">parse<wbr>Args</a>
+						<a href="main_api_handler.html#createapihandler" class="tsd-kind-icon">create<wbr>Api<wbr>Handler</a>
 					</li>
 				</ul>
 			</nav>

@@ -19,6 +19,9 @@ Docs for [client-desktop](http://github.com/manniwatch/manniwatch/tree/master/pa
 ## [client-ng](http://manniwatch.github.io/docs/client-ng/index.html)
 Docs for [client-ng](http://github.com/manniwatch/manniwatch/tree/master/packages/client-ng/)
 
+## [client-types](http://manniwatch.github.io/docs/client-types/index.html)
+Docs for [client-types](http://github.com/manniwatch/manniwatch/tree/master/packages/client-types/)
+
 ## [pb-converter](http://manniwatch.github.io/docs/pb-converter/index.html)
 Docs for [pb-converter](http://github.com/manniwatch/manniwatch/tree/master/packages/pb-converter/)
 

@@ -88,14 +88,11 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="manniwatchapiclient.html#endpoint" class="tsd-kind-icon">endpoint</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="manniwatchapiclient.html#httpclient" class="tsd-kind-icon">http<wbr>Client</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="manniwatchapiclient.html#proxies" class="tsd-kind-icon">proxies</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="manniwatchapiclient.html#randomuseragent" class="tsd-kind-icon">random<wbr>User<wbr>Agent</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="manniwatchapiclient.html#getproxy" class="tsd-kind-icon">get<wbr>Proxy</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="manniwatchapiclient.html#getroutebyrouteid" class="tsd-kind-icon">get<wbr>Route<wbr>ByRoute<wbr>Id</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="manniwatchapiclient.html#getroutebytripid" class="tsd-kind-icon">get<wbr>Route<wbr>ByTrip<wbr>Id</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="manniwatchapiclient.html#getroutebyvehicleid" class="tsd-kind-icon">get<wbr>Route<wbr>ByVehicle<wbr>Id</a></li>
@@ -120,13 +117,13 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Manni<wbr>Watch<wbr>Api<wbr>Client<span class="tsd-signature-symbol">(</span>endpoint<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, proxies<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span>, randomUserAgent<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="manniwatchapiclient.html" class="tsd-signature-type" data-tsd-kind="Class">ManniWatchApiClient</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Manni<wbr>Watch<wbr>Api<wbr>Client<span class="tsd-signature-symbol">(</span>endpoint<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, axiosInstance<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">AxiosInstance</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="manniwatchapiclient.html" class="tsd-signature-type" data-tsd-kind="Class">ManniWatchApiClient</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/1147c19/packages/api-client/src/manni-watch-api-client.ts#L31">manni-watch-api-client.ts:31</a></li>
+									<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/45b3d87/packages/api-client/src/manni-watch-api-client.ts#L31">manni-watch-api-client.ts:31</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -145,10 +142,7 @@
 									</div>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> proxies: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
-								</li>
-								<li>
-									<h5>randomUserAgent: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> axiosInstance: <span class="tsd-signature-type">AxiosInstance</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="manniwatchapiclient.html" class="tsd-signature-type" data-tsd-kind="Class">ManniWatchApiClient</a></h4>
@@ -160,55 +154,24 @@
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="endpoint" class="tsd-anchor"></a>
-					<h3>endpoint</h3>
+					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> endpoint</h3>
 					<div class="tsd-signature tsd-kind-icon">endpoint<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
 					<a name="httpclient" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> http<wbr>Client</h3>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> <span class="tsd-flag ts-flagReadonly">Readonly</span> http<wbr>Client</h3>
 					<div class="tsd-signature tsd-kind-icon">http<wbr>Client<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">AxiosInstance</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/1147c19/packages/api-client/src/manni-watch-api-client.ts#L31">manni-watch-api-client.ts:31</a></li>
+							<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/45b3d87/packages/api-client/src/manni-watch-api-client.ts#L31">manni-watch-api-client.ts:31</a></li>
 						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="proxies" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> proxies</h3>
-					<div class="tsd-signature tsd-kind-icon">proxies<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div>
-					<aside class="tsd-sources">
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="randomuseragent" class="tsd-anchor"></a>
-					<h3>random<wbr>User<wbr>Agent</h3>
-					<div class="tsd-signature tsd-kind-icon">random<wbr>User<wbr>Agent<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></div>
-					<aside class="tsd-sources">
 					</aside>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="getproxy" class="tsd-anchor"></a>
-					<h3>get<wbr>Proxy</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Proxy<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/1147c19/packages/api-client/src/manni-watch-api-client.ts#L48">manni-watch-api-client.ts:48</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h4>
-						</li>
-					</ul>
-				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="getroutebyrouteid" class="tsd-anchor"></a>
 					<h3>get<wbr>Route<wbr>ByRoute<wbr>Id</h3>
@@ -219,7 +182,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/1147c19/packages/api-client/src/manni-watch-api-client.ts#L127">manni-watch-api-client.ts:127</a></li>
+									<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/45b3d87/packages/api-client/src/manni-watch-api-client.ts#L117">manni-watch-api-client.ts:117</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -255,7 +218,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/1147c19/packages/api-client/src/manni-watch-api-client.ts#L96">manni-watch-api-client.ts:96</a></li>
+									<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/45b3d87/packages/api-client/src/manni-watch-api-client.ts#L86">manni-watch-api-client.ts:86</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -288,7 +251,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/1147c19/packages/api-client/src/manni-watch-api-client.ts#L111">manni-watch-api-client.ts:111</a></li>
+									<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/45b3d87/packages/api-client/src/manni-watch-api-client.ts#L101">manni-watch-api-client.ts:101</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -321,7 +284,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/1147c19/packages/api-client/src/manni-watch-api-client.ts#L265">manni-watch-api-client.ts:265</a></li>
+									<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/45b3d87/packages/api-client/src/manni-watch-api-client.ts#L255">manni-watch-api-client.ts:255</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -345,7 +308,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/1147c19/packages/api-client/src/manni-watch-api-client.ts#L241">manni-watch-api-client.ts:241</a></li>
+									<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/45b3d87/packages/api-client/src/manni-watch-api-client.ts#L231">manni-watch-api-client.ts:231</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -375,7 +338,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/1147c19/packages/api-client/src/manni-watch-api-client.ts#L143">manni-watch-api-client.ts:143</a></li>
+									<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/45b3d87/packages/api-client/src/manni-watch-api-client.ts#L133">manni-watch-api-client.ts:133</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -405,7 +368,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/1147c19/packages/api-client/src/manni-watch-api-client.ts#L197">manni-watch-api-client.ts:197</a></li>
+									<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/45b3d87/packages/api-client/src/manni-watch-api-client.ts#L187">manni-watch-api-client.ts:187</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -450,7 +413,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/1147c19/packages/api-client/src/manni-watch-api-client.ts#L254">manni-watch-api-client.ts:254</a></li>
+									<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/45b3d87/packages/api-client/src/manni-watch-api-client.ts#L244">manni-watch-api-client.ts:244</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -480,7 +443,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/1147c19/packages/api-client/src/manni-watch-api-client.ts#L161">manni-watch-api-client.ts:161</a></li>
+									<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/45b3d87/packages/api-client/src/manni-watch-api-client.ts#L151">manni-watch-api-client.ts:151</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -510,7 +473,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/1147c19/packages/api-client/src/manni-watch-api-client.ts#L220">manni-watch-api-client.ts:220</a></li>
+									<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/45b3d87/packages/api-client/src/manni-watch-api-client.ts#L210">manni-watch-api-client.ts:210</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -555,7 +518,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/1147c19/packages/api-client/src/manni-watch-api-client.ts#L178">manni-watch-api-client.ts:178</a></li>
+									<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/45b3d87/packages/api-client/src/manni-watch-api-client.ts#L168">manni-watch-api-client.ts:168</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -588,7 +551,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/1147c19/packages/api-client/src/manni-watch-api-client.ts#L77">manni-watch-api-client.ts:77</a></li>
+									<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/45b3d87/packages/api-client/src/manni-watch-api-client.ts#L67">manni-watch-api-client.ts:67</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -625,7 +588,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/1147c19/packages/api-client/src/manni-watch-api-client.ts#L57">manni-watch-api-client.ts:57</a></li>
+									<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/45b3d87/packages/api-client/src/manni-watch-api-client.ts#L52">manni-watch-api-client.ts:52</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -669,15 +632,6 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
 								<a href="manniwatchapiclient.html#httpclient" class="tsd-kind-icon">http<wbr>Client</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="manniwatchapiclient.html#proxies" class="tsd-kind-icon">proxies</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="manniwatchapiclient.html#randomuseragent" class="tsd-kind-icon">random<wbr>User<wbr>Agent</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="manniwatchapiclient.html#getproxy" class="tsd-kind-icon">get<wbr>Proxy</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="manniwatchapiclient.html#getroutebyrouteid" class="tsd-kind-icon">get<wbr>Route<wbr>ByRoute<wbr>Id</a>

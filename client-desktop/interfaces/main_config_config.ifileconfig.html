@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>IApiServerConfig | @manniwatch/client-desktop</title>
+	<title>IFileConfig | @manniwatch/client-desktop</title>
 	<meta name="description" content="Documentation for @manniwatch/client-desktop">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -55,13 +55,13 @@
 					<a href="../modules.html">@manniwatch/client-desktop</a>
 				</li>
 				<li>
-					<a href="../modules/api_server_config.html">api-server-config</a>
+					<a href="../modules/main_config_config.html">main/config/config</a>
 				</li>
 				<li>
-					<a href="api_server_config.iapiserverconfig.html">IApiServerConfig</a>
+					<a href="main_config_config.ifileconfig.html">IFileConfig</a>
 				</li>
 			</ul>
-			<h1>Interface IApiServerConfig</h1>
+			<h1>Interface IFileConfig</h1>
 		</div>
 	</div>
 </header>
@@ -72,7 +72,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">IApiServerConfig</span>
+						<span class="target">IFileConfig</span>
 					</li>
 				</ul>
 			</section>
@@ -83,9 +83,7 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="api_server_config.iapiserverconfig.html#endpoint" class="tsd-kind-icon">endpoint</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="api_server_config.iapiserverconfig.html#port" class="tsd-kind-icon">port</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="api_server_config.iapiserverconfig.html#secret" class="tsd-kind-icon">secret</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="main_config_config.ifileconfig.html#map" class="tsd-kind-icon">map</a></li>
 							</ul>
 						</section>
 					</div>
@@ -94,49 +92,14 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="endpoint" class="tsd-anchor"></a>
-					<h3>endpoint</h3>
-					<div class="tsd-signature tsd-kind-icon">endpoint<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="map" class="tsd-anchor"></a>
+					<h3>map</h3>
+					<div class="tsd-signature tsd-kind-icon">map<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">IFileConfigMap</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/1147c19/packages/client-desktop/src/api-server-config.ts#L9">api-server-config.ts:9</a></li>
+							<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/45b3d87/packages/client-desktop/src/main/config/config.ts#L14">src/main/config/config.ts:14</a></li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Endpoint to be used.</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="port" class="tsd-anchor"></a>
-					<h3>port</h3>
-					<div class="tsd-signature tsd-kind-icon">port<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/1147c19/packages/client-desktop/src/api-server-config.ts#L13">api-server-config.ts:13</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Port to be used for the api server</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="secret" class="tsd-anchor"></a>
-					<h3>secret</h3>
-					<div class="tsd-signature tsd-kind-icon">secret<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/manniwatch/manniwatch/blob/1147c19/packages/client-desktop/src/api-server-config.ts#L17">api-server-config.ts:17</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Secret to be used to authorize api calls</p>
-						</div>
-					</div>
 				</section>
 			</section>
 		</div>
@@ -147,28 +110,58 @@
 						<a href="../modules.html">Exports</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="../modules/api_server.html">api-<wbr>server</a>
+						<a href="../modules/environment_environment.html">environment/environment</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="../modules/api_server.html">api-<wbr>server</a>
+						<a href="../modules/environment_environment_prod.html">environment/environment.prod</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/main_api_handler.html">main/api-<wbr>handler</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/main_app.html">main/app</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/main_app_callback.html">main/app-<wbr>callback</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/main_cli.html">main/cli</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/main_cli_cli_config.html">main/cli/cli-<wbr>config</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/main_cli_handle_cli.html">main/cli/handle-<wbr>cli</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/main_config.html">main/config</a>
 					</li>
 					<li class="current tsd-kind-module">
-						<a href="../modules/api_server_config.html">api-<wbr>server-<wbr>config</a>
+						<a href="../modules/main_config_config.html">main/config/config</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="../modules/api_server_api_not_found_request_handler.html">api-<wbr>server/api-<wbr>not-<wbr>found-<wbr>request-<wbr>handler</a>
+						<a href="../modules/main_config_load_config.html">main/config/load-<wbr>config</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="../modules/api_server_server_error_request_handler.html">api-<wbr>server/server-<wbr>error-<wbr>request-<wbr>handler</a>
+						<a href="../modules/main_config_validate_file_config.html">main/config/validate-<wbr>file-<wbr>config</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="../modules/app.html">app</a>
+						<a href="../modules/main_main.html">main/main</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="../modules/app_callback.html">app-<wbr>callback</a>
+						<a href="../modules/main_mw_file_protocol_handler.html">main/mw-<wbr>file-<wbr>protocol-<wbr>handler</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="../modules/cli_commands.html">cli-<wbr>commands</a>
+						<a href="../modules/main_mw_tiles_protocol_handler.html">main/mw-<wbr>tiles-<wbr>protocol-<wbr>handler</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/main_renderer.html">main/renderer</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/preload_manniwatch_api.html">preload/manniwatch-<wbr>api</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/preload_prerender.html">preload/prerender</a>
 					</li>
 				</ul>
 			</nav>
@@ -177,21 +170,18 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface tsd-parent-kind-module">
-						<a href="api_server_config.iapiserverconfig.html" class="tsd-kind-icon">IApi<wbr>Server<wbr>Config</a>
+						<a href="main_config_config.ifileconfig.html" class="tsd-kind-icon">IFile<wbr>Config</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="api_server_config.iapiserverconfig.html#endpoint" class="tsd-kind-icon">endpoint</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="api_server_config.iapiserverconfig.html#port" class="tsd-kind-icon">port</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="api_server_config.iapiserverconfig.html#secret" class="tsd-kind-icon">secret</a>
+								<a href="main_config_config.ifileconfig.html#map" class="tsd-kind-icon">map</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
+						<a href="../modules/main_config_config.html#appconfig" class="tsd-kind-icon">App<wbr>Config</a>
+					</li>
 				</ul>
 			</nav>
 		</div>
