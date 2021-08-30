@@ -68,7 +68,7 @@ define({
   "66": "m",
   "67": "l",
   "name": "manniwatch Api Route Docs",
-  "version": "0.27.5",
+  "version": "0.27.6",
   "description": "An express api router used to proxy requests to the upstream server",
   "title": "manniwatch Api Route",
   "sampleUrl": false,
@@ -76,7 +76,7 @@ define({
   "apidoc": "0.3.0",
   "generator": {
     "name": "apidoc",
-    "time": "2021-08-30T07:35:38.575Z",
+    "time": "2021-08-30T07:38:25.548Z",
     "url": "https://apidocjs.com",
     "version": "0.29.0"
   }
