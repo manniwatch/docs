@@ -1,0 +1,546 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@manniwatch/client-ng documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css" media="(prefers-color-scheme: dark)">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">@manniwatch/client-ng documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  TripPassagesListItemComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/routes/trip-passages/trip-passages-list-item.component.ts</code>
+</p>
+
+
+
+
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+            <tr>
+                <td class="col-md-3">changeDetection</td>
+                <td class="col-md-9"><code>ChangeDetectionStrategy.OnPush</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-trip-passages-list-item</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./trip-passages-list-item.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./trip-passages-list-item.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#passage" >passage</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>HostBindings</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#class.departed" >class.departed</a>
+                            </li>
+                            <li>
+                                <a href="#class.stopping" >class.stopping</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#departed" >departed</a>
+                                </li>
+                                <li>
+                                    <a href="#stopping" >stopping</a>
+                                </li>
+                                <li>
+                                    <a href="#passageTime" >passageTime</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="passage"></a>
+                        <b>passage</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>ITripPassage</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/routes/trip-passages/trip-passages-list-item.component.ts:26</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3>HostBindings</h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="class.departed"></a>
+                    <span class="name">
+                        <span ><b>class.departed</b></span>
+                        <a href="#class.departed"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/routes/trip-passages/trip-passages-list-item.component.ts:29</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="class.stopping"></a>
+                    <span class="name">
+                        <span ><b>class.stopping</b></span>
+                        <a href="#class.stopping"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/routes/trip-passages/trip-passages-list-item.component.ts:33</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+
+    <section>
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="departed"></a>
+                        <span class="name"><b>departed</b><a href="#departed"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>departed()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/routes/trip-passages/trip-passages-list-item.component.ts:29</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="stopping"></a>
+                        <span class="name"><b>stopping</b><a href="#stopping"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>stopping()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/routes/trip-passages/trip-passages-list-item.component.ts:33</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="passageTime"></a>
+                        <span class="name"><b>passageTime</b><a href="#passageTime"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>passageTime()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/routes/trip-passages/trip-passages-list-item.component.ts:37</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+</section>
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+    ChangeDetectionStrategy,
+    Component,
+    HostBinding,
+    Input,
+} from &#x27;@angular/core&#x27;;
+import { ITripPassage, VEHICLE_STATUS } from &#x27;@manniwatch/api-types&#x27;;
+import {
+    differenceInMinutes as dateDifferenceInMinutes,
+    format as dateFormat,
+    formatDistanceToNow as dateFormatDistanceToNow,
+    parse as dateParse,
+} from &#x27;date-fns&#x27;;
+@Component({
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: &#x27;app-trip-passages-list-item&#x27;,
+    styleUrls: [&#x27;./trip-passages-list-item.component.scss&#x27;],
+    templateUrl: &#x27;./trip-passages-list-item.component.html&#x27;,
+})
+export class TripPassagesListItemComponent {
+    @Input()
+    public passage: ITripPassage;
+
+    @HostBinding(&#x27;class.departed&#x27;)
+    public get departed(): boolean {
+        return this.passage ? this.passage.status &#x3D;&#x3D;&#x3D; VEHICLE_STATUS.DEPARTED : false;
+    }
+    @HostBinding(&#x27;class.stopping&#x27;)
+    public get stopping(): boolean {
+        return this.passage ? this.passage.status &#x3D;&#x3D;&#x3D; VEHICLE_STATUS.STOPPING : false;
+    }
+
+    public get passageTime(): string {
+        if (this.passage) {
+            // Maybe either of each is set but actualTime is prefered!
+            const time: string &#x3D; this.passage.actualTime || this.passage.plannedTime;
+            if (time) {
+                const planned: Date &#x3D; dateParse(time, &#x27;HH:mm&#x27;, new Date());
+                const diff: number &#x3D; dateDifferenceInMinutes(planned, new Date());
+                if (Math.abs(diff) &lt; 15) {
+                    return dateFormatDistanceToNow(planned, { addSuffix: true });
+                }
+                return dateFormat(planned, &#x27;p&#x27;);
+            }
+        }
+        return &#x27;No departure time&#x27;;
+    }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;a mat-list-item [routerLink]&#x3D;&quot;[&#x27;/stop&#x27;, passage?.stop?.shortName]&quot; role&#x3D;&quot;listitem&quot;&gt;&lt;mat-icon matListIcon role&#x3D;&quot;figure&quot; i18n-aria-label&#x3D;&quot;@@busStopIcon&quot; aria-label&#x3D;&quot;Bus stop icon&quot;&gt;&lt;/mat-icon&gt;&lt;h4 class&#x3D;&quot;title&quot; matLine aria-label&#x3D;&quot;Stop name&quot; i18n-aria-label&#x3D;&quot;@@stopName&quot;&gt;{{passage?.stop?.name}}&lt;/h4&gt;&lt;p class&#x3D;&quot;subtitle&quot; matLine&gt;&lt;span role&#x3D;&quot;timer&quot;&gt;{{passageTime}}&lt;span class&#x3D;&quot;demo-2&quot; role&#x3D;&quot;status&quot;&gt;&amp;nbsp;-- {{passage?.status}}&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;&lt;/a&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./trip-passages-list-item.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">@use &#x27;~@angular/material&#x27; as mat;
+@import &#x27;~@angular/material/theming&#x27;;
+
+@import &#x27;src/themes.scss&#x27;;
+
+mat-icon[matListIcon]::after {
+    content:&quot;directions_bus&quot;
+}
+:host-context(.departed) {
+    a{
+        opacity:0.75 !important;
+        background-color: rgba(0,0,0,0.1);
+    }
+    mat-icon[matListIcon]::after {
+        content:&quot;transfer_within_a_station&quot;
+    }
+}
+
+:host-context(.stopping) {
+    a{
+        background-color: rgba(0,255,0,0.1);
+    }
+    mat-icon[matListIcon]::after {
+        content:&quot;place&quot;
+    }
+}
+
+$config: mat.define-typography-config();
+h4.title{
+    font-size: 16px !important;
+    font-family: mat.font-family($config);
+    font-weight: 700 !important;
+    opacity: 0.87;
+    // color:green;
+}
+p.subtitle{
+    font-size: 12px !important;
+    font-family: mat.font-family($config);
+    line-height:20px;
+    font-weight: 600 !important;
+    opacity: 0.6;
+    // color:red;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><a mat-list-item [routerLink]="[\'/stop\', passage?.stop?.shortName]" role="listitem"><mat-icon matListIcon role="figure" i18n-aria-label="@@busStopIcon" aria-label="Bus stop icon"></mat-icon><h4 class="title" matLine aria-label="Stop name" i18n-aria-label="@@stopName">{{passage?.stop?.name}}</h4><p class="subtitle" matLine><span role="timer">{{passageTime}}<span class="demo-2" role="status">&nbsp;-- {{passage?.status}}</span></span></p></a></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CommonErrorComponent', 'selector': 'app-common-error'},{'name': 'DepartureListComponent', 'selector': 'app-departure-list'},{'name': 'DepartureListItemComponent', 'selector': 'app-departure-list-item'},{'name': 'HeaderBoxComponent', 'selector': 'app-header-box'},{'name': 'MainToolbarComponent', 'selector': 'app-main-toolbar'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'NotFoundMessageSwitchComponent', 'selector': 'app-not-found-msg-switch'},{'name': 'RequestUpdateDialogComponent', 'selector': 'app-request-update-dialog'},{'name': 'RetryDialogComponent', 'selector': 'app-retry-dialog'},{'name': 'RouteListComponent', 'selector': 'app-route-list'},{'name': 'RouteLoadingIndicatorComponent', 'selector': 'app-route-loading-indicator'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'StopInfoComponent', 'selector': 'app-stop-info'},{'name': 'StopPointInfoComponent', 'selector': 'app-stop-point-info'},{'name': 'StopsInfoComponent', 'selector': 'app-stops-info'},{'name': 'ThemeSelectorComponent', 'selector': 'app-theme-selector'},{'name': 'ToolbarSearchBoxComponent', 'selector': 'app-toolbar-search'},{'name': 'TripPassagesComponent', 'selector': 'app-trip-passages'},{'name': 'TripPassagesListComponent', 'selector': 'app-trip-passages-list'},{'name': 'TripPassagesListItemComponent', 'selector': 'app-trip-passages-list-item'}];
+    var DIRECTIVES = [{'name': 'BaseOlMapDirective', 'selector': ''},{'name': 'CountdownTimerDirective', 'selector': 'span[appCountdownTimer]'},{'name': 'OlMainMapDirective', 'selector': 'map[appOlMainMap]'},{'name': 'OlStaticMapDirective', 'selector': 'map[appOlStatic]'},{'name': 'OsmOlMapDirective', 'selector': ''},{'name': 'VectorOlMapDirective', 'selector': ''}];
+    var ACTUAL_COMPONENT = {'name': 'TripPassagesListItemComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'TripPassagesListItemComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

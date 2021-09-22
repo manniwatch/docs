@@ -1,0 +1,1016 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@manniwatch/client-ng documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css" media="(prefers-color-scheme: dark)">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">@manniwatch/client-ng documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  DepartureListItemComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/modules/departure-list/departure-list-item.component.ts</code>
+</p>
+
+
+
+
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+            <tr>
+                <td class="col-md-3">changeDetection</td>
+                <td class="col-md-9"><code>ChangeDetectionStrategy.OnPush</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-departure-list-item</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./departure-list-item.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./departure-list-item.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#mDelay" >mDelay</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#mDeparture" >mDeparture</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#mTime" >mTime</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#calculateDelay" >calculateDelay</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#convertTime" >convertTime</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#departure" >departure</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#departure" >departure</a>
+                                </li>
+                                <li>
+                                    <a href="#time" >time</a>
+                                </li>
+                                <li>
+                                    <a href="#statusIcon" >statusIcon</a>
+                                </li>
+                                <li>
+                                    <a href="#status" >status</a>
+                                </li>
+                                <li>
+                                    <a href="#delay" >delay</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="departure"></a>
+                        <b>departure</b>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/modules/departure-list/departure-list-item.component.ts:46</a></div>
+                            </td>
+                        </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Sets the departure</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="calculateDelay"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>calculateDelay</b></span>
+                        <a href="#calculateDelay"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>calculateDelay(data: IDeparture)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="112"
+                            class="link-to-prism">src/app/modules/departure-list/departure-list-item.component.ts:112</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Calculates the delay</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>data</td>
+                                    <td>
+                                            <code>IDeparture</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>a number except 0 or false</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code> | number</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="convertTime"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>convertTime</b></span>
+                        <a href="#convertTime"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>convertTime(departure: IDeparture)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="86"
+                            class="link-to-prism">src/app/modules/departure-list/departure-list-item.component.ts:86</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>departure</td>
+                                    <td>
+                                            <code>IDeparture</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mDelay"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>mDelay</b></span>
+                        <a href="#mDelay"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>boolean | number</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/modules/departure-list/departure-list-item.component.ts:35</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>The delay of the departure. Can be positive or negative excluding zero
+or false if no delay is to be expected</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mDeparture"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>mDeparture</b></span>
+                        <a href="#mDeparture"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>IDeparture</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>undefined</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/modules/departure-list/departure-list-item.component.ts:30</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Object holding the current departure
+Can be undefined</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mTime"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>mTime</b></span>
+                        <a href="#mTime"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/modules/departure-list/departure-list-item.component.ts:39</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>The time of arrival</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="departure"></a>
+                        <span class="name"><b>departure</b><a href="#departure"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>departure()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="56" class="link-to-prism">src/app/modules/departure-list/departure-list-item.component.ts:56</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>gets the departure</p>
+</div>
+
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>    <code>IDeparture</code>
+
+                                </div>
+                        </td>
+                    </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>set</b><code>departure(deps: IDeparture)</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/modules/departure-list/departure-list-item.component.ts:46</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Sets the departure</p>
+</div>
+
+                                <div class="io-description">
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                        <td>Type</td>
+                                                    <td>Optional</td>
+                                                        <td>Description</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                            <td>deps</td>
+                                                    
+                                                            <td>
+                                                                        <code>IDeparture</code>
+                                                            </td>
+                                                    
+                                                        <td>
+                                                                No
+                                                        </td>
+                                                        
+                                                            <td>
+                                                                    <p>The departures</p>
+
+                                                            </td>
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                                </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="time"></a>
+                        <span class="name"><b>time</b><a href="#time"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>time()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="60" class="link-to-prism">src/app/modules/departure-list/departure-list-item.component.ts:60</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="statusIcon"></a>
+                        <span class="name"><b>statusIcon</b><a href="#statusIcon"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>statusIcon()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="64" class="link-to-prism">src/app/modules/departure-list/departure-list-item.component.ts:64</a></div>
+                                </td>
+                            </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="status"></a>
+                        <span class="name"><b>status</b><a href="#status"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>status()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="82" class="link-to-prism">src/app/modules/departure-list/departure-list-item.component.ts:82</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Returns the DepartureStatus</p>
+</div>
+
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>    <code>VEHICLE_STATUS</code>
+
+                                </div>
+                        </td>
+                    </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="delay"></a>
+                        <span class="name"><b>delay</b><a href="#delay"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>delay()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="104" class="link-to-prism">src/app/modules/departure-list/departure-list-item.component.ts:104</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Returns the delay</p>
+</div>
+
+                                <div>
+                                </div>
+                                <div class="io-description">
+                                    <b>Returns : </b>    <code>boolean | number</code>
+
+                                </div>
+                        </td>
+                    </tr>
+
+            </tbody>
+        </table>
+</section>
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+    ChangeDetectionStrategy,
+    Component,
+    Input,
+} from &#x27;@angular/core&#x27;;
+import { IDeparture, VEHICLE_STATUS } from &#x27;@manniwatch/api-types&#x27;;
+import {
+    add,
+    differenceInMinutes,
+    format,
+    formatDistanceToNow,
+    parse,
+} from &#x27;date-fns&#x27;;
+@Component({
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: &#x27;app-departure-list-item&#x27;,
+    styleUrls: [&#x27;./departure-list-item.component.scss&#x27;],
+    templateUrl: &#x27;./departure-list-item.component.html&#x27;,
+})
+export class DepartureListItemComponent {
+
+    /**
+     * Object holding the current departure
+     * Can be undefined
+     */
+    private mDeparture: IDeparture &#x3D; undefined;
+    /**
+     * The delay of the departure. Can be positive or negative excluding zero
+     * or false if no delay is to be expected
+     */
+    private mDelay: boolean | number &#x3D; false;
+    /**
+     * The time of arrival
+     */
+    private mTime: string &#x3D; &#x27;&#x27;;
+
+    /**
+     * Sets the departure
+     * @param deps The departures
+     */
+    @Input(&#x27;departure&#x27;)
+    public set departure(deps: IDeparture) {
+        this.mDeparture &#x3D; deps;
+        this.mDelay &#x3D; this.calculateDelay(deps);
+        this.mTime &#x3D; this.convertTime(deps);
+    }
+
+    /**
+     * gets the departure
+     * @returns the departure or undefined
+     */
+    public get departure(): IDeparture {
+        return this.mDeparture;
+    }
+
+    public get time(): string {
+        return this.mTime;
+    }
+
+    public get statusIcon(): string {
+        switch (this.mDeparture.status) {
+            case VEHICLE_STATUS.PREDICTED:
+                return &#x27;directions_bus&#x27;;
+            case VEHICLE_STATUS.DEPARTED:
+                return &#x27;directions_bus&#x27;;
+            case VEHICLE_STATUS.STOPPING:
+                return &#x27;departure_board&#x27;;
+            case VEHICLE_STATUS.PLANNED:
+            default:
+                return &#x27;query_builder&#x27;;
+        }
+    }
+
+    /**
+     * Returns the DepartureStatus
+     * @returns vehicle status {@VEHICLE_STATUS}
+     */
+    public get status(): VEHICLE_STATUS {
+        return this.mDeparture.status;
+    }
+
+    public convertTime(departure: IDeparture): string {
+        if (departure) {
+            const planned: Date &#x3D; add(new Date(), {
+                seconds: departure.actualRelativeTime,
+            });
+            const diff: number &#x3D; differenceInMinutes(planned, new Date());
+            if (Math.abs(diff) &lt; 15) {
+                return formatDistanceToNow(planned, { addSuffix: true });
+            }
+            return format(planned, &#x27;p&#x27;);
+        }
+        return &#x27;No departure time&#x27;;
+    }
+
+    /**
+     * Returns the delay
+     * @returns false or an integer except 0
+     */
+    public get delay(): boolean | number {
+        return this.mDelay;
+    }
+
+    /**
+     * Calculates the delay
+     * @param data a number except 0 or false
+     */
+    public calculateDelay(data: IDeparture): false | number {
+        if (data &amp;&amp; data.actualTime &amp;&amp; data.plannedTime) {
+            if (data.actualTime !&#x3D;&#x3D; data.plannedTime) {
+                const actual: Date &#x3D; parse(data.actualTime, &#x27;HH:mm&#x27;, new Date());
+                const planned: Date &#x3D; parse(data.plannedTime, &#x27;HH:mm&#x27;, new Date());
+                let diffMinutes: number &#x3D; differenceInMinutes(actual, planned);
+                if (diffMinutes &gt; 60 * 12) {
+                    diffMinutes -&#x3D; 60 * 24;
+                } else if (diffMinutes &lt; - 60 * 12) {
+                    diffMinutes +&#x3D; 60 * 24;
+                }
+                return diffMinutes;
+            }
+        }
+        return false;
+    }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;a mat-list-item [routerLink]&#x3D;&quot;[&#x27;/passages&#x27;, departure.tripId]&quot; role&#x3D;&quot;listitem&quot;&gt;&lt;mat-icon matListIcon title&#x3D;&quot;{{status}}&quot;&gt;{{statusIcon}}&lt;/mat-icon&gt;&lt;span class&#x3D;&quot;pattern-text&quot; *ngIf&#x3D;&quot;delay!&#x3D;&#x3D;false&quot; [ngClass]&#x3D;&quot;{&#x27;late&#x27;:(delay&amp;gt;0),&#x27;early&#x27;:(delay&amp;lt;0)}&quot;&gt;{{delay}}&lt;/span&gt;&lt;h4 class&#x3D;&quot;title&quot; matLine&gt;{{ departure?.patternText }} {{ departure?.direction }}&lt;/h4&gt;&lt;p class&#x3D;&quot;subtitle&quot; matLine&gt;&lt;span title&#x3D;&quot;Planned: {{departure?.plannedTime}}&quot;&gt;{{time}}&lt;/span&gt;&lt;/p&gt;&lt;/a&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./departure-list-item.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">
+@use &#x27;~@angular/material&#x27; as mat;
+@import &#x27;~@angular/material/theming&#x27;;
+
+@import &#x27;src/themes.scss&#x27;;
+:host{
+    display:block;
+}
+div.no-departures{
+    margin:15px;
+}
+span.pattern-text{
+    font-weight: bold;
+}
+
+span.pattern-text.late{
+    color: mat.get-color-from-palette(map-get($manniwatch-light-theme, warn));
+    @media (prefers-color-scheme: dark) {
+        color: mat.get-color-from-palette(map-get($manniwatch-dark-theme, warn));
+    }
+}
+span.pattern-text.late:before{
+    content: &#x27;+&#x27;;
+}
+span.pattern-text.early{
+    color: mat.get-color-from-palette(map-get($manniwatch-light-theme, accent));
+    @media (prefers-color-scheme: dark) {
+        color: mat.get-color-from-palette(map-get($manniwatch-dark-theme, accent));
+    }
+}
+$config: mat.define-typography-config();
+h4.title{
+    font-size: 16px !important;
+    font-family: mat.font-family($config);
+    font-weight: 700 !important;
+    opacity: 0.87;
+    // color:green;
+}
+p.subtitle{
+    font-size: 12px !important;
+    font-family: mat.font-family($config);
+    line-height:20px;
+    font-weight: 600 !important;
+    opacity: 0.6;
+    // color:red;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><a mat-list-item [routerLink]="[\'/passages\', departure.tripId]" role="listitem"><mat-icon matListIcon title="{{status}}">{{statusIcon}}</mat-icon><span class="pattern-text" *ngIf="delay!==false" [ngClass]="{\'late\':(delay&gt;0),\'early\':(delay&lt;0)}">{{delay}}</span><h4 class="title" matLine>{{ departure?.patternText }} {{ departure?.direction }}</h4><p class="subtitle" matLine><span title="Planned: {{departure?.plannedTime}}">{{time}}</span></p></a></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CommonErrorComponent', 'selector': 'app-common-error'},{'name': 'DepartureListComponent', 'selector': 'app-departure-list'},{'name': 'DepartureListItemComponent', 'selector': 'app-departure-list-item'},{'name': 'HeaderBoxComponent', 'selector': 'app-header-box'},{'name': 'MainToolbarComponent', 'selector': 'app-main-toolbar'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'NotFoundMessageSwitchComponent', 'selector': 'app-not-found-msg-switch'},{'name': 'RequestUpdateDialogComponent', 'selector': 'app-request-update-dialog'},{'name': 'RetryDialogComponent', 'selector': 'app-retry-dialog'},{'name': 'RouteListComponent', 'selector': 'app-route-list'},{'name': 'RouteLoadingIndicatorComponent', 'selector': 'app-route-loading-indicator'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'StopInfoComponent', 'selector': 'app-stop-info'},{'name': 'StopPointInfoComponent', 'selector': 'app-stop-point-info'},{'name': 'StopsInfoComponent', 'selector': 'app-stops-info'},{'name': 'ThemeSelectorComponent', 'selector': 'app-theme-selector'},{'name': 'ToolbarSearchBoxComponent', 'selector': 'app-toolbar-search'},{'name': 'TripPassagesComponent', 'selector': 'app-trip-passages'},{'name': 'TripPassagesListComponent', 'selector': 'app-trip-passages-list'},{'name': 'TripPassagesListItemComponent', 'selector': 'app-trip-passages-list-item'}];
+    var DIRECTIVES = [{'name': 'BaseOlMapDirective', 'selector': ''},{'name': 'CountdownTimerDirective', 'selector': 'span[appCountdownTimer]'},{'name': 'OlMainMapDirective', 'selector': 'map[appOlMainMap]'},{'name': 'OlStaticMapDirective', 'selector': 'map[appOlStatic]'},{'name': 'OsmOlMapDirective', 'selector': ''},{'name': 'VectorOlMapDirective', 'selector': ''}];
+    var ACTUAL_COMPONENT = {'name': 'DepartureListItemComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'DepartureListItemComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
