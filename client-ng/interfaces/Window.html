@@ -154,17 +154,22 @@ declare global {
     }
 }
 export const isManniwatchDesktop &#x3D; (): boolean &#x3D;&gt; {
-    return (window &amp;&amp;
+    return (
+        window &amp;&amp;
         &#x27;electron&#x27; in window &amp;&amp;
-        &#x27;manniwatch&#x27; in (window as any).electron);
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-explicit-any
+        &#x27;manniwatch&#x27; in window.electron
+    );
 };
 
 export const getManniwatchDesktopApi &#x3D; (): ApiService &#x3D;&gt; {
-    return (window as any).electron.manniwatch.api;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    return window.electron.manniwatch.api;
 };
 
 export const getManniwatchDesktopEnvironment &#x3D; (): IEnvironmentBase &#x3D;&gt; {
-    return window?.electron?.manniwatch?.environment || {} as any;
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-explicit-any
+    return window?.electron?.manniwatch?.environment || ({} as IEnvironmentBase);
 };
 </code></pre>
     </div>

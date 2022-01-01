@@ -272,8 +272,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="43"
-                            class="link-to-prism">src/app/routes/stop-point/stop-point-info.component.ts:43</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="42"
+                            class="link-to-prism">src/app/routes/stop-point/stop-point-info.component.ts:42</a></div>
                 </td>
             </tr>
 
@@ -311,8 +311,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="26"
-                            class="link-to-prism">src/app/routes/stop-point/stop-point-info.component.ts:26</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="25"
+                            class="link-to-prism">src/app/routes/stop-point/stop-point-info.component.ts:25</a></div>
                 </td>
             </tr>
 
@@ -467,28 +467,26 @@ import { StopPointInfoService } from &#x27;./stop-point-info.service&#x27;;
     templateUrl: &#x27;./stop-point-info.component.html&#x27;,
 })
 export class StopPointInfoComponent implements OnInit, OnDestroy {
-
     public headerMapData: IStaticMapData;
     private subscriptions: Subscription[] &#x3D; [];
     public stopPassage: IStopPassage;
-    constructor(public stopInfoService: StopPointInfoService) {
-    }
+    constructor(public stopInfoService: StopPointInfoService) {}
 
     public ngOnInit(): void {
-        this.subscriptions.push(this.stopInfoService
-            .createStopPointLocationObservable()
-            .subscribe({
+        this.subscriptions.push(
+            this.stopInfoService.createStopPointLocationObservable().subscribe({
                 next: (mapData: IStaticMapData): void &#x3D;&gt; {
                     this.headerMapData &#x3D; mapData;
                 },
-            }));
-        this.subscriptions.push(this.stopInfoService
-            .createStopPassageRefreshObservable()
-            .subscribe({
+            })
+        );
+        this.subscriptions.push(
+            this.stopInfoService.createStopPassageRefreshObservable().subscribe({
                 next: (mapData: IStopPassage): void &#x3D;&gt; {
                     this.stopPassage &#x3D; mapData;
                 },
-            }));
+            })
+        );
     }
 
     public ngOnDestroy(): void {
@@ -502,34 +500,50 @@ export class StopPointInfoComponent implements OnInit, OnDestroy {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;app-header-box title&#x3D;&quot;{{stopPassage?.stopName}}&quot;&gt;&lt;map appOlStatic [mapData]&#x3D;&quot;headerMapData&quot;&gt;&lt;/map&gt;&lt;/app-header-box&gt;&lt;mat-tab-group mat-stretch-tabs dynamicHeight&gt;&lt;mat-tab i18n-label&#x3D;&quot;tab header departures|Departures@@departures&quot; label&#x3D;&quot;Departures&quot;&gt;&lt;app-departure-list [departures]&#x3D;&quot;stopPassage?.actual&quot;&gt;&lt;/app-departure-list&gt;&lt;/mat-tab&gt;&lt;mat-tab i18n-label&#x3D;&quot;tab header routes|Routes@@Routes&quot; label&#x3D;&quot;Routes&quot;&gt;&lt;app-route-list [routes]&#x3D;&quot;stopPassage?.routes&quot;&gt;&lt;/app-route-list&gt;&lt;/mat-tab&gt;&lt;/mat-tab-group&gt;&lt;ng-template *ngIf&#x3D;&quot;false&quot;&gt;&lt;div class&#x3D;&quot;error-box&quot;&gt;&lt;h3&gt;Error occured&lt;/h3&gt;&lt;p&gt;Will retry in a 0s&lt;/p&gt;&lt;/div&gt;&lt;/ng-template&gt;</code></pre>
+        <pre class="line-numbers"><code class="language-html">
+&lt;app-header-box title&#x3D;&quot;{{stopPassage?.stopName}}&quot;&gt;&lt;map appOlStatic [mapData]&#x3D;&quot;headerMapData&quot;&gt;&lt;/map&gt;&lt;/app-header-box&gt;
+&lt;mat-tab-group mat-stretch-tabs dynamicHeight&gt;
+  &lt;mat-tab i18n-label&#x3D;&quot;tab header departures|Departures@@departures&quot; label&#x3D;&quot;Departures&quot;&gt;
+    &lt;app-departure-list [departures]&#x3D;&quot;stopPassage?.actual&quot;&gt;&lt;/app-departure-list&gt;
+  &lt;/mat-tab&gt;
+  &lt;mat-tab i18n-label&#x3D;&quot;tab header routes|Routes@@Routes&quot; label&#x3D;&quot;Routes&quot;&gt;
+    &lt;app-route-list [routes]&#x3D;&quot;stopPassage?.routes&quot;&gt;&lt;/app-route-list&gt;
+  &lt;/mat-tab&gt;
+&lt;/mat-tab-group&gt;
+&lt;ng-template *ngIf&#x3D;&quot;false&quot;&gt;
+  &lt;div class&#x3D;&quot;error-box&quot;&gt;
+    &lt;h3&gt;Error occured&lt;/h3&gt;
+    &lt;p&gt;Will retry in a 0s&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/ng-template&gt;</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
                 <p class="comment">
                     <code>./stop-point-info.component.scss</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss">mat-tab-group{
+                <pre class="line-numbers"><code class="language-scss">mat-tab-group {
     flex-grow: 1;
 }
-div.error-box{
-    flex:0 0 auto;
-    background:#B00020;
-    color:white;
-    padding:5px 20px 5px 20px;
-    h3{
+div.error-box {
+    flex: 0 0 auto;
+    background: #b00020;
+    color: white;
+    padding: 5px 20px 5px 20px;
+    h3 {
         font-size: 25px;
         line-height: 30px;
-        padding:0px;
-        margin:0px;
+        padding: 0px;
+        margin: 0px;
     }
-    p{
+    p {
         font-size: 15px;
         line-height: 20px;
-        padding:0px;
-        margin:0px;
+        padding: 0px;
+        margin: 0px;
     }
-}</code></pre>
+}
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -557,7 +571,7 @@ div.error-box{
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><app-header-box title="{{stopPassage?.stopName}}"><map appOlStatic [mapData]="headerMapData"></map></app-header-box><mat-tab-group mat-stretch-tabs dynamicHeight><mat-tab i18n-label="tab header departures|Departures@@departures" label="Departures"><app-departure-list [departures]="stopPassage?.actual"></app-departure-list></mat-tab><mat-tab i18n-label="tab header routes|Routes@@Routes" label="Routes"><app-route-list [routes]="stopPassage?.routes"></app-route-list></mat-tab></mat-tab-group><ng-template *ngIf="false"><div class="error-box"><h3>Error occured</h3><p>Will retry in a 0s</p></div></ng-template></div>'
+        var COMPONENT_TEMPLATE = '<div><app-header-box title="{{stopPassage?.stopName}}"><map appOlStatic [mapData]="headerMapData"></map></app-header-box><mat-tab-group mat-stretch-tabs dynamicHeight>  <mat-tab i18n-label="tab header departures|Departures@@departures" label="Departures">    <app-departure-list [departures]="stopPassage?.actual"></app-departure-list>  </mat-tab>  <mat-tab i18n-label="tab header routes|Routes@@Routes" label="Routes">    <app-route-list [routes]="stopPassage?.routes"></app-route-list>  </mat-tab></mat-tab-group><ng-template *ngIf="false">  <div class="error-box">    <h3>Error occured</h3>    <p>Will retry in a 0s</p>  </div></ng-template></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CommonErrorComponent', 'selector': 'app-common-error'},{'name': 'DepartureListComponent', 'selector': 'app-departure-list'},{'name': 'DepartureListItemComponent', 'selector': 'app-departure-list-item'},{'name': 'HeaderBoxComponent', 'selector': 'app-header-box'},{'name': 'MainToolbarComponent', 'selector': 'app-main-toolbar'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'NotFoundMessageSwitchComponent', 'selector': 'app-not-found-msg-switch'},{'name': 'RequestUpdateDialogComponent', 'selector': 'app-request-update-dialog'},{'name': 'RetryDialogComponent', 'selector': 'app-retry-dialog'},{'name': 'RouteListComponent', 'selector': 'app-route-list'},{'name': 'RouteLoadingIndicatorComponent', 'selector': 'app-route-loading-indicator'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'StopInfoComponent', 'selector': 'app-stop-info'},{'name': 'StopPointInfoComponent', 'selector': 'app-stop-point-info'},{'name': 'StopsInfoComponent', 'selector': 'app-stops-info'},{'name': 'ThemeSelectorComponent', 'selector': 'app-theme-selector'},{'name': 'ToolbarSearchBoxComponent', 'selector': 'app-toolbar-search'},{'name': 'TripPassagesComponent', 'selector': 'app-trip-passages'},{'name': 'TripPassagesListComponent', 'selector': 'app-trip-passages-list'},{'name': 'TripPassagesListItemComponent', 'selector': 'app-trip-passages-list-item'}];
     var DIRECTIVES = [{'name': 'BaseOlMapDirective', 'selector': ''},{'name': 'CountdownTimerDirective', 'selector': 'span[appCountdownTimer]'},{'name': 'OlMainMapDirective', 'selector': 'map[appOlMainMap]'},{'name': 'OlStaticMapDirective', 'selector': 'map[appOlStatic]'},{'name': 'OsmOlMapDirective', 'selector': ''},{'name': 'VectorOlMapDirective', 'selector': ''}];
     var ACTUAL_COMPONENT = {'name': 'StopPointInfoComponent'};

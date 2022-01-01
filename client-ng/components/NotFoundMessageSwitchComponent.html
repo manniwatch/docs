@@ -155,7 +155,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/routes/error/not-found-msg-switch.component.ts:19</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/routes/error/not-found-msg-switch.component.ts:20</a></div>
                             </td>
                         </tr>
 
@@ -223,7 +223,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/routes/error/not-found-msg-switch.component.ts:19</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/routes/error/not-found-msg-switch.component.ts:20</a></div>
                         </td>
                     </tr>
 
@@ -252,20 +252,33 @@ import { ErrorType } from &#x27;./error-type&#x27;;
 export class NotFoundMessageSwitchComponent {
     public errorTypeObservable: Observable&lt;ErrorType&gt;;
     constructor(private route: ActivatedRoute) {
-        this.errorTypeObservable &#x3D; this.route.queryParams
-            .pipe(map((value: Params): ErrorType &#x3D;&gt; {
+        this.errorTypeObservable &#x3D; this.route.queryParams.pipe(
+            map((value: Params): ErrorType &#x3D;&gt; {
                 if (value.type) {
-                    return value.type;
+                    return value.type as ErrorType;
                 }
                 return ErrorType.UNKNOWN;
-            }));
+            })
+        );
     }
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;info&quot; [ngSwitch]&#x3D;&quot;errorTypeObservable|async&quot;&gt;&lt;ng-container *ngSwitchCase&#x3D;&quot;1&quot;&gt;&lt;p&gt;The passage could not be found. It either expired or has yet to start.&lt;/p&gt;&lt;p&gt;Please select another passage.&lt;/p&gt;&lt;/ng-container&gt;&lt;ng-container *ngSwitchCase&#x3D;&quot;2&quot;&gt;&lt;p&gt;The requested vehicle could not be found. It might not be active at the moment.&lt;/p&gt;&lt;/ng-container&gt;&lt;ng-container *ngSwitchDefault&gt;&lt;p&gt;The requested resource can not be found.&lt;/p&gt;&lt;/ng-container&gt;&lt;/div&gt;</code></pre>
+        <pre class="line-numbers"><code class="language-html">
+&lt;div class&#x3D;&quot;info&quot; [ngSwitch]&#x3D;&quot;errorTypeObservable|async&quot;&gt;
+  &lt;ng-container *ngSwitchCase&#x3D;&quot;1&quot;&gt;
+    &lt;p&gt;The passage could not be found. It either expired or has yet to start.&lt;/p&gt;
+    &lt;p&gt;Please select another passage.&lt;/p&gt;
+  &lt;/ng-container&gt;
+  &lt;ng-container *ngSwitchCase&#x3D;&quot;2&quot;&gt;
+    &lt;p&gt;The requested vehicle could not be found. It might not be active at the moment.&lt;/p&gt;
+  &lt;/ng-container&gt;
+  &lt;ng-container *ngSwitchDefault&gt;
+    &lt;p&gt;The requested resource can not be found.&lt;/p&gt;
+  &lt;/ng-container&gt;
+&lt;/div&gt;</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
@@ -303,7 +316,7 @@ export class NotFoundMessageSwitchComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="info" [ngSwitch]="errorTypeObservable|async"><ng-container *ngSwitchCase="1"><p>The passage could not be found. It either expired or has yet to start.</p><p>Please select another passage.</p></ng-container><ng-container *ngSwitchCase="2"><p>The requested vehicle could not be found. It might not be active at the moment.</p></ng-container><ng-container *ngSwitchDefault><p>The requested resource can not be found.</p></ng-container></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="info" [ngSwitch]="errorTypeObservable|async">  <ng-container *ngSwitchCase="1">    <p>The passage could not be found. It either expired or has yet to start.</p>    <p>Please select another passage.</p>  </ng-container>  <ng-container *ngSwitchCase="2">    <p>The requested vehicle could not be found. It might not be active at the moment.</p>  </ng-container>  <ng-container *ngSwitchDefault>    <p>The requested resource can not be found.</p>  </ng-container></div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CommonErrorComponent', 'selector': 'app-common-error'},{'name': 'DepartureListComponent', 'selector': 'app-departure-list'},{'name': 'DepartureListItemComponent', 'selector': 'app-departure-list-item'},{'name': 'HeaderBoxComponent', 'selector': 'app-header-box'},{'name': 'MainToolbarComponent', 'selector': 'app-main-toolbar'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'NotFoundMessageSwitchComponent', 'selector': 'app-not-found-msg-switch'},{'name': 'RequestUpdateDialogComponent', 'selector': 'app-request-update-dialog'},{'name': 'RetryDialogComponent', 'selector': 'app-retry-dialog'},{'name': 'RouteListComponent', 'selector': 'app-route-list'},{'name': 'RouteLoadingIndicatorComponent', 'selector': 'app-route-loading-indicator'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'StopInfoComponent', 'selector': 'app-stop-info'},{'name': 'StopPointInfoComponent', 'selector': 'app-stop-point-info'},{'name': 'StopsInfoComponent', 'selector': 'app-stops-info'},{'name': 'ThemeSelectorComponent', 'selector': 'app-theme-selector'},{'name': 'ToolbarSearchBoxComponent', 'selector': 'app-toolbar-search'},{'name': 'TripPassagesComponent', 'selector': 'app-trip-passages'},{'name': 'TripPassagesListComponent', 'selector': 'app-trip-passages-list'},{'name': 'TripPassagesListItemComponent', 'selector': 'app-trip-passages-list-item'}];
     var DIRECTIVES = [{'name': 'BaseOlMapDirective', 'selector': ''},{'name': 'CountdownTimerDirective', 'selector': 'span[appCountdownTimer]'},{'name': 'OlMainMapDirective', 'selector': 'map[appOlMainMap]'},{'name': 'OlStaticMapDirective', 'selector': 'map[appOlStatic]'},{'name': 'OsmOlMapDirective', 'selector': ''},{'name': 'VectorOlMapDirective', 'selector': ''}];
     var ACTUAL_COMPONENT = {'name': 'NotFoundMessageSwitchComponent'};

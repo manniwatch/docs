@@ -141,8 +141,9 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">/*!
- * Source https://github.com/manniwatch/manniwatch Package: client-ng
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">/*
+ * Package @manniwatch/client-ng
+ * Source https://manniwatch.github.io/manniwatch/
  */
 
 import { CommonModule } from &#x27;@angular/common&#x27;;
@@ -155,18 +156,11 @@ import { ThemeSelectorComponent } from &#x27;./theme-selector.component&#x27;;
  * Stops lazy loaded Module
  */
 @NgModule({
-    declarations: [
-        ThemeSelectorComponent,
-    ],
-    imports: [
-        CommonModule,
-        MatIconModule,
-        MatListModule,
-    ],
-    providers: [
-    ],
+    declarations: [ThemeSelectorComponent],
+    imports: [CommonModule, MatIconModule, MatListModule],
+    providers: [],
 })
-export class ThemeSelectorModule { }
+export class ThemeSelectorModule {}
 </code></pre>
     </div>
 </div>

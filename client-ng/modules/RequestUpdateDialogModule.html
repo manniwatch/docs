@@ -56,6 +56,10 @@
 <title>cluster_RequestUpdateDialogModule</title>
 <polygon fill="none" stroke="black" stroke-dasharray="1,5" points="8,-32.8 8,-295.8 290,-295.8 290,-32.8 8,-32.8"/>
 </g>
+<g id="clust5" class="cluster">
+<title>cluster_RequestUpdateDialogModule_exports</title>
+<polygon fill="none" stroke="black" points="37,-235.8 37,-287.8 261,-287.8 261,-235.8 37,-235.8"/>
+</g>
 <g id="clust2" class="cluster">
 <title>cluster_RequestUpdateDialogModule_declarations</title>
 <polygon fill="none" stroke="black" points="39,-105.8 39,-157.8 259,-157.8 259,-105.8 39,-105.8"/>
@@ -63,10 +67,6 @@
 <g id="clust3" class="cluster">
 <title>cluster_RequestUpdateDialogModule_RequestUpdateDialogComponent_providers</title>
 <polygon fill="none" stroke="black" points="16,-40.8 16,-92.8 282,-92.8 282,-40.8 16,-40.8"/>
-</g>
-<g id="clust5" class="cluster">
-<title>cluster_RequestUpdateDialogModule_exports</title>
-<polygon fill="none" stroke="black" points="37,-235.8 37,-287.8 261,-287.8 261,-235.8 37,-235.8"/>
 </g>
 <!-- RequestUpdateDialogComponent -->
 <g id="node1" class="node">
@@ -159,15 +159,6 @@
                     </ul>
                 </div>
                 <div class="col-sm-3">
-                    <h3>EntryComponents<a href="https://angular.io/api/core/NgModule#entryComponents" target="_blank"
-                            title="Official documentation about module entryComponents"><span class="icon ion-ios-information-circle-outline"></span></a></h3>
-                    <ul class="list-group">
-                        <li class="list-group-item">
-                            <a href="../components/RequestUpdateDialogComponent.html">RequestUpdateDialogComponent</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-sm-3">
                     <h3>Exports<a href="https://angular.io/api/core/NgModule#exports" target="_blank" title="Official documentation about module exports"><span
                                 class="icon ion-ios-information-circle-outline"></a></h3>
                     <ul class="list-group">
@@ -184,8 +175,9 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">/*!
- * Source https://github.com/manniwatch/manniwatch Package: client-ng
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">/*
+ * Package @manniwatch/client-ng
+ * Source https://manniwatch.github.io/manniwatch/
  */
 
 import { CommonModule } from &#x27;@angular/common&#x27;;
@@ -196,28 +188,12 @@ import { MatProgressSpinnerModule } from &#x27;@angular/material/progress-spinne
 import { RequestUpdateDialogComponent } from &#x27;./request-update-dialog.component&#x27;;
 
 @NgModule({
-    declarations: [
-        RequestUpdateDialogComponent,
-    ],
-    entryComponents: [
-        RequestUpdateDialogComponent,
-    ],
-    exports: [
-        CommonModule,
-        MatDialogModule,
-        MatButtonModule,
-        MatProgressSpinnerModule,
-        RequestUpdateDialogComponent,
-    ],
-    imports: [
-        CommonModule,
-        MatDialogModule,
-        MatButtonModule,
-        MatProgressSpinnerModule,
-    ],
+    declarations: [RequestUpdateDialogComponent],
+    exports: [CommonModule, MatDialogModule, MatButtonModule, MatProgressSpinnerModule, RequestUpdateDialogComponent],
+    imports: [CommonModule, MatDialogModule, MatButtonModule, MatProgressSpinnerModule],
     providers: [],
 })
-export class RequestUpdateDialogModule { }
+export class RequestUpdateDialogModule {}
 </code></pre>
     </div>
 </div>

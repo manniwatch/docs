@@ -219,7 +219,6 @@
     templateUrl: &#x27;./header-box.component.html&#x27;,
 })
 export class HeaderBoxComponent {
-
     @Input()
     public lastUpdate: Date &#x3D; undefined;
 
@@ -230,7 +229,10 @@ export class HeaderBoxComponent {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;ng-content&gt;&lt;/ng-content&gt;&lt;div class&#x3D;&quot;title-box&quot;&gt;&lt;span class&#x3D;&quot;title&quot; *ngIf&#x3D;&quot;title!&#x3D;&#x3D;undefined&quot; role&#x3D;&quot;heading&quot; aria-level&#x3D;&quot;2&quot; title&#x3D;&quot;{{title}}&quot;&gt;{{title}}&lt;/span&gt;&lt;span class&#x3D;&quot;subtitle&quot; *ngIf&#x3D;&quot;lastUpdate!&#x3D;&#x3D;undefined&quot; title&#x3D;&quot;{{ lastUpdate  | date:&#x27;full&#x27;}}&quot;&gt;Last Update: {{ lastUpdate  | date:&#x27;mediumTime&#x27;}}&lt;/span&gt;&lt;/div&gt;&lt;mat-icon&gt;location_off&lt;/mat-icon&gt;</code></pre>
+        <pre class="line-numbers"><code class="language-html">
+&lt;ng-content&gt;&lt;/ng-content&gt;
+&lt;div class&#x3D;&quot;title-box&quot;&gt;&lt;span class&#x3D;&quot;title&quot; *ngIf&#x3D;&quot;title!&#x3D;&#x3D;undefined&quot; role&#x3D;&quot;heading&quot; aria-level&#x3D;&quot;2&quot; title&#x3D;&quot;{{title}}&quot;&gt;{{title}}&lt;/span&gt;&lt;span class&#x3D;&quot;subtitle&quot; *ngIf&#x3D;&quot;lastUpdate!&#x3D;&#x3D;undefined&quot; title&#x3D;&quot;{{ lastUpdate  | date:&#x27;full&#x27;}}&quot;&gt;Last Update: {{ lastUpdate  | date:&#x27;mediumTime&#x27;}}&lt;/span&gt;&lt;/div&gt;
+&lt;mat-icon&gt;location_off&lt;/mat-icon&gt;</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">

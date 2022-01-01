@@ -219,8 +219,9 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">/*!
- * Source https://github.com/manniwatch/manniwatch Package: client-ng
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">/*
+ * Package @manniwatch/client-ng
+ * Source https://manniwatch.github.io/manniwatch/
  */
 
 import { CommonModule } from &#x27;@angular/common&#x27;;
@@ -239,11 +240,7 @@ import { RouteLoadingIndicatorComponent } from &#x27;./route-loading-indicator.c
 import { ToolbarSearchBoxComponent } from &#x27;./search-box.component&#x27;;
 
 @NgModule({
-    declarations: [
-        MainToolbarComponent,
-        ToolbarSearchBoxComponent,
-        RouteLoadingIndicatorComponent,
-    ],
+    declarations: [MainToolbarComponent, ToolbarSearchBoxComponent, RouteLoadingIndicatorComponent],
     exports: [
         MainToolbarComponent,
         CommonModule,
@@ -273,10 +270,9 @@ import { ToolbarSearchBoxComponent } from &#x27;./search-box.component&#x27;;
         RouterModule,
         MatProgressBarModule,
     ],
-    providers: [
-    ],
+    providers: [],
 })
-export class MainToolbarModule { }
+export class MainToolbarModule {}
 </code></pre>
     </div>
 </div>

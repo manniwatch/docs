@@ -412,8 +412,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="33"
-                            class="link-to-prism">src/app/modules/main-map/ol-marker-handler.ts:33</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="31"
+                            class="link-to-prism">src/app/modules/main-map/ol-marker-handler.ts:31</a></div>
                 </td>
             </tr>
 
@@ -451,8 +451,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="38"
-                            class="link-to-prism">src/app/modules/main-map/ol-marker-handler.ts:38</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="35"
+                            class="link-to-prism">src/app/modules/main-map/ol-marker-handler.ts:35</a></div>
                 </td>
             </tr>
 
@@ -490,8 +490,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="68"
-                            class="link-to-prism">src/app/modules/main-map/ol-marker-handler.ts:68</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="64"
+                            class="link-to-prism">src/app/modules/main-map/ol-marker-handler.ts:64</a></div>
                 </td>
             </tr>
 
@@ -561,8 +561,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="87"
-                            class="link-to-prism">src/app/modules/main-map/ol-marker-handler.ts:87</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="83"
+                            class="link-to-prism">src/app/modules/main-map/ol-marker-handler.ts:83</a></div>
                 </td>
             </tr>
 
@@ -632,8 +632,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="43"
-                            class="link-to-prism">src/app/modules/main-map/ol-marker-handler.ts:43</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="39"
+                            class="link-to-prism">src/app/modules/main-map/ol-marker-handler.ts:39</a></div>
                 </td>
             </tr>
 
@@ -703,8 +703,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="104"
-                            class="link-to-prism">src/app/modules/main-map/ol-marker-handler.ts:104</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="100"
+                            class="link-to-prism">src/app/modules/main-map/ol-marker-handler.ts:100</a></div>
                 </td>
             </tr>
 
@@ -733,16 +733,15 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgZone } from &#x27;@angular/core&#x27;;
 import { IStopLocation, IStopPointLocation } from &#x27;@manniwatch/api-types&#x27;;
 import { Map as OlMap } from &#x27;ol&#x27;;
+import Feature from &#x27;ol/Feature&#x27;;
 import Point from &#x27;ol/geom/Point&#x27;;
 import VectorLayer from &#x27;ol/layer/Vector&#x27;;
 import VectorSource from &#x27;ol/source/Vector&#x27;;
-import Feature from &#x27;ol/Feature&#x27;;
 import { combineLatest, Observable, Subscription } from &#x27;rxjs&#x27;;
 import { startWith, take } from &#x27;rxjs/operators&#x27;;
 import { OlUtil } from &#x27;src/app/util/ol&#x27;;
 import { OlMainMapDirective } from &#x27;./ol-main-map.directive&#x27;;
 export class OlMarkerHandler {
-
     /**
      * Layer for the stop markers to be displayed on the map
      */
@@ -754,18 +753,14 @@ export class OlMarkerHandler {
     private stopPointMarkerVectorSource: VectorSource&lt;Point&gt; &#x3D; undefined;
     private stopMarkerVectorSource: VectorSource&lt;Point&gt; &#x3D; undefined;
     private loadSubscription: Subscription;
-    public constructor(private mainMap: OlMainMapDirective,
-        private readonly zoomBorder: number) {
-    }
+    public constructor(private mainMap: OlMainMapDirective, private readonly zoomBorder: number) {}
 
     public getStopLocations(): Observable&lt;IStopLocation[]&gt; {
-        return this.mainMap.stopService.stopObservable
-            .pipe(take(1), startWith([]));
+        return this.mainMap.stopService.stopObservable.pipe(take(1), startWith([]));
     }
 
     public getStopPointLocations(): Observable&lt;IStopPointLocation[]&gt; {
-        return this.mainMap.stopService.stopPointObservable
-            .pipe(take(1), startWith([]));
+        return this.mainMap.stopService.stopPointObservable.pipe(take(1), startWith([]));
     }
 
     public start(leafletMap: OlMap): void {
@@ -785,12 +780,12 @@ export class OlMarkerHandler {
         });
         leafletMap.addLayer(this.stopMarkerLayer);
         leafletMap.addLayer(this.stopPointMarkerLayer);
-        this.loadSubscription &#x3D;
-            combineLatest([this.getStopLocations(), this.getStopPointLocations()])
-                .subscribe((result: [IStopLocation[], IStopPointLocation[]]): void &#x3D;&gt; {
-                    this.setStopPoints(result[1]);
-                    this.setStops(result[0]);
-                });
+        this.loadSubscription &#x3D; combineLatest([this.getStopLocations(), this.getStopPointLocations()]).subscribe(
+            (result: [IStopLocation[], IStopPointLocation[]]): void &#x3D;&gt; {
+                this.setStopPoints(result[1]);
+                this.setStops(result[0]);
+            }
+        );
     }
 
     public setStopPoints(stopPoints: IStopPointLocation[]): void {

@@ -432,8 +432,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="101"
-                            class="link-to-prism">src/app/modules/main-map/ol-vehicle-handler.ts:101</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="102"
+                            class="link-to-prism">src/app/modules/main-map/ol-vehicle-handler.ts:102</a></div>
                 </td>
             </tr>
 
@@ -503,8 +503,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="82"
-                            class="link-to-prism">src/app/modules/main-map/ol-vehicle-handler.ts:82</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="81"
+                            class="link-to-prism">src/app/modules/main-map/ol-vehicle-handler.ts:81</a></div>
                 </td>
             </tr>
 
@@ -574,8 +574,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="107"
-                            class="link-to-prism">src/app/modules/main-map/ol-vehicle-handler.ts:107</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="108"
+                            class="link-to-prism">src/app/modules/main-map/ol-vehicle-handler.ts:108</a></div>
                 </td>
             </tr>
 
@@ -645,8 +645,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="39"
-                            class="link-to-prism">src/app/modules/main-map/ol-vehicle-handler.ts:39</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="38"
+                            class="link-to-prism">src/app/modules/main-map/ol-vehicle-handler.ts:38</a></div>
                 </td>
             </tr>
 
@@ -716,8 +716,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="124"
-                            class="link-to-prism">src/app/modules/main-map/ol-vehicle-handler.ts:124</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="125"
+                            class="link-to-prism">src/app/modules/main-map/ol-vehicle-handler.ts:125</a></div>
                 </td>
             </tr>
 
@@ -761,7 +761,6 @@ import { IData } from &#x27;src/app/services/vehicle.service&#x27;;
 import { OlUtil } from &#x27;src/app/util/ol&#x27;;
 import { OlMainMapDirective } from &#x27;./ol-main-map.directive&#x27;;
 export class OlVehicleHandler {
-
     /**
      * Layer for the stop markers to be displayed on the map
      */
@@ -774,8 +773,7 @@ export class OlVehicleHandler {
     private mouseHoverSubscription: Subscription;
 
     private selectVehicleSubscription: Subscription;
-    public constructor(private mainMap: OlMainMapDirective) {
-    }
+    public constructor(private mainMap: OlMainMapDirective) {}
 
     public start(leafletMap: OlMap): void {
         NgZone.assertNotInAngularZone();
@@ -790,34 +788,34 @@ export class OlVehicleHandler {
         leafletMap.addLayer(this.vehicleRouteLayer);
         leafletMap.addLayer(this.vehicleMarkerLayer);
 
-        const obs1: Observable&lt;TimestampedVehicleLocation[]&gt; &#x3D; this.mainMap.vehicleSerivce
-            .getVehicles
-            .pipe(runOutsideZone(this.mainMap.zone),
-                distinctUntilChanged((x: IData, y: IData): boolean &#x3D;&gt; {
-                    if (x &amp;&amp; y) {
-                        return x.lastUpdate &#x3D;&#x3D;&#x3D; y.lastUpdate;
-                    }
-                    return false;
-                }), pluck(&#x27;vehicles&#x27;));
+        const obs1: Observable&lt;TimestampedVehicleLocation[]&gt; &#x3D; this.mainMap.vehicleSerivce.getVehicles.pipe(
+            runOutsideZone(this.mainMap.zone),
+            distinctUntilChanged((x: IData, y: IData): boolean &#x3D;&gt; {
+                if (x &amp;&amp; y) {
+                    return x.lastUpdate &#x3D;&#x3D;&#x3D; y.lastUpdate;
+                }
+                return false;
+            }),
+            pluck(&#x27;vehicles&#x27;)
+        );
 
-        const obs2: Observable&lt;IVehiclePathInfo&gt; &#x3D; this.mainMap.mainMapService
-            .statusObservable
-            .pipe(runOutsideZone(this.mainMap.zone),
-                switchMap((tripId: string): Observable&lt;IVehiclePathInfo&gt; &#x3D;&gt; {
-                    if (tripId) {
-                        return this.mainMap.apiService.getRouteByTripId(tripId)
-                            .pipe(catchError((err: any): Observable&lt;IVehiclePathInfo&gt; &#x3D;&gt; {
-                                return of(undefined);
-                            }));
-                    }
-                    return of(undefined);
-                }));
-        this.loadSubscription &#x3D; combineLatest([obs1, obs2])
-            .subscribe((result: [TimestampedVehicleLocation[], IVehiclePathInfo]): void &#x3D;&gt; {
-                this.setVehicles(result[0]);
-                this.setRoute(result[1]);
-            });
-
+        const obs2: Observable&lt;IVehiclePathInfo&gt; &#x3D; this.mainMap.mainMapService.statusObservable.pipe(
+            runOutsideZone(this.mainMap.zone),
+            switchMap((tripId: string): Observable&lt;IVehiclePathInfo&gt; &#x3D;&gt; {
+                if (tripId) {
+                    return this.mainMap.apiService.getRouteByTripId(tripId).pipe(
+                        catchError((err: any): Observable&lt;IVehiclePathInfo&gt; &#x3D;&gt; {
+                            return of(undefined);
+                        })
+                    );
+                }
+                return of(undefined);
+            })
+        );
+        this.loadSubscription &#x3D; combineLatest([obs1, obs2]).subscribe((result: [TimestampedVehicleLocation[], IVehiclePathInfo]): void &#x3D;&gt; {
+            this.setVehicles(result[0]);
+            this.setRoute(result[1]);
+        });
     }
 
     public setRoute(vehiclePath: IVehiclePathInfo): void {
@@ -829,12 +827,14 @@ export class OlVehicleHandler {
 
             const polyline: LineString &#x3D; new LineString(locations);
             const feature: Feature&lt;LineString&gt; &#x3D; new Feature(polyline);
-            feature.setStyle(new Style({
-                stroke: new Stroke({
-                    color: [255, 111, 0, 0.8],
-                    width: 6,
-                }),
-            }));
+            feature.setStyle(
+                new Style({
+                    stroke: new Stroke({
+                        color: [255, 111, 0, 0.8],
+                        width: 6,
+                    }),
+                })
+            );
             this.vehicleRouteVectorSource.addFeature(feature);
         }
     }

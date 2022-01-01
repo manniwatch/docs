@@ -143,8 +143,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="177"
-                            class="link-to-prism">src/app/util/ol/ol-util.ts:177</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="180"
+                            class="link-to-prism">src/app/util/ol/ol-util.ts:180</a></div>
                 </td>
             </tr>
 
@@ -207,15 +207,15 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>createStopMarkerStyle(selected: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
+                    <code>createStopMarkerStyle(selected)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="151"
-                            class="link-to-prism">src/app/util/ol/ol-util.ts:151</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="154"
+                            class="link-to-prism">src/app/util/ol/ol-util.ts:154</a></div>
                 </td>
             </tr>
 
@@ -230,7 +230,6 @@
                             <thead>
                                 <tr>
                                     <td>Name</td>
-                                    <td>Type</td>
                                     <td>Optional</td>
                                     <td>Default value</td>
                                 </tr>
@@ -238,9 +237,6 @@
                             <tbody>
                                 <tr>
                                     <td>selected</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-                                    </td>
 
                                     <td>
                                         No
@@ -289,8 +285,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="154"
-                            class="link-to-prism">src/app/util/ol/ol-util.ts:154</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="157"
+                            class="link-to-prism">src/app/util/ol/ol-util.ts:157</a></div>
                 </td>
             </tr>
 
@@ -360,8 +356,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="161"
-                            class="link-to-prism">src/app/util/ol/ol-util.ts:161</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="164"
+                            class="link-to-prism">src/app/util/ol/ol-util.ts:164</a></div>
                 </td>
             </tr>
 
@@ -424,15 +420,15 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>createVehicleMarkerStyle(selected: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
+                    <code>createVehicleMarkerStyle(selected)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="124"
-                            class="link-to-prism">src/app/util/ol/ol-util.ts:124</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="127"
+                            class="link-to-prism">src/app/util/ol/ol-util.ts:127</a></div>
                 </td>
             </tr>
 
@@ -447,7 +443,6 @@
                             <thead>
                                 <tr>
                                     <td>Name</td>
-                                    <td>Type</td>
                                     <td>Optional</td>
                                     <td>Default value</td>
                                 </tr>
@@ -455,9 +450,6 @@
                             <tbody>
                                 <tr>
                                     <td>selected</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-                                    </td>
 
                                     <td>
                                         No
@@ -495,6 +487,7 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { IVehicleLocation } from &#x27;@manniwatch/api-types&#x27;;
+import { FeatureLike } from &#x27;ol/Feature&#x27;;
 import { Coordinate } from &#x27;ol/coordinate&#x27;;
 import { fromLonLat } from &#x27;ol/proj&#x27;;
 import CircleStyle from &#x27;ol/style/Circle&#x27;;
@@ -503,10 +496,9 @@ import Icon from &#x27;ol/style/Icon&#x27;;
 import Stroke from &#x27;ol/style/Stroke&#x27;;
 import Style, { StyleLike } from &#x27;ol/style/Style&#x27;;
 import Text from &#x27;ol/style/Text&#x27;;
-import { FeatureLike } from &#x27;ol/Feature&#x27;;
 import { TrapezeCoord } from &#x27;./trapeze-coord&#x27;;
 
-const DEFAULT_STYLES: { [key: string]: StyleLike; } &#x3D; {
+const DEFAULT_STYLES: { [key: string]: StyleLike } &#x3D; {
     icon: new Style({
         image: new Icon({
             anchor: [0.5, 0.5],
@@ -518,7 +510,8 @@ const DEFAULT_STYLES: { [key: string]: StyleLike; } &#x3D; {
     }),
     route: new Style({
         stroke: new Stroke({
-            color: [237, 212, 0, 0.8], width: 6,
+            color: [237, 212, 0, 0.8],
+            width: 6,
         }),
     }),
     stop: new Style({
@@ -526,7 +519,8 @@ const DEFAULT_STYLES: { [key: string]: StyleLike; } &#x3D; {
             fill: new Fill({ color: &#x27;#111111&#x27; }),
             radius: 12,
             stroke: new Stroke({
-                color: &#x27;#EEEEEE&#x27;, width: 2,
+                color: &#x27;#EEEEEE&#x27;,
+                width: 2,
             }),
         }),
         text: new Text({
@@ -542,7 +536,8 @@ const DEFAULT_STYLES: { [key: string]: StyleLike; } &#x3D; {
             fill: new Fill({ color: &#x27;#AAAAFF&#x27; }),
             radius: 12,
             stroke: new Stroke({
-                color: &#x27;#111111&#x27;, width: 2,
+                color: &#x27;#111111&#x27;,
+                width: 2,
             }),
         }),
         text: new Text({
@@ -554,10 +549,10 @@ const DEFAULT_STYLES: { [key: string]: StyleLike; } &#x3D; {
         zIndex: 1000,
     }),
     vehicle: (p0: FeatureLike, p1: number): Style &#x3D;&gt; {
-        const vehicle: IVehicleLocation &#x3D; p0.get(&#x27;vehicle&#x27;);
+        const vehicle: IVehicleLocation &#x3D; p0.get(&#x27;vehicle&#x27;) as IVehicleLocation;
         // tslint:disable-next-line:triple-equals
         if (vehicle !&#x3D; undefined) {
-            const rot: number &#x3D; Math.PI / 180 * ((vehicle.heading + 270) % 360);
+            const rot: number &#x3D; (Math.PI / 180) * ((vehicle.heading + 270) % 360);
             return new Style({
                 image: new Icon({
                     anchor: [24 / 68, 0.5],
@@ -586,10 +581,10 @@ const DEFAULT_STYLES: { [key: string]: StyleLike; } &#x3D; {
         zIndex: 600,
     }),
     vehicle_selected: (p0: FeatureLike, p1: number): Style &#x3D;&gt; {
-        const vehicle: IVehicleLocation &#x3D; p0.get(&#x27;vehicle&#x27;);
+        const vehicle: IVehicleLocation &#x3D; p0.get(&#x27;vehicle&#x27;) as IVehicleLocation;
         // tslint:disable-next-line:triple-equals
         if (vehicle !&#x3D; undefined) {
-            const rot: number &#x3D; Math.PI / 180 * ((vehicle.heading + 270) % 360);
+            const rot: number &#x3D; (Math.PI / 180) * ((vehicle.heading + 270) % 360);
             return new Style({
                 image: new Icon({
                     anchor: [24 / 68, 0.5],
@@ -612,13 +607,12 @@ const DEFAULT_STYLES: { [key: string]: StyleLike; } &#x3D; {
     },
 };
 export class OlUtil {
-
-    public static createVehicleMarkerStyle(selected: boolean &#x3D; false): (p0: FeatureLike, p1: number) &#x3D;&gt; Style {
+    public static createVehicleMarkerStyle(selected &#x3D; false): (p0: FeatureLike, p1: number) &#x3D;&gt; Style {
         return (p0: FeatureLike, p1: number): Style &#x3D;&gt; {
-            const vehicle: IVehicleLocation &#x3D; p0.get(&#x27;vehicle&#x27;);
+            const vehicle: IVehicleLocation &#x3D; p0.get(&#x27;vehicle&#x27;) as IVehicleLocation;
             // tslint:disable-next-line:triple-equals
             if (vehicle !&#x3D; undefined) {
-                const rot: number &#x3D; Math.PI / 180 * ((vehicle.heading + 270) % 360);
+                const rot: number &#x3D; (Math.PI / 180) * ((vehicle.heading + 270) % 360);
                 return new Style({
                     image: new Icon({
                         anchor: [24 / 68, 0.5],
@@ -640,13 +634,13 @@ export class OlUtil {
             return undefined;
         };
     }
-    public static createStopMarkerStyle(selected: boolean &#x3D; false): Style {
-        return selected ? DEFAULT_STYLES.stop_selected as Style : DEFAULT_STYLES.stop as Style;
+    public static createStopMarkerStyle(selected &#x3D; false): Style {
+        return selected ? (DEFAULT_STYLES.stop_selected as Style) : (DEFAULT_STYLES.stop as Style);
     }
     public static createStyleByFeature(feature: FeatureLike): StyleLike {
         // tslint:disable-next-line:triple-equals
         if (feature.get(&#x27;type&#x27;) !&#x3D; undefined) {
-            return OlUtil.createStyleByType(feature.get(&#x27;type&#x27;));
+            return OlUtil.createStyleByType(feature.get(&#x27;type&#x27;) as string);
         }
         return undefined;
     }

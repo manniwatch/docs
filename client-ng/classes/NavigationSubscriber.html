@@ -116,7 +116,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/modules/main-toolbar/main-toolbar.component.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/modules/main-toolbar/main-toolbar.component.ts:13</a></div>
                             </td>
                         </tr>
 
@@ -249,7 +249,6 @@ import { ToolbarSearchBoxComponent } from &#x27;./search-box.component&#x27;;
 
 // tslint:disable:max-classes-per-file
 export class NavigationSubscriber extends Subscriber&lt;RouterEvent&gt; {
-
     public constructor(private toolbar: MainToolbarComponent) {
         super();
     }
@@ -268,7 +267,6 @@ export class NavigationSubscriber extends Subscriber&lt;RouterEvent&gt; {
     templateUrl: &#x27;./main-toolbar.component.html&#x27;,
 })
 export class MainToolbarComponent {
-
     public get searchOpen(): boolean {
         return this.mSearchOpen;
     }
@@ -276,14 +274,13 @@ export class MainToolbarComponent {
     public set searchOpen(open: boolean) {
         this.mSearchOpen &#x3D; open;
     }
-    public closeable: boolean &#x3D; false;
+    public closeable &#x3D; false;
     @ViewChild(ToolbarSearchBoxComponent)
     private searchBoxComponent: ToolbarSearchBoxComponent;
 
-    private mSearchOpen: boolean &#x3D; false;
+    private mSearchOpen &#x3D; false;
 
-    constructor(private sidebarService: SidebarService,
-        private router: Router) {
+    constructor(private sidebarService: SidebarService, private router: Router) {
         this.router.events.subscribe(new NavigationSubscriber(this));
     }
 
@@ -291,7 +288,7 @@ export class MainToolbarComponent {
         this.sidebarService.toggleSidebar();
     }
 
-    public onFocusSearch(event: any): void {
+    public onFocusSearch(event: boolean): void {
         this.searchOpen &#x3D; event;
     }
     public toggleSearch(): void {
@@ -299,7 +296,6 @@ export class MainToolbarComponent {
             // this.searchBoxComponent.doFocusSearch();
         }
     }
-
 }
 </code></pre>
     </div>

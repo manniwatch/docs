@@ -322,8 +322,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="60"
-                            class="link-to-prism">src/app/modules/common/countdown-timer/countdown-timer.directive.ts:60</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="63"
+                            class="link-to-prism">src/app/modules/common/countdown-timer/countdown-timer.directive.ts:63</a></div>
                 </td>
             </tr>
 
@@ -592,7 +592,6 @@ import { distinctUntilChanged, map } from &#x27;rxjs/operators&#x27;;
     selector: &#x27;span[appCountdownTimer]&#x27;,
 })
 export class CountdownTimerDirective implements OnInit, OnDestroy {
-
     /**
      * Sets the targetTime
      */
@@ -613,27 +612,30 @@ export class CountdownTimerDirective implements OnInit, OnDestroy {
      * Placeholder if time has run out
      */
     @Input()
-    public placeholder: string &#x3D; &#x27;-&#x27;;
+    public placeholder &#x3D; &#x27;-&#x27;;
 
-    private timestamp: string &#x3D; &#x27;&#x27;;
+    private timestamp &#x3D; &#x27;&#x27;;
     private updateSubscription: Subscription;
     private timestampSubject: BehaviorSubject&lt;number&gt; &#x3D; new BehaviorSubject(0);
 
     public ngOnInit(): void {
         this.updateSubscription &#x3D; combineLatest([timer(0, 200), this.timestampSubject])
-            .pipe(map((value: [number, number]): string &#x3D;&gt; {
-                const diff: number &#x3D; Math.max(value[1] - Date.now(), 0);
-                if (diff &lt;&#x3D; 0) {
-                    return this.placeholder;
-                } else {
-                    return Math.ceil(diff / 1000.0) + &#x27;s&#x27;;
-                }
-            }),
-                distinctUntilChanged())
-            .subscribe(new Subscriber((val: string): void &#x3D;&gt; {
-                this.timestamp &#x3D; val;
-            }));
-
+            .pipe(
+                map((value: [number, number]): string &#x3D;&gt; {
+                    const diff: number &#x3D; Math.max(value[1] - Date.now(), 0);
+                    if (diff &lt;&#x3D; 0) {
+                        return this.placeholder;
+                    } else {
+                        return &#x60;${Math.ceil(diff / 1000.0)}s&#x60;;
+                    }
+                }),
+                distinctUntilChanged()
+            )
+            .subscribe({
+                next: (val: string): void &#x3D;&gt; {
+                    this.timestamp &#x3D; val;
+                },
+            });
     }
 
     public ngOnDestroy(): void {

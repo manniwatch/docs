@@ -28,7 +28,7 @@
                    <compodoc-menu mode="normal"></compodoc-menu>
                </div>
                <!-- START CONTENT -->
-               <div class="content guard">
+               <div class="content injectable">
                    <div class="content-data">
 
 
@@ -37,11 +37,9 @@
 
 
 
-
-
 <ol class="breadcrumb">
-    <li>Guards</li>
-    <li >StopPointInfoResolver</li>
+  <li>Injectables</li>
+  <li >StopsResolver</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -54,31 +52,50 @@
 </ul>
 
 <div class="tab-content">
-        <div class="tab-pane fade active in" id="c-info">
-            <p class="comment">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
             <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/routes/stops/stops.resolver.ts</code>
+        </p>
+
+
+            <p class="comment">
+                <h3>Description</h3>
             </p>
             <p class="comment">
-                <code>src/app/routes/stop-point/stop-point-info.resolver.ts</code>
+                <p>A Resolver for the Stations Response</p>
+
+            </p>
+
+            <p class="comment">
+                <h3>Extends</h3>
+            </p>
+            <p class="comment">
+                        <code><a href="../guards/RetryResolver.html" target="_self" >RetryResolver</a></code>
             </p>
 
 
-                <p class="comment">
-                <h3>Description</h3>
-                </p>
-                <p class="comment">
-                    <p>Resolves information for a stop provided in the route parameter &#39;stopId&#39;
-Redirects to /stops if the server responds with an 404 status</p>
-
-                </p>
-
-
-
-
-                <section>
+            <section>
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#api" >api</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -90,7 +107,7 @@ Redirects to /stops if the server responds with an 404 status</p>
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#resolve" >resolve</a>
+                                <a href="#createLoader" >createLoader</a>
                             </li>
                         </ul>
                     </td>
@@ -104,19 +121,19 @@ Redirects to /stops if the server responds with an 404 status</p>
     </table>
 </section>
 
-                <section>
+            <section>
     <h3 id="constructor">Constructor</h3>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
                     <td class="col-md-4">
                                 <span class="modifier">Public</span>
-                        <code>constructor(api: <a href="../classes/ApiService.html" target="_self">ApiService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
+                        <code>constructor(api: <a href="../classes/ApiService.html" target="_self">ApiService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, dialog: <a href="../injectables/AppDialogService.html" target="_self">AppDialogService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/routes/stop-point/stop-point-info.resolver.ts:18</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/routes/stops/stops.resolver.ts:18</a></div>
                             </td>
                         </tr>
 
@@ -164,8 +181,20 @@ Redirects to /stops if the server responds with an 404 status</p>
                                                     </td>
                                                     
                                                         <td>
-                                                                <p>the {@Router}</p>
-
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>dialog</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AppDialogService.html" target="_self" >AppDialogService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
                                                         </td>
                                                 </tr>
                                         </tbody>
@@ -177,7 +206,7 @@ Redirects to /stops if the server responds with an 404 status</p>
         </table>
 </section>
 
-                <section>
+            <section>
     
     <h3 id="methods">
         Methods
@@ -186,33 +215,33 @@ Redirects to /stops if the server responds with an 404 status</p>
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="resolve"></a>
+                    <a name="createLoader"></a>
                     <span class="name">
                         <span class="modifier">Public</span>
-                        <span ><b>resolve</b></span>
-                        <a href="#resolve"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>createLoader</b></span>
+                        <a href="#createLoader"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>resolve(route: <a href="https://angular.io/api/router/ActivatedRouteSnapshot" target="_blank">ActivatedRouteSnapshot</a>, state: <a href="https://angular.io/api/router/RouterStateSnapshot" target="_blank">RouterStateSnapshot</a>)</code>
+                    <code>createLoader(route: <a href="https://angular.io/api/router/ActivatedRouteSnapshot" target="_blank">ActivatedRouteSnapshot</a>, state: <a href="https://angular.io/api/router/RouterStateSnapshot" target="_blank">RouterStateSnapshot</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="32"
-                            class="link-to-prism">src/app/routes/stop-point/stop-point-info.resolver.ts:32</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="37"
+                            class="link-to-prism">src/app/routes/stops/stops.resolver.ts:37</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>Resolves the stop information via the stopId param inside the route</p>
+                    <div class="io-description"><p>Resolves the station response</p>
 </div>
 
                     <div class="io-description">
@@ -240,7 +269,7 @@ Redirects to /stops if the server responds with an 404 status</p>
 
 
                                     <td>
-                                        <p>The RouteSnapshot</p>
+                                        <p>The activated RouteSnapshot</p>
 
                                     </td>
                                 </tr>
@@ -256,7 +285,7 @@ Redirects to /stops if the server responds with an 404 status</p>
 
 
                                     <td>
-                                        <p>The RouterState</p>
+                                        <p>The router state snapshot</p>
 
                                     </td>
                                 </tr>
@@ -266,62 +295,102 @@ Redirects to /stops if the server responds with an 404 status</p>
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>    <code>Observable&lt;IStopPassage&gt;</code>
+                        <b>Returns : </b>    <code>Observable&lt;IStopLocations&gt;</code>
 
                     </div>
                     <div class="io-description">
-                        
+                        <p>An observable that resolves the {@StationsResponse}</p>
+
                     </div>
                 </td>
             </tr>
         </tbody>
     </table>
 </section>
-        </div>
+            <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="api"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>api</b></span>
+                        <a href="#api"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/ApiService.html" target="_self" >ApiService</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/routes/stops/stops.resolver.ts:26</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description">the {@ApiService}</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+
+    </div>
 
 
-        <div class="tab-pane fade  tab-source-code" id="c-source">
-            <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { HttpErrorResponse } from &#x27;@angular/common/http&#x27;;
-import { Injectable } from &#x27;@angular/core&#x27;;
-import { ActivatedRouteSnapshot, Resolve, Router, RouterStateSnapshot } from &#x27;@angular/router&#x27;;
-import { IStopPassage } from &#x27;@manniwatch/api-types&#x27;;
-import { EMPTY, Observable } from &#x27;rxjs&#x27;;
-import { catchError } from &#x27;rxjs/operators&#x27;;
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
+import { ActivatedRouteSnapshot, Router, RouterStateSnapshot } from &#x27;@angular/router&#x27;;
+import { IStopLocations } from &#x27;@manniwatch/api-types&#x27;;
+import { Observable } from &#x27;rxjs&#x27;;
 import { ApiService } from &#x27;src/app/services&#x27;;
+import { AppDialogService } from &#x27;src/app/services&#x27;;
+import { RetryResolver } from &#x27;src/app/util/retry-resolver&#x27;;
 
 /**
- * Resolves information for a stop provided in the route parameter &#x27;stopId&#x27;
- * Redirects to /stops if the server responds with an 404 status
+ * A Resolver for the Stations Response
  */
 @Injectable()
-export class StopPointInfoResolver implements Resolve&lt;IStopPassage&gt; {
-
+export class StopsResolver extends RetryResolver&lt;IStopLocations&gt; {
     /**
      * Constructor
+     *
      * @param api the {@ApiService}
-     * @param router the {@Router}
+     * @param router
+     * @param dialog
      */
-    public constructor(private api: ApiService, private router: Router) { }
+    public constructor(public api: ApiService, router: Router, dialog: AppDialogService) {
+        super(router, dialog);
+    }
 
     /**
-     * Resolves the stop information via the stopId param inside the route
-     * @param route The RouteSnapshot
-     * @param state The RouterState
+     * Resolves the station response
+     *
+     * @param route The activated RouteSnapshot
+     * @param state The router state snapshot
+     * @returns An observable that resolves the {@StationsResponse}
      */
-    public resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable&lt;IStopPassage&gt; {
-        return this.api
-            .getStopPointPassages(route.params.stopPointId)
-            .pipe(catchError((err: any | HttpErrorResponse): Observable&lt;any&gt; &#x3D;&gt; {
-                if (err.status &#x3D;&#x3D;&#x3D; 404) {
-                    this.router.navigate([&#x27;stops&#x27;]);
-                }
-                return EMPTY;
-            }));
+    public createLoader(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable&lt;IStopLocations&gt; {
+        return this.api.getStopLocations();
     }
 }
 </code></pre>
-        </div>
+    </div>
+
 </div>
+
+
 
 
 
@@ -357,8 +426,8 @@ export class StopPointInfoResolver implements Resolve&lt;IStopPassage&gt; {
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'guard';
-            var COMPODOC_CURRENT_PAGE_URL = 'StopPointInfoResolver.html';
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'StopsResolver.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

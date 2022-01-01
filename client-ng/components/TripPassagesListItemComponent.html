@@ -203,7 +203,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/routes/trip-passages/trip-passages-list-item.component.ts:26</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/routes/trip-passages/trip-passages-list-item.component.ts:22</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -230,7 +230,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/routes/trip-passages/trip-passages-list-item.component.ts:29</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/routes/trip-passages/trip-passages-list-item.component.ts:25</a></div>
                         </td>
                     </tr>
 
@@ -256,7 +256,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/routes/trip-passages/trip-passages-list-item.component.ts:33</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/routes/trip-passages/trip-passages-list-item.component.ts:29</a></div>
                         </td>
                     </tr>
 
@@ -288,7 +288,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/routes/trip-passages/trip-passages-list-item.component.ts:29</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/routes/trip-passages/trip-passages-list-item.component.ts:25</a></div>
                                 </td>
                             </tr>
 
@@ -310,7 +310,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/routes/trip-passages/trip-passages-list-item.component.ts:33</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/routes/trip-passages/trip-passages-list-item.component.ts:29</a></div>
                                 </td>
                             </tr>
 
@@ -332,7 +332,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/routes/trip-passages/trip-passages-list-item.component.ts:37</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/routes/trip-passages/trip-passages-list-item.component.ts:33</a></div>
                                 </td>
                             </tr>
 
@@ -343,12 +343,7 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
-    ChangeDetectionStrategy,
-    Component,
-    HostBinding,
-    Input,
-} from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ChangeDetectionStrategy, Component, HostBinding, Input } from &#x27;@angular/core&#x27;;
 import { ITripPassage, VEHICLE_STATUS } from &#x27;@manniwatch/api-types&#x27;;
 import {
     differenceInMinutes as dateDifferenceInMinutes,
@@ -395,52 +390,56 @@ export class TripPassagesListItemComponent {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;a mat-list-item [routerLink]&#x3D;&quot;[&#x27;/stop&#x27;, passage?.stop?.shortName]&quot; role&#x3D;&quot;listitem&quot;&gt;&lt;mat-icon matListIcon role&#x3D;&quot;figure&quot; i18n-aria-label&#x3D;&quot;@@busStopIcon&quot; aria-label&#x3D;&quot;Bus stop icon&quot;&gt;&lt;/mat-icon&gt;&lt;h4 class&#x3D;&quot;title&quot; matLine aria-label&#x3D;&quot;Stop name&quot; i18n-aria-label&#x3D;&quot;@@stopName&quot;&gt;{{passage?.stop?.name}}&lt;/h4&gt;&lt;p class&#x3D;&quot;subtitle&quot; matLine&gt;&lt;span role&#x3D;&quot;timer&quot;&gt;{{passageTime}}&lt;span class&#x3D;&quot;demo-2&quot; role&#x3D;&quot;status&quot;&gt;&amp;nbsp;-- {{passage?.status}}&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;&lt;/a&gt;</code></pre>
+        <pre class="line-numbers"><code class="language-html">&lt;a mat-list-item [routerLink]&#x3D;&quot;[&#x27;/stop&#x27;, passage?.stop?.shortName]&quot; role&#x3D;&quot;listitem&quot;&gt;
+  &lt;mat-icon matListIcon role&#x3D;&quot;figure&quot; i18n-aria-label&#x3D;&quot;@@busStopIcon&quot; aria-label&#x3D;&quot;Bus stop icon&quot;&gt;&lt;/mat-icon&gt;
+  &lt;h4 class&#x3D;&quot;title&quot; matLine aria-label&#x3D;&quot;Stop name&quot; i18n-aria-label&#x3D;&quot;@@stopName&quot;&gt;{{passage?.stop?.name}}&lt;/h4&gt;
+  &lt;p class&#x3D;&quot;subtitle&quot; matLine&gt;&lt;span role&#x3D;&quot;timer&quot;&gt;
+      {{passageTime}}&lt;span class&#x3D;&quot;demo-2&quot; role&#x3D;&quot;status&quot;&gt;&amp;nbsp;-- {{passage?.status}}&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;&lt;/a&gt;</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
                 <p class="comment">
                     <code>./trip-passages-list-item.component.scss</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss">@use &#x27;~@angular/material&#x27; as mat;
-@import &#x27;~@angular/material/theming&#x27;;
+                <pre class="line-numbers"><code class="language-scss">@use &#x27;@angular/material&#x27; as mat;
+@import &#x27;@angular/material/theming&#x27;;
 
 @import &#x27;src/themes.scss&#x27;;
 
 mat-icon[matListIcon]::after {
-    content:&quot;directions_bus&quot;
+    content: &#x27;directions_bus&#x27;;
 }
 :host-context(.departed) {
-    a{
-        opacity:0.75 !important;
-        background-color: rgba(0,0,0,0.1);
+    a {
+        opacity: 0.75 !important;
+        background-color: rgba(0, 0, 0, 0.1);
     }
     mat-icon[matListIcon]::after {
-        content:&quot;transfer_within_a_station&quot;
+        content: &#x27;transfer_within_a_station&#x27;;
     }
 }
 
 :host-context(.stopping) {
-    a{
-        background-color: rgba(0,255,0,0.1);
+    a {
+        background-color: rgba(0, 255, 0, 0.1);
     }
     mat-icon[matListIcon]::after {
-        content:&quot;place&quot;
+        content: &#x27;place&#x27;;
     }
 }
 
 $config: mat.define-typography-config();
-h4.title{
+h4.title {
     font-size: 16px !important;
     font-family: mat.font-family($config);
     font-weight: 700 !important;
     opacity: 0.87;
     // color:green;
 }
-p.subtitle{
+p.subtitle {
     font-size: 12px !important;
     font-family: mat.font-family($config);
-    line-height:20px;
+    line-height: 20px;
     font-weight: 600 !important;
     opacity: 0.6;
     // color:red;
@@ -473,7 +472,7 @@ p.subtitle{
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><a mat-list-item [routerLink]="[\'/stop\', passage?.stop?.shortName]" role="listitem"><mat-icon matListIcon role="figure" i18n-aria-label="@@busStopIcon" aria-label="Bus stop icon"></mat-icon><h4 class="title" matLine aria-label="Stop name" i18n-aria-label="@@stopName">{{passage?.stop?.name}}</h4><p class="subtitle" matLine><span role="timer">{{passageTime}}<span class="demo-2" role="status">&nbsp;-- {{passage?.status}}</span></span></p></a></div>'
+        var COMPONENT_TEMPLATE = '<div><a mat-list-item [routerLink]="[\'/stop\', passage?.stop?.shortName]" role="listitem">  <mat-icon matListIcon role="figure" i18n-aria-label="@@busStopIcon" aria-label="Bus stop icon"></mat-icon>  <h4 class="title" matLine aria-label="Stop name" i18n-aria-label="@@stopName">{{passage?.stop?.name}}</h4>  <p class="subtitle" matLine><span role="timer">      {{passageTime}}<span class="demo-2" role="status">&nbsp;-- {{passage?.status}}</span></span></p></a></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CommonErrorComponent', 'selector': 'app-common-error'},{'name': 'DepartureListComponent', 'selector': 'app-departure-list'},{'name': 'DepartureListItemComponent', 'selector': 'app-departure-list-item'},{'name': 'HeaderBoxComponent', 'selector': 'app-header-box'},{'name': 'MainToolbarComponent', 'selector': 'app-main-toolbar'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'NotFoundMessageSwitchComponent', 'selector': 'app-not-found-msg-switch'},{'name': 'RequestUpdateDialogComponent', 'selector': 'app-request-update-dialog'},{'name': 'RetryDialogComponent', 'selector': 'app-retry-dialog'},{'name': 'RouteListComponent', 'selector': 'app-route-list'},{'name': 'RouteLoadingIndicatorComponent', 'selector': 'app-route-loading-indicator'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'StopInfoComponent', 'selector': 'app-stop-info'},{'name': 'StopPointInfoComponent', 'selector': 'app-stop-point-info'},{'name': 'StopsInfoComponent', 'selector': 'app-stops-info'},{'name': 'ThemeSelectorComponent', 'selector': 'app-theme-selector'},{'name': 'ToolbarSearchBoxComponent', 'selector': 'app-toolbar-search'},{'name': 'TripPassagesComponent', 'selector': 'app-trip-passages'},{'name': 'TripPassagesListComponent', 'selector': 'app-trip-passages-list'},{'name': 'TripPassagesListItemComponent', 'selector': 'app-trip-passages-list-item'}];
     var DIRECTIVES = [{'name': 'BaseOlMapDirective', 'selector': ''},{'name': 'CountdownTimerDirective', 'selector': 'span[appCountdownTimer]'},{'name': 'OlMainMapDirective', 'selector': 'map[appOlMainMap]'},{'name': 'OlStaticMapDirective', 'selector': 'map[appOlStatic]'},{'name': 'OsmOlMapDirective', 'selector': ''},{'name': 'VectorOlMapDirective', 'selector': ''}];
     var ACTUAL_COMPONENT = {'name': 'TripPassagesListItemComponent'};

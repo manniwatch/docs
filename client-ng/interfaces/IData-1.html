@@ -198,26 +198,23 @@ export interface IData {
     selector: &#x27;app-stop-info&#x27;,
     styleUrls: [&#x27;./stop-info.component.scss&#x27;],
     templateUrl: &#x27;./stop-info.component.html&#x27;,
-
 })
 export class StopInfoComponent implements OnInit, OnDestroy {
-
     public headerMapData: IStaticMapData;
     private subscriptions: Subscription[] &#x3D; [];
     public stopPassage: IStopPassage;
-    constructor(public stopInfoService: StopInfoService) { }
+    constructor(public stopInfoService: StopInfoService) {}
 
     public ngOnInit(): void {
-        this.subscriptions.push(this.stopInfoService
-            .createStopPassageRefreshObservable()
-            .subscribe({
+        this.subscriptions.push(
+            this.stopInfoService.createStopPassageRefreshObservable().subscribe({
                 next: (val: IStopPassage): void &#x3D;&gt; {
                     this.stopPassage &#x3D; val;
                 },
-            }));
-        this.subscriptions.push(this.stopInfoService
-            .createStopLocationObservable()
-            .subscribe({
+            })
+        );
+        this.subscriptions.push(
+            this.stopInfoService.createStopLocationObservable().subscribe({
                 next: (stopLocation: IStopLocation): void &#x3D;&gt; {
                     if (stopLocation) {
                         this.headerMapData &#x3D; {
@@ -236,7 +233,8 @@ export class StopInfoComponent implements OnInit, OnDestroy {
                         };
                     }
                 },
-            }));
+            })
+        );
     }
     public ngOnDestroy(): void {
         this.subscriptions.forEach((sub: Subscription): void &#x3D;&gt; {

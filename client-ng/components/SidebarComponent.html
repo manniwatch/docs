@@ -196,7 +196,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/modules/sidebar/sidebar.component.ts:16</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/modules/sidebar/sidebar.component.ts:17</a></div>
                             </td>
                         </tr>
 
@@ -316,8 +316,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="22"
-                            class="link-to-prism">src/app/modules/sidebar/sidebar.component.ts:22</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="20"
+                            class="link-to-prism">src/app/modules/sidebar/sidebar.component.ts:20</a></div>
                 </td>
             </tr>
 
@@ -355,8 +355,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="26"
-                            class="link-to-prism">src/app/modules/sidebar/sidebar.component.ts:26</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="24"
+                            class="link-to-prism">src/app/modules/sidebar/sidebar.component.ts:24</a></div>
                 </td>
             </tr>
 
@@ -427,7 +427,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/modules/sidebar/sidebar.component.ts:34</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/modules/sidebar/sidebar.component.ts:33</a></div>
                                 </td>
                             </tr>
                     <tr>
@@ -498,10 +498,7 @@ import { SidebarService } from &#x27;./sidebar.service&#x27;;
     templateUrl: &#x27;./sidebar.component.html&#x27;,
 })
 export class SidebarComponent {
-    public constructor(private sidebarService: SidebarService,
-        public dialog: MatDialog) {
-
-    }
+    public constructor(private sidebarService: SidebarService, public dialog: MatDialog) {}
 
     public closeSidebar(): void {
         this.sidebarService.closeSidebar();
@@ -513,6 +510,7 @@ export class SidebarComponent {
 
     /**
      * The app version found inside the package
+     *
      * @returns the package version
      */
     public get appVersion(): string {
@@ -521,6 +519,7 @@ export class SidebarComponent {
 
     /**
      * The @angular/core version used
+     *
      * @returns Version
      */
     public get angularVersion(): string {
@@ -535,30 +534,53 @@ export class SidebarComponent {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;button mat-icon-button (click)&#x3D;&quot;closeSidebar()&quot;&gt;&lt;mat-icon&gt;close&lt;/mat-icon&gt;&lt;/button&gt;&lt;mat-nav-list (click)&#x3D;&quot;closeSidebar()&quot;&gt;&lt;h3 matSubheader&gt;Head&lt;/h3&gt;&lt;a mat-list-item [routerLink]&#x3D;&quot;[&#x27;/&#x27;]&quot; [queryParams]&#x3D;&quot;{utm_source: &#x27;sidebar&#x27;}&quot; role&#x3D;&quot;navigation&quot;&gt;&lt;mat-icon matListIcon&gt;home&lt;/mat-icon&gt;&lt;h4 matLine&gt;Home&lt;/h4&gt;&lt;p matLine&gt;Home&lt;/p&gt;&lt;/a&gt;&lt;a mat-list-item [routerLink]&#x3D;&quot;[&#x27;/stops&#x27;]&quot; role&#x3D;&quot;navigation&quot;&gt;&lt;mat-icon matListIcon&gt;place&lt;/mat-icon&gt;&lt;h4 matLine&gt;Stops&lt;/h4&gt;&lt;p matLine&gt;List of stops&lt;/p&gt;&lt;/a&gt;&lt;mat-divider&gt;&lt;/mat-divider&gt;&lt;button mat-list-item (click)&#x3D;&quot;checkForUpdate()&quot;&gt;&lt;mat-icon matListIcon&gt;system_update_alt&lt;/mat-icon&gt;&lt;h4 matLine&gt;Check for Update&lt;/h4&gt;&lt;p matLine&gt;Check if an update is available&lt;/p&gt;&lt;/button&gt;&lt;a mat-list-item [routerLink]&#x3D;&quot;[&#x27;/settings&#x27;]&quot; role&#x3D;&quot;navigation&quot;&gt;&lt;mat-icon matListIcon&gt;settings&lt;/mat-icon&gt;&lt;h4 matLine&gt;Settings&lt;/h4&gt;&lt;p matLine&gt;Change Settings&lt;/p&gt;&lt;/a&gt;&lt;/mat-nav-list&gt;&lt;div class&#x3D;&quot;info-box&quot;&gt;&lt;span title&#x3D;&quot;App Version&quot;&gt;App: {{appVersion}}&lt;/span&gt;&lt;span title&#x3D;&quot;Angular Version&quot;&gt;Angular: {{angularVersion}}&lt;/span&gt;&lt;/div&gt;</code></pre>
+        <pre class="line-numbers"><code class="language-html">
+&lt;button mat-icon-button (click)&#x3D;&quot;closeSidebar()&quot;&gt;
+  &lt;mat-icon&gt;close&lt;/mat-icon&gt;
+&lt;/button&gt;
+&lt;mat-nav-list (click)&#x3D;&quot;closeSidebar()&quot;&gt;
+  &lt;h3 matSubheader&gt;Head&lt;/h3&gt;&lt;a mat-list-item [routerLink]&#x3D;&quot;[&#x27;/&#x27;]&quot; [queryParams]&#x3D;&quot;{utm_source: &#x27;sidebar&#x27;}&quot; role&#x3D;&quot;navigation&quot;&gt;
+    &lt;mat-icon matListIcon&gt;home&lt;/mat-icon&gt;
+    &lt;h4 matLine&gt;Home&lt;/h4&gt;
+    &lt;p matLine&gt;Home&lt;/p&gt;&lt;/a&gt;&lt;a mat-list-item [routerLink]&#x3D;&quot;[&#x27;/stops&#x27;]&quot; role&#x3D;&quot;navigation&quot;&gt;
+    &lt;mat-icon matListIcon&gt;place&lt;/mat-icon&gt;
+    &lt;h4 matLine&gt;Stops&lt;/h4&gt;
+    &lt;p matLine&gt;List of stops&lt;/p&gt;&lt;/a&gt;
+  &lt;mat-divider&gt;&lt;/mat-divider&gt;
+  &lt;button mat-list-item (click)&#x3D;&quot;checkForUpdate()&quot;&gt;
+    &lt;mat-icon matListIcon&gt;system_update_alt&lt;/mat-icon&gt;
+    &lt;h4 matLine&gt;Check for Update&lt;/h4&gt;
+    &lt;p matLine&gt;Check if an update is available&lt;/p&gt;
+  &lt;/button&gt;&lt;a mat-list-item [routerLink]&#x3D;&quot;[&#x27;/settings&#x27;]&quot; role&#x3D;&quot;navigation&quot;&gt;
+    &lt;mat-icon matListIcon&gt;settings&lt;/mat-icon&gt;
+    &lt;h4 matLine&gt;Settings&lt;/h4&gt;
+    &lt;p matLine&gt;Change Settings&lt;/p&gt;&lt;/a&gt;
+&lt;/mat-nav-list&gt;
+&lt;div class&#x3D;&quot;info-box&quot;&gt;&lt;span title&#x3D;&quot;App Version&quot;&gt;App: {{appVersion}}&lt;/span&gt;&lt;span title&#x3D;&quot;Angular Version&quot;&gt;Angular: {{angularVersion}}&lt;/span&gt;&lt;/div&gt;</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
                 <p class="comment">
                     <code>./sidebar.component.scss</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss">:host{
-    display:flex;
+                <pre class="line-numbers"><code class="language-scss">:host {
+    display: flex;
     justify-items: stretch;
     flex-direction: column;
-    height:100%;
+    height: 100%;
 }
-mat-list{
-    flex:1 0 auto;
-    overflow-y:auto;
+mat-list {
+    flex: 1 0 auto;
+    overflow-y: auto;
 }
-.info-box{
+.info-box {
     border-top: 1px solid grey;
-    flex:0 0;
-    display:flex;
+    flex: 0 0;
+    display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-}</code></pre>
+}
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -586,7 +608,7 @@ mat-list{
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><button mat-icon-button (click)="closeSidebar()"><mat-icon>close</mat-icon></button><mat-nav-list (click)="closeSidebar()"><h3 matSubheader>Head</h3><a mat-list-item [routerLink]="[\'/\']" [queryParams]="{utm_source: \'sidebar\'}" role="navigation"><mat-icon matListIcon>home</mat-icon><h4 matLine>Home</h4><p matLine>Home</p></a><a mat-list-item [routerLink]="[\'/stops\']" role="navigation"><mat-icon matListIcon>place</mat-icon><h4 matLine>Stops</h4><p matLine>List of stops</p></a><mat-divider></mat-divider><button mat-list-item (click)="checkForUpdate()"><mat-icon matListIcon>system_update_alt</mat-icon><h4 matLine>Check for Update</h4><p matLine>Check if an update is available</p></button><a mat-list-item [routerLink]="[\'/settings\']" role="navigation"><mat-icon matListIcon>settings</mat-icon><h4 matLine>Settings</h4><p matLine>Change Settings</p></a></mat-nav-list><div class="info-box"><span title="App Version">App: {{appVersion}}</span><span title="Angular Version">Angular: {{angularVersion}}</span></div></div>'
+        var COMPONENT_TEMPLATE = '<div><button mat-icon-button (click)="closeSidebar()">  <mat-icon>close</mat-icon></button><mat-nav-list (click)="closeSidebar()">  <h3 matSubheader>Head</h3><a mat-list-item [routerLink]="[\'/\']" [queryParams]="{utm_source: \'sidebar\'}" role="navigation">    <mat-icon matListIcon>home</mat-icon>    <h4 matLine>Home</h4>    <p matLine>Home</p></a><a mat-list-item [routerLink]="[\'/stops\']" role="navigation">    <mat-icon matListIcon>place</mat-icon>    <h4 matLine>Stops</h4>    <p matLine>List of stops</p></a>  <mat-divider></mat-divider>  <button mat-list-item (click)="checkForUpdate()">    <mat-icon matListIcon>system_update_alt</mat-icon>    <h4 matLine>Check for Update</h4>    <p matLine>Check if an update is available</p>  </button><a mat-list-item [routerLink]="[\'/settings\']" role="navigation">    <mat-icon matListIcon>settings</mat-icon>    <h4 matLine>Settings</h4>    <p matLine>Change Settings</p></a></mat-nav-list><div class="info-box"><span title="App Version">App: {{appVersion}}</span><span title="Angular Version">Angular: {{angularVersion}}</span></div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CommonErrorComponent', 'selector': 'app-common-error'},{'name': 'DepartureListComponent', 'selector': 'app-departure-list'},{'name': 'DepartureListItemComponent', 'selector': 'app-departure-list-item'},{'name': 'HeaderBoxComponent', 'selector': 'app-header-box'},{'name': 'MainToolbarComponent', 'selector': 'app-main-toolbar'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'NotFoundMessageSwitchComponent', 'selector': 'app-not-found-msg-switch'},{'name': 'RequestUpdateDialogComponent', 'selector': 'app-request-update-dialog'},{'name': 'RetryDialogComponent', 'selector': 'app-retry-dialog'},{'name': 'RouteListComponent', 'selector': 'app-route-list'},{'name': 'RouteLoadingIndicatorComponent', 'selector': 'app-route-loading-indicator'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'StopInfoComponent', 'selector': 'app-stop-info'},{'name': 'StopPointInfoComponent', 'selector': 'app-stop-point-info'},{'name': 'StopsInfoComponent', 'selector': 'app-stops-info'},{'name': 'ThemeSelectorComponent', 'selector': 'app-theme-selector'},{'name': 'ToolbarSearchBoxComponent', 'selector': 'app-toolbar-search'},{'name': 'TripPassagesComponent', 'selector': 'app-trip-passages'},{'name': 'TripPassagesListComponent', 'selector': 'app-trip-passages-list'},{'name': 'TripPassagesListItemComponent', 'selector': 'app-trip-passages-list-item'}];
     var DIRECTIVES = [{'name': 'BaseOlMapDirective', 'selector': ''},{'name': 'CountdownTimerDirective', 'selector': 'span[appCountdownTimer]'},{'name': 'OlMainMapDirective', 'selector': 'map[appOlMainMap]'},{'name': 'OlStaticMapDirective', 'selector': 'map[appOlStatic]'},{'name': 'OsmOlMapDirective', 'selector': ''},{'name': 'VectorOlMapDirective', 'selector': ''}];
     var ACTUAL_COMPONENT = {'name': 'SidebarComponent'};

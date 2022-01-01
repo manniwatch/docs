@@ -217,7 +217,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/modules/departure-list/departure-list.component.ts:29</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/modules/departure-list/departure-list.component.ts:25</a></div>
                             </td>
                         </tr>
                 <tr>
@@ -259,8 +259,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="44"
-                            class="link-to-prism">src/app/modules/departure-list/departure-list.component.ts:44</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="41"
+                            class="link-to-prism">src/app/modules/departure-list/departure-list.component.ts:41</a></div>
                 </td>
             </tr>
 
@@ -315,7 +315,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/modules/departure-list/departure-list.component.ts:23</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/modules/departure-list/departure-list.component.ts:19</a></div>
                         </td>
                     </tr>
 
@@ -344,7 +344,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/modules/departure-list/departure-list.component.ts:36</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/modules/departure-list/departure-list.component.ts:32</a></div>
                                 </td>
                             </tr>
                     <tr>
@@ -366,7 +366,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/modules/departure-list/departure-list.component.ts:29</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/modules/departure-list/departure-list.component.ts:25</a></div>
                                 </td>
                             </tr>
                     <tr>
@@ -415,11 +415,7 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
-    ChangeDetectionStrategy,
-    Component,
-    Input,
-} from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ChangeDetectionStrategy, Component, Input } from &#x27;@angular/core&#x27;;
 import { IDeparture } from &#x27;@manniwatch/api-types&#x27;;
 
 /**
@@ -432,13 +428,12 @@ import { IDeparture } from &#x27;@manniwatch/api-types&#x27;;
     templateUrl: &#x27;./departure-list.component.html&#x27;,
 })
 export class DepartureListComponent {
-
     private mDepartures: IDeparture[] &#x3D; [];
 
     /**
      * set the departures
      */
-    @Input(&#x27;departures&#x27;)
+    @Input()
     public set departures(deps: IDeparture[]) {
         this.mDepartures &#x3D; deps ? deps : [];
     }
@@ -452,29 +447,35 @@ export class DepartureListComponent {
 
     /**
      * Returns if the atleast one departure was provided
+     *
      * @returns true if there is atleast one departure
      */
     public hasDepartures(): boolean {
         return this.mDepartures !&#x3D;&#x3D; undefined &amp;&amp; this.mDepartures.length &gt; 0;
     }
-
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;mat-nav-list *ngIf&#x3D;&quot;hasDepartures()&quot; role&#x3D;&quot;list&quot;&gt;&lt;app-departure-list-item *ngFor&#x3D;&quot;let passage of departures&quot; [departure]&#x3D;&quot;passage&quot;&gt;&lt;/app-departure-list-item&gt;&lt;/mat-nav-list&gt;&lt;div class&#x3D;&quot;no-departures&quot; *ngIf&#x3D;&quot;!hasDepartures()&quot;&gt;&lt;h4&gt;No Departures&lt;/h4&gt;&lt;/div&gt;</code></pre>
+        <pre class="line-numbers"><code class="language-html">
+&lt;mat-nav-list *ngIf&#x3D;&quot;hasDepartures()&quot; role&#x3D;&quot;list&quot;&gt;
+  &lt;app-departure-list-item *ngFor&#x3D;&quot;let passage of departures&quot; [departure]&#x3D;&quot;passage&quot;&gt;&lt;/app-departure-list-item&gt;
+&lt;/mat-nav-list&gt;
+&lt;div class&#x3D;&quot;no-departures&quot; *ngIf&#x3D;&quot;!hasDepartures()&quot;&gt;
+  &lt;h4&gt;No Departures&lt;/h4&gt;
+&lt;/div&gt;</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
                 <p class="comment">
                     <code>./departure-list.component.scss</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss">:host{
-    display:block;
+                <pre class="line-numbers"><code class="language-scss">:host {
+    display: block;
 }
-div.no-departures{
-    margin:15px;
+div.no-departures {
+    margin: 15px;
 }
 </code></pre>
     </div>
@@ -504,7 +505,7 @@ div.no-departures{
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><mat-nav-list *ngIf="hasDepartures()" role="list"><app-departure-list-item *ngFor="let passage of departures" [departure]="passage"></app-departure-list-item></mat-nav-list><div class="no-departures" *ngIf="!hasDepartures()"><h4>No Departures</h4></div></div>'
+        var COMPONENT_TEMPLATE = '<div><mat-nav-list *ngIf="hasDepartures()" role="list">  <app-departure-list-item *ngFor="let passage of departures" [departure]="passage"></app-departure-list-item></mat-nav-list><div class="no-departures" *ngIf="!hasDepartures()">  <h4>No Departures</h4></div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CommonErrorComponent', 'selector': 'app-common-error'},{'name': 'DepartureListComponent', 'selector': 'app-departure-list'},{'name': 'DepartureListItemComponent', 'selector': 'app-departure-list-item'},{'name': 'HeaderBoxComponent', 'selector': 'app-header-box'},{'name': 'MainToolbarComponent', 'selector': 'app-main-toolbar'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'NotFoundMessageSwitchComponent', 'selector': 'app-not-found-msg-switch'},{'name': 'RequestUpdateDialogComponent', 'selector': 'app-request-update-dialog'},{'name': 'RetryDialogComponent', 'selector': 'app-retry-dialog'},{'name': 'RouteListComponent', 'selector': 'app-route-list'},{'name': 'RouteLoadingIndicatorComponent', 'selector': 'app-route-loading-indicator'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'StopInfoComponent', 'selector': 'app-stop-info'},{'name': 'StopPointInfoComponent', 'selector': 'app-stop-point-info'},{'name': 'StopsInfoComponent', 'selector': 'app-stops-info'},{'name': 'ThemeSelectorComponent', 'selector': 'app-theme-selector'},{'name': 'ToolbarSearchBoxComponent', 'selector': 'app-toolbar-search'},{'name': 'TripPassagesComponent', 'selector': 'app-trip-passages'},{'name': 'TripPassagesListComponent', 'selector': 'app-trip-passages-list'},{'name': 'TripPassagesListItemComponent', 'selector': 'app-trip-passages-list-item'}];
     var DIRECTIVES = [{'name': 'BaseOlMapDirective', 'selector': ''},{'name': 'CountdownTimerDirective', 'selector': 'span[appCountdownTimer]'},{'name': 'OlMainMapDirective', 'selector': 'map[appOlMainMap]'},{'name': 'OlStaticMapDirective', 'selector': 'map[appOlStatic]'},{'name': 'OsmOlMapDirective', 'selector': ''},{'name': 'VectorOlMapDirective', 'selector': ''}];
     var ACTUAL_COMPONENT = {'name': 'DepartureListComponent'};

@@ -183,7 +183,7 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ApplicationRef, Injectable } from &#x27;@angular/core&#x27;;
-import { ActivatedRoute } from &#x27;@angular/router&#x27;;
+import { ActivatedRoute, Data } from &#x27;@angular/router&#x27;;
 import { IStopPassage, IStopPointLocation } from &#x27;@manniwatch/api-types&#x27;;
 import { interval, Observable } from &#x27;rxjs&#x27;;
 import { first, map, mergeMap, startWith, switchMap } from &#x27;rxjs/operators&#x27;;
@@ -198,35 +198,42 @@ export interface IStatus {
 @Injectable()
 export class StopPointInfoService {
     public readonly stopPassageObservable: Observable&lt;IStopPassage&gt;;
-    constructor(private route: ActivatedRoute,
+    constructor(
+        private route: ActivatedRoute,
         private apiService: ApiService,
         public stopService: StopPointService,
-        private appRef: ApplicationRef) {
-        this.stopPassageObservable &#x3D; this.route.data.pipe(map((params: any): IStopPassage &#x3D;&gt; {
-            return params.stopPoint;
-        }));
+        private appRef: ApplicationRef
+    ) {
+        this.stopPassageObservable &#x3D; this.route.data.pipe(
+            map((params: Data): IStopPassage &#x3D;&gt; {
+                return params.stopPoint as IStopPassage;
+            })
+        );
     }
     public createStopPassageRefreshObservable(): Observable&lt;IStopPassage&gt; {
-        return this.stopPassageObservable
-            .pipe(switchMap((value: IStopPassage): Observable&lt;IStopPassage&gt; &#x3D;&gt; {
-                return this.appRef
-                    .isStable.pipe(first((state: boolean): boolean &#x3D;&gt; state),
-                        mergeMap((): Observable&lt;IStopPassage&gt; &#x3D;&gt; {
-                            return interval(5000)
-                                .pipe(switchMap((): Observable&lt;IStopPassage&gt; &#x3D;&gt;
-                                    this.apiService
-                                        .getStopPointPassages(value.stopShortName)));
-                        }),
-                        startWith(value));
-            }));
+        return this.stopPassageObservable.pipe(
+            switchMap((value: IStopPassage): Observable&lt;IStopPassage&gt; &#x3D;&gt; {
+                return this.appRef.isStable.pipe(
+                    first((state: boolean): boolean &#x3D;&gt; state),
+                    mergeMap((): Observable&lt;IStopPassage&gt; &#x3D;&gt; {
+                        return interval(5000).pipe(
+                            switchMap((): Observable&lt;IStopPassage&gt; &#x3D;&gt; this.apiService.getStopPointPassages(value.stopShortName))
+                        );
+                    }),
+                    startWith(value)
+                );
+            })
+        );
     }
 
     public createStopPointLocationObservable(): Observable&lt;IStaticMapData&gt; {
-        return this.stopPassageObservable
-            .pipe(switchMap((stopPassage: IStopPassage): Observable&lt;IStopPointLocation&gt; &#x3D;&gt; {
-                return this.stopService.watchStopPoint(stopPassage.stopShortName)
+        return this.stopPassageObservable.pipe(
+            switchMap((stopPassage: IStopPassage): Observable&lt;IStopPointLocation&gt; &#x3D;&gt; {
+                return this.stopService
+                    .watchStopPoint(stopPassage.stopShortName)
                     .pipe(startWith&lt;IStopPointLocation&gt;(undefined as IStopPointLocation));
-            }), map((stop: IStopPointLocation): IStaticMapData &#x3D;&gt; {
+            }),
+            map((stop: IStopPointLocation): IStaticMapData &#x3D;&gt; {
                 // tslint:disable-next-line:triple-equals
                 if (stop &#x3D;&#x3D; undefined) {
                     return { map: { blur: true } };
@@ -238,7 +245,8 @@ export class StopPointInfoService {
                         },
                     };
                 }
-            }));
+            })
+        );
     }
 }
 </code></pre>

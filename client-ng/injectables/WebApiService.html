@@ -164,7 +164,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/services/web-api.service.ts:25</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/services/web-api.service.ts:26</a></div>
                             </td>
                         </tr>
 
@@ -280,8 +280,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="44"
-                            class="link-to-prism">src/app/services/web-api.service.ts:44</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="50"
+                            class="link-to-prism">src/app/services/web-api.service.ts:50</a></div>
                 </td>
             </tr>
 
@@ -351,8 +351,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="41"
-                            class="link-to-prism">src/app/services/web-api.service.ts:41</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="47"
+                            class="link-to-prism">src/app/services/web-api.service.ts:47</a></div>
                 </td>
             </tr>
 
@@ -422,8 +422,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="100"
-                            class="link-to-prism">src/app/services/web-api.service.ts:100</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="108"
+                            class="link-to-prism">src/app/services/web-api.service.ts:108</a></div>
                 </td>
             </tr>
 
@@ -461,8 +461,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="47"
-                            class="link-to-prism">src/app/services/web-api.service.ts:47</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="53"
+                            class="link-to-prism">src/app/services/web-api.service.ts:53</a></div>
                 </td>
             </tr>
 
@@ -532,8 +532,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="71"
-                            class="link-to-prism">src/app/services/web-api.service.ts:71</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="77"
+                            class="link-to-prism">src/app/services/web-api.service.ts:77</a></div>
                 </td>
             </tr>
 
@@ -603,8 +603,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="50"
-                            class="link-to-prism">src/app/services/web-api.service.ts:50</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="56"
+                            class="link-to-prism">src/app/services/web-api.service.ts:56</a></div>
                 </td>
             </tr>
 
@@ -674,8 +674,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="85"
-                            class="link-to-prism">src/app/services/web-api.service.ts:85</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="92"
+                            class="link-to-prism">src/app/services/web-api.service.ts:92</a></div>
                 </td>
             </tr>
 
@@ -745,8 +745,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="53"
-                            class="link-to-prism">src/app/services/web-api.service.ts:53</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="59"
+                            class="link-to-prism">src/app/services/web-api.service.ts:59</a></div>
                 </td>
             </tr>
 
@@ -887,8 +887,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="63"
-                            class="link-to-prism">src/app/services/web-api.service.ts:63</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="69"
+                            class="link-to-prism">src/app/services/web-api.service.ts:69</a></div>
                 </td>
             </tr>
 
@@ -976,8 +976,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="56"
-                            class="link-to-prism">src/app/services/web-api.service.ts:56</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="62"
+                            class="link-to-prism">src/app/services/web-api.service.ts:62</a></div>
                 </td>
             </tr>
 
@@ -1089,20 +1089,25 @@ import { SettingsService } from &#x27;./settings&#x27;;
 
 @Injectable()
 export class WebApiService implements ApiService {
-
-    public constructor(public http: HttpClient, private config: SettingsService) { }
+    public constructor(public http: HttpClient, private config: SettingsService) {}
 
     public baseUrl(): string {
         const basePath: string &#x3D; this.config.config.apiEndpoint;
-        return basePath.endsWith(&#x27;\/&#x27;) ? basePath : (&#x60;${basePath}\/&#x60;);
+        return basePath.endsWith(&#x27;/&#x27;) ? basePath : &#x60;${basePath}/&#x60;;
     }
 
     public getTripPassages(tripId: string): Observable&lt;TripInfoWithId&gt; {
-        return this.http.get&lt;ITripPassages&gt;(&#x60;${this.baseUrl()}trip/${tripId}/passages?mode&#x3D;departure&#x60;)
-            .pipe(map((trip: ITripPassages): TripInfoWithId &#x3D;&gt;
-                Object.assign({
-                    tripId,
-                }, trip)));
+        return this.http.get&lt;ITripPassages&gt;(&#x60;${this.baseUrl()}trip/${tripId}/passages?mode&#x3D;departure&#x60;).pipe(
+            map(
+                (trip: ITripPassages): TripInfoWithId &#x3D;&gt;
+                    Object.assign(
+                        {
+                            tripId,
+                        },
+                        trip
+                    )
+            )
+        );
     }
     public getRouteByVehicleId(vehicleId: string): Observable&lt;IVehiclePathInfo&gt; {
         return this.http.get&lt;IVehiclePathInfo&gt;(&#x60;${this.baseUrl()}vehicle/${vehicleId}/route&#x60;);
@@ -1119,14 +1124,14 @@ export class WebApiService implements ApiService {
     public getStopPointPassages(stopPointId: string): Observable&lt;IStopPassage&gt; {
         return this.http.get&lt;IStopPassage&gt;(&#x60;${this.baseUrl()}stopPoint/${stopPointId}/passages&#x60;);
     }
-    public getVehicleLocations(lastUpdate: number &#x3D; 0): Observable&lt;IVehicleLocationList&gt; {
+    public getVehicleLocations(lastUpdate &#x3D; 0): Observable&lt;IVehicleLocationList&gt; {
         return this.http.get&lt;IVehicleLocationList&gt;(&#x60;${this.baseUrl()}geo/vehicles&#x60;, {
             params: {
                 lastUpdate: &#x60;${lastUpdate}&#x60;,
             },
         });
     }
-    public getVehicleLocation(vehicleId: string, lastUpdate: number &#x3D; 0): Observable&lt;IVehicleLocation&gt; {
+    public getVehicleLocation(vehicleId: string, lastUpdate &#x3D; 0): Observable&lt;IVehicleLocation&gt; {
         return this.http.get&lt;IVehicleLocation&gt;(&#x60;${this.baseUrl()}geo/vehicle/${vehicleId}&#x60;, {
             params: {
                 lastUpdate: &#x60;${lastUpdate}&#x60;,
@@ -1145,8 +1150,9 @@ export class WebApiService implements ApiService {
                 },
             });
         }
-        return this.http.get&lt;IStopLocations&gt;(&#x60;${this.baseUrl()}&#x60; +
-            &#x60;geo/stops?left&#x3D;-648000000&amp;bottom&#x3D;-324000000&amp;right&#x3D;648000000&amp;top&#x3D;324000000&#x60;);
+        return this.http.get&lt;IStopLocations&gt;(
+            &#x60;${this.baseUrl()}&#x60; + &#x60;geo/stops?left&#x3D;-648000000&amp;bottom&#x3D;-324000000&amp;right&#x3D;648000000&amp;top&#x3D;324000000&#x60;
+        );
     }
     public getStopPointLocations(bounds?: IBounds): Observable&lt;IStopPointLocations&gt; {
         if (bounds) {
@@ -1159,20 +1165,24 @@ export class WebApiService implements ApiService {
                 },
             });
         }
-        return this.http.get&lt;IStopPointLocations&gt;(&#x60;${this.baseUrl()}&#x60; +
-            &#x60;geo/stopPoints?left&#x3D;-648000000&amp;bottom&#x3D;-324000000&amp;right&#x3D;648000000&amp;top&#x3D;324000000&#x60;);
+        return this.http.get&lt;IStopPointLocations&gt;(
+            &#x60;${this.baseUrl()}&#x60; + &#x60;geo/stopPoints?left&#x3D;-648000000&amp;bottom&#x3D;-324000000&amp;right&#x3D;648000000&amp;top&#x3D;324000000&#x60;
+        );
     }
 
     public getSettings(): Observable&lt;ISettings&gt; {
-        return this.http.get(&#x60;${this.baseUrl()}settings&#x60;, {
-            responseType: &#x27;text&#x27;,
-        })
-            .pipe(map((body: string): ISettings &#x3D;&gt; {
-                const firstBracket: number &#x3D; body.indexOf(&#x27;{&#x27;);
-                const lastBracket: number &#x3D; body.lastIndexOf(&#x27;}&#x27;);
-                const parsedBody: string &#x3D; body.substr(firstBracket, lastBracket - firstBracket + 1);
-                return JSON.parse(parsedBody);
-            }));
+        return this.http
+            .get(&#x60;${this.baseUrl()}settings&#x60;, {
+                responseType: &#x27;text&#x27;,
+            })
+            .pipe(
+                map((body: string): ISettings &#x3D;&gt; {
+                    const firstBracket: number &#x3D; body.indexOf(&#x27;{&#x27;);
+                    const lastBracket: number &#x3D; body.lastIndexOf(&#x27;}&#x27;);
+                    const parsedBody: string &#x3D; body.substr(firstBracket, lastBracket - firstBracket + 1);
+                    return JSON.parse(parsedBody) as ISettings;
+                })
+            );
     }
 }
 </code></pre>

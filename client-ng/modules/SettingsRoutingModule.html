@@ -72,8 +72,9 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">/*!
- * Source https://github.com/manniwatch/manniwatch Package: client-ng
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">/*
+ * Package @manniwatch/client-ng
+ * Source https://manniwatch.github.io/manniwatch/
  */
 
 import { NgModule } from &#x27;@angular/core&#x27;;
@@ -93,14 +94,10 @@ const settingsRoutes: Routes &#x3D; [
 ];
 
 @NgModule({
-    exports: [
-        RouterModule,
-    ],
-    imports: [
-        RouterModule.forChild(settingsRoutes),
-    ],
+    exports: [RouterModule],
+    imports: [RouterModule.forChild(settingsRoutes)],
 })
-export class SettingsRoutingModule { }
+export class SettingsRoutingModule {}
 </code></pre>
     </div>
 </div>

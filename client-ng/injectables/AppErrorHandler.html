@@ -120,7 +120,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/app-error-handler.ts:13</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/app-error-handler.ts:14</a></div>
                             </td>
                         </tr>
 
@@ -185,8 +185,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="29"
-                            class="link-to-prism">src/app/app-error-handler.ts:29</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="32"
+                            class="link-to-prism">src/app/app-error-handler.ts:32</a></div>
                 </td>
             </tr>
 
@@ -258,8 +258,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="51"
-                            class="link-to-prism">src/app/app-error-handler.ts:51</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="56"
+                            class="link-to-prism">src/app/app-error-handler.ts:56</a></div>
                 </td>
             </tr>
 
@@ -352,8 +352,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="22"
-                            class="link-to-prism">src/app/app-error-handler.ts:22</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="23"
+                            class="link-to-prism">src/app/app-error-handler.ts:23</a></div>
                 </td>
             </tr>
 
@@ -393,20 +393,22 @@ import { AppNotificationService, AppNotificationType } from &#x27;./services/app
  */
 @Injectable()
 export class AppErrorHandler implements ErrorHandler {
-
-    public constructor(private injector: Injector) { }
+    public constructor(private injector: Injector) {}
 
     /**
      * If the browser supports the online tag it will
      * returns its value. otherwise it will always be true
+     *
      * @returns true if the navigator is offline
      */
     public isClientOffline(): boolean {
-        return (!navigator.onLine);
+        return !navigator.onLine;
     }
 
     /**
      * Handles all errors
+     *
+     * @param error
      */
     public handleError(error: Error | HttpErrorResponse | any): void {
         // The notification service
@@ -414,8 +416,9 @@ export class AppErrorHandler implements ErrorHandler {
         if (error instanceof HttpErrorResponse) {
             return this.handleHttpErrorResponse(error, notificationService);
         } else {
+            const message: string &#x3D; &#x27;message&#x27; in error ? (error as { message: string }).message : &#x27;Unknown error&#x27;;
             notificationService.notify({
-                message: error.message,
+                message,
                 reportable: true,
                 title: &#x27;Uncaught error occured&#x27;,
                 type: AppNotificationType.ERROR,
@@ -427,6 +430,7 @@ export class AppErrorHandler implements ErrorHandler {
 
     /**
      * Handles HttpErrorResponses
+     *
      * @param errorResponse the response to handle
      * @param notificationService the notification service to be used
      */

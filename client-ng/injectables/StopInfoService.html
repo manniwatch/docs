@@ -123,7 +123,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/routes/stop/stop-info.service.ts:19</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/routes/stop/stop-info.service.ts:20</a></div>
                             </td>
                         </tr>
 
@@ -263,8 +263,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="37"
-                            class="link-to-prism">src/app/routes/stop/stop-info.service.ts:37</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="38"
+                            class="link-to-prism">src/app/routes/stop/stop-info.service.ts:38</a></div>
                 </td>
             </tr>
 
@@ -306,7 +306,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/routes/stop/stop-info.service.ts:19</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/routes/stop/stop-info.service.ts:20</a></div>
                         </td>
                     </tr>
 
@@ -320,7 +320,7 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ApplicationRef, Injectable } from &#x27;@angular/core&#x27;;
-import { ActivatedRoute } from &#x27;@angular/router&#x27;;
+import { ActivatedRoute, Data } from &#x27;@angular/router&#x27;;
 import { IStopLocation, IStopPassage } from &#x27;@manniwatch/api-types&#x27;;
 import { interval, Observable } from &#x27;rxjs&#x27;;
 import { first, map, mergeMap, startWith, switchMap } from &#x27;rxjs/operators&#x27;;
@@ -334,36 +334,37 @@ export interface IStatus {
 @Injectable()
 export class StopInfoService {
     public stopInfoObservable: Observable&lt;IStopPassage&gt;;
-    constructor(private route: ActivatedRoute,
+    constructor(
+        private route: ActivatedRoute,
         private apiService: ApiService,
         private stopService: StopPointService,
-        private appRef: ApplicationRef) {
-        this.stopInfoObservable &#x3D; this.route.data
-            .pipe(map((data: any): IStopPassage &#x3D;&gt;
-                data.stopInfo));
-
+        private appRef: ApplicationRef
+    ) {
+        this.stopInfoObservable &#x3D; this.route.data.pipe(map((data: Data): IStopPassage &#x3D;&gt; data.stopInfo as IStopPassage));
     }
 
     public createStopLocationObservable(): Observable&lt;IStopLocation&gt; {
-        return this.stopInfoObservable
-            .pipe(mergeMap((value: IStopPassage): Observable&lt;IStopLocation&gt; &#x3D;&gt; {
+        return this.stopInfoObservable.pipe(
+            mergeMap((value: IStopPassage): Observable&lt;IStopLocation&gt; &#x3D;&gt; {
                 return this.stopService.filterStop(value.stopShortName);
-            }));
+            })
+        );
     }
 
     public createStopPassageRefreshObservable(): Observable&lt;IStopPassage&gt; {
-        return this.stopInfoObservable
-            .pipe(switchMap((value: IStopPassage): Observable&lt;IStopPassage&gt; &#x3D;&gt; {
-                return this.appRef
-                    .isStable.pipe(first((state: boolean): boolean &#x3D;&gt; state),
-                        mergeMap((): Observable&lt;IStopPassage&gt; &#x3D;&gt; {
-                            return interval(10000)
-                                .pipe(switchMap((): Observable&lt;IStopPassage&gt; &#x3D;&gt;
-                                    this.apiService
-                                        .getStopPassages(value.stopShortName)));
-                        }),
-                        startWith(value));
-            }));
+        return this.stopInfoObservable.pipe(
+            switchMap((value: IStopPassage): Observable&lt;IStopPassage&gt; &#x3D;&gt; {
+                return this.appRef.isStable.pipe(
+                    first((state: boolean): boolean &#x3D;&gt; state),
+                    mergeMap((): Observable&lt;IStopPassage&gt; &#x3D;&gt; {
+                        return interval(10000).pipe(
+                            switchMap((): Observable&lt;IStopPassage&gt; &#x3D;&gt; this.apiService.getStopPassages(value.stopShortName))
+                        );
+                    }),
+                    startWith(value)
+                );
+            })
+        );
     }
 }
 </code></pre>

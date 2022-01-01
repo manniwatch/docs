@@ -61,6 +61,12 @@
 
 
 
+            <p class="comment">
+                <h3>Implements</h3>
+            </p>
+            <p class="comment">
+                            <code><a href="https://angular.io/api/core/AfterViewInit" target="_blank" >AfterViewInit</a></code>
+            </p>
 
 
 
@@ -120,7 +126,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/modules/openlayers/osm-ol-map.directive.ts:21</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/modules/openlayers/osm-ol-map.directive.ts:18</a></div>
                             </td>
                         </tr>
 
@@ -213,8 +219,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="82"
-                            class="link-to-prism">src/app/modules/openlayers/osm-ol-map.directive.ts:82</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="75"
+                            class="link-to-prism">src/app/modules/openlayers/osm-ol-map.directive.ts:75</a></div>
                 </td>
             </tr>
 
@@ -291,8 +297,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="94"
-                            class="link-to-prism">src/app/modules/openlayers/osm-ol-map.directive.ts:94</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="87"
+                            class="link-to-prism">src/app/modules/openlayers/osm-ol-map.directive.ts:87</a></div>
                 </td>
             </tr>
 
@@ -362,8 +368,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="52"
-                            class="link-to-prism">src/app/modules/openlayers/osm-ol-map.directive.ts:52</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="44"
+                            class="link-to-prism">src/app/modules/openlayers/osm-ol-map.directive.ts:44</a></div>
                 </td>
             </tr>
 
@@ -401,8 +407,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="28"
-                            class="link-to-prism">src/app/modules/openlayers/osm-ol-map.directive.ts:28</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="22"
+                            class="link-to-prism">src/app/modules/openlayers/osm-ol-map.directive.ts:22</a></div>
                 </td>
             </tr>
 
@@ -440,8 +446,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="66"
-                            class="link-to-prism">src/app/modules/openlayers/osm-ol-map.directive.ts:66</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="58"
+                            class="link-to-prism">src/app/modules/openlayers/osm-ol-map.directive.ts:58</a></div>
                 </td>
             </tr>
 
@@ -508,11 +514,7 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
-    Directive,
-    ElementRef,
-    NgZone,
-} from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { AfterViewInit, Directive, ElementRef, NgZone } from &#x27;@angular/core&#x27;;
 import { Map, View } from &#x27;ol&#x27;;
 import { Coordinate } from &#x27;ol/coordinate&#x27;;
 import { defaults } from &#x27;ol/interaction&#x27;;
@@ -524,11 +526,8 @@ import { environment } from &#x27;src/environments&#x27;;
 import { BaseOlMapDirective } from &#x27;./base-ol-map.directive&#x27;;
 
 @Directive()
-export abstract class OsmOlMapDirective extends BaseOlMapDirective&lt;OSM&gt; {
-
-    constructor(elRef: ElementRef,
-        zone: NgZone,
-        settings: SettingsService) {
+export abstract class OsmOlMapDirective extends BaseOlMapDirective&lt;OSM&gt; implements AfterViewInit {
+    constructor(elRef: ElementRef, zone: NgZone, settings: SettingsService) {
         super(elRef, zone, settings);
     }
     public ngAfterViewInit(): void {
@@ -537,10 +536,8 @@ export abstract class OsmOlMapDirective extends BaseOlMapDirective&lt;OSM&gt; {
             this.mBackgroundMapLayer &#x3D; this.createMapLayer();
             this.map &#x3D; new Map({
                 interactions: defaults(),
-                layers: [
-                    this.mBackgroundMapLayer,
-                ],
-                target: this.elRef.nativeElement,
+                layers: [this.mBackgroundMapLayer],
+                target: this.elRef.nativeElement as HTMLElement,
                 view: new View({
                     // projection: &#x27;EPSG:3857&#x27;, // &#x27;EPSG:4326&#x27;,
                     center: this.settings.getInitialMapCenter(),
@@ -583,13 +580,14 @@ export abstract class OsmOlMapDirective extends BaseOlMapDirective&lt;OSM&gt; {
 
     /**
      * Selected theme
+     *
      * @param theme theme to set
      */
     public applyTheme(theme: Theme): void {
         NgZone.assertNotInAngularZone();
-        const mapProvider: any &#x3D; environment.map.mapProvider;
+        const mapProvider &#x3D; environment.map.mapProvider;
         if (mapProvider) {
-            if (mapProvider?.options_dark &amp;&amp; theme &#x3D;&#x3D;&#x3D; Theme.DARK) {
+            if (&#x27;options_dark&#x27; in mapProvider &amp;&amp; theme &#x3D;&#x3D;&#x3D; Theme.DARK) {
                 this.mBackgroundMapLayer.setSource(new OSM(mapProvider.options_dark));
             } else {
                 this.mBackgroundMapLayer.setSource(new OSM(mapProvider.options));
@@ -598,6 +596,7 @@ export abstract class OsmOlMapDirective extends BaseOlMapDirective&lt;OSM&gt; {
     }
 
     public applyVectorTheme(theme: Theme): void {
+        // Keep
     }
 }
 </code></pre>

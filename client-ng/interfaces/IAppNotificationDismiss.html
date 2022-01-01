@@ -225,16 +225,13 @@ export interface IAppNotificationDismiss {
     providedIn: &#x27;root&#x27;,
 })
 export class AppNotificationService {
-
     /**
      * Subject for replaying notifcations
      */
-    private notificationSubject: Subject&lt;IAppNotification&gt; &#x3D; new Subject();
-    constructor() {
-    }
-
+    private notificationSubject: Subject&lt;IAppNotification&gt; &#x3D; new Subject&lt;IAppNotification&gt;();
     /**
      * Will publish the notification
+     *
      * @param noti the notification
      */
     public notify(noti: IAppNotification): void {
@@ -249,9 +246,8 @@ export class AppNotificationService {
     }
 
     public report(err: any): void {
-
+        // TODO
     }
-
 }
 </code></pre>
     </div>

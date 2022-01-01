@@ -184,7 +184,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/routes/stops/stops-info.component.ts:14</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/routes/stops/stops-info.component.ts:15</a></div>
                             </td>
                         </tr>
 
@@ -333,7 +333,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/routes/stops/stops-info.component.ts:14</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/routes/stops/stops-info.component.ts:15</a></div>
                         </td>
                     </tr>
 
@@ -362,7 +362,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/routes/stops/stops-info.component.ts:29</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/routes/stops/stops-info.component.ts:30</a></div>
                                 </td>
                             </tr>
                     <tr>
@@ -387,8 +387,8 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
-import { ActivatedRoute } from &#x27;@angular/router&#x27;;
-import { IStopLocation } from &#x27;@manniwatch/api-types&#x27;;
+import { ActivatedRoute, Data } from &#x27;@angular/router&#x27;;
+import { IStopLocation, IStopLocations } from &#x27;@manniwatch/api-types&#x27;;
 @Component({
     selector: &#x27;app-stops-info&#x27;,
     styleUrls: [&#x27;./stops-info.component.scss&#x27;],
@@ -397,10 +397,9 @@ import { IStopLocation } from &#x27;@manniwatch/api-types&#x27;;
 export class StopsInfoComponent {
     private mStops: IStopLocation[] &#x3D; [];
     constructor(private activatedRoute: ActivatedRoute) {
-        const st: IStopLocation[] &#x3D; this.activatedRoute.snapshot.data.stops.stops.sort((a: IStopLocation, b: IStopLocation): number &#x3D;&gt;
-            a.name.localeCompare(b.name));
-        this.mStops &#x3D; st;
-
+        const data: Data &amp; { stops?: IStopLocations } &#x3D; this.activatedRoute.snapshot.data;
+        const stops: IStopLocation[] | undefined &#x3D; data?.stops?.stops;
+        this.mStops &#x3D; stops ? stops.sort((a: IStopLocation, b: IStopLocation): number &#x3D;&gt; a.name.localeCompare(b.name)) : [];
     }
 
     public hasHeader(idx: number): boolean {
@@ -408,18 +407,28 @@ export class StopsInfoComponent {
     }
     /**
      * The stops to be displayed
+     *
      * @returns a list of stops to be used
      */
     public get stops(): IStopLocation[] {
         return this.mStops;
     }
-
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;mat-nav-list class&#x3D;&quot;stoplist&quot; role&#x3D;&quot;list&quot;&gt;&lt;ng-container *ngFor&#x3D;&quot;let item of stops;let idx &#x3D; index;&quot;&gt;&lt;mat-divider *ngIf&#x3D;&quot;hasHeader(idx)&amp;amp;&amp;amp;idx&amp;gt;0&quot;&gt;&lt;/mat-divider&gt;&lt;h3 *ngIf&#x3D;&quot;hasHeader(idx)&quot; mat-subheader&gt;{{item.name.charAt(0)}}&lt;/h3&gt;&lt;a [routerLink]&#x3D;&quot;[&#x27;/stop&#x27;, item.shortName]&quot; title&#x3D;&quot;{{item?.name}}&quot;&gt;&lt;mat-list-item role&#x3D;&quot;listitem&quot;&gt;&lt;mat-icon mat-list-icon&gt;place&lt;/mat-icon&gt;&lt;h4 mat-line&gt;{{item?.name}}&lt;/h4&gt;&lt;/mat-list-item&gt;&lt;/a&gt;&lt;/ng-container&gt;&lt;/mat-nav-list&gt;</code></pre>
+        <pre class="line-numbers"><code class="language-html">
+&lt;mat-nav-list class&#x3D;&quot;stoplist&quot; role&#x3D;&quot;list&quot;&gt;
+  &lt;ng-container *ngFor&#x3D;&quot;let item of stops;let idx &#x3D; index;&quot;&gt;
+    &lt;mat-divider *ngIf&#x3D;&quot;hasHeader(idx)&amp;amp;&amp;amp;idx&amp;gt;0&quot;&gt;&lt;/mat-divider&gt;
+    &lt;h3 *ngIf&#x3D;&quot;hasHeader(idx)&quot; mat-subheader&gt;{{item.name.charAt(0)}}&lt;/h3&gt;&lt;a [routerLink]&#x3D;&quot;[&#x27;/stop&#x27;, item.shortName]&quot; title&#x3D;&quot;{{item?.name}}&quot;&gt;
+      &lt;mat-list-item role&#x3D;&quot;listitem&quot;&gt;
+        &lt;mat-icon mat-list-icon&gt;place&lt;/mat-icon&gt;
+        &lt;h4 mat-line&gt;{{item?.name}}&lt;/h4&gt;
+      &lt;/mat-list-item&gt;&lt;/a&gt;
+  &lt;/ng-container&gt;
+&lt;/mat-nav-list&gt;</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
@@ -430,14 +439,14 @@ export class StopsInfoComponent {
     overflow-y: auto;
     overflow-x: hidden;
     flex: 1;
-    
 }
 @import &#x27;./../../box-settings.scss&#x27;;
-@media (min-width: #{$boxMaxWidth + 1}){
-    mat-nav-list.stoplist{
-        padding-top:100px;
+@media (min-width: #{$boxMaxWidth + 1}) {
+    mat-nav-list.stoplist {
+        padding-top: 100px;
     }
-}</code></pre>
+}
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -465,7 +474,7 @@ export class StopsInfoComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><mat-nav-list class="stoplist" role="list"><ng-container *ngFor="let item of stops;let idx = index;"><mat-divider *ngIf="hasHeader(idx)&amp;&amp;idx&gt;0"></mat-divider><h3 *ngIf="hasHeader(idx)" mat-subheader>{{item.name.charAt(0)}}</h3><a [routerLink]="[\'/stop\', item.shortName]" title="{{item?.name}}"><mat-list-item role="listitem"><mat-icon mat-list-icon>place</mat-icon><h4 mat-line>{{item?.name}}</h4></mat-list-item></a></ng-container></mat-nav-list></div>'
+        var COMPONENT_TEMPLATE = '<div><mat-nav-list class="stoplist" role="list">  <ng-container *ngFor="let item of stops;let idx = index;">    <mat-divider *ngIf="hasHeader(idx)&amp;&amp;idx&gt;0"></mat-divider>    <h3 *ngIf="hasHeader(idx)" mat-subheader>{{item.name.charAt(0)}}</h3><a [routerLink]="[\'/stop\', item.shortName]" title="{{item?.name}}">      <mat-list-item role="listitem">        <mat-icon mat-list-icon>place</mat-icon>        <h4 mat-line>{{item?.name}}</h4>      </mat-list-item></a>  </ng-container></mat-nav-list></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CommonErrorComponent', 'selector': 'app-common-error'},{'name': 'DepartureListComponent', 'selector': 'app-departure-list'},{'name': 'DepartureListItemComponent', 'selector': 'app-departure-list-item'},{'name': 'HeaderBoxComponent', 'selector': 'app-header-box'},{'name': 'MainToolbarComponent', 'selector': 'app-main-toolbar'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'NotFoundMessageSwitchComponent', 'selector': 'app-not-found-msg-switch'},{'name': 'RequestUpdateDialogComponent', 'selector': 'app-request-update-dialog'},{'name': 'RetryDialogComponent', 'selector': 'app-retry-dialog'},{'name': 'RouteListComponent', 'selector': 'app-route-list'},{'name': 'RouteLoadingIndicatorComponent', 'selector': 'app-route-loading-indicator'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'StopInfoComponent', 'selector': 'app-stop-info'},{'name': 'StopPointInfoComponent', 'selector': 'app-stop-point-info'},{'name': 'StopsInfoComponent', 'selector': 'app-stops-info'},{'name': 'ThemeSelectorComponent', 'selector': 'app-theme-selector'},{'name': 'ToolbarSearchBoxComponent', 'selector': 'app-toolbar-search'},{'name': 'TripPassagesComponent', 'selector': 'app-trip-passages'},{'name': 'TripPassagesListComponent', 'selector': 'app-trip-passages-list'},{'name': 'TripPassagesListItemComponent', 'selector': 'app-trip-passages-list-item'}];
     var DIRECTIVES = [{'name': 'BaseOlMapDirective', 'selector': ''},{'name': 'CountdownTimerDirective', 'selector': 'span[appCountdownTimer]'},{'name': 'OlMainMapDirective', 'selector': 'map[appOlMainMap]'},{'name': 'OlStaticMapDirective', 'selector': 'map[appOlStatic]'},{'name': 'OsmOlMapDirective', 'selector': ''},{'name': 'VectorOlMapDirective', 'selector': ''}];
     var ACTUAL_COMPONENT = {'name': 'StopsInfoComponent'};

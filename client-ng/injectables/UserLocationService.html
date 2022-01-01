@@ -175,15 +175,15 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>createPositionRequest(timeout: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, highAccuracy: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
+                    <code>createPositionRequest(timeout: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, highAccuracy)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="46"
-                            class="link-to-prism">src/app/services/user-location.service.ts:46</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="47"
+                            class="link-to-prism">src/app/services/user-location.service.ts:47</a></div>
                 </td>
             </tr>
 
@@ -222,7 +222,6 @@
                                 <tr>
                                     <td>highAccuracy</td>
                                     <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
                                     </td>
 
                                     <td>
@@ -276,7 +275,7 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>new BehaviorSubject(undefined)</code>
+                        <i>Default value : </i><code>new BehaviorSubject&lt;GeolocationPositionError&gt;(undefined)</code>
                     </td>
                 </tr>
                     <tr>
@@ -308,7 +307,7 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>new BehaviorSubject(undefined)</code>
+                        <i>Default value : </i><code>new BehaviorSubject&lt;GeolocationPosition&gt;(undefined)</code>
                     </td>
                 </tr>
                     <tr>
@@ -427,9 +426,8 @@ import { catchError, debounceTime, mergeMap } from &#x27;rxjs/operators&#x27;;
     providedIn: &#x27;root&#x27;,
 })
 export class UserLocationService {
-
     public get featureAvailable(): boolean {
-        return (navigator.geolocation) ? true : false;
+        return navigator.geolocation ? true : false;
     }
 
     public get location(): GeolocationPosition {
@@ -442,27 +440,27 @@ export class UserLocationService {
         return this.locationSubject.asObservable();
     }
 
-    private locationErrorSubject: BehaviorSubject&lt;GeolocationPositionError&gt; &#x3D; new BehaviorSubject(undefined);
+    private locationErrorSubject: BehaviorSubject&lt;GeolocationPositionError&gt; &#x3D; new BehaviorSubject&lt;GeolocationPositionError&gt;(undefined);
 
-    private locationSubject: BehaviorSubject&lt;GeolocationPosition&gt; &#x3D; new BehaviorSubject(undefined);
+    private locationSubject: BehaviorSubject&lt;GeolocationPosition&gt; &#x3D; new BehaviorSubject&lt;GeolocationPosition&gt;(undefined);
     public constructor() {
         this.locationErrorObservable
-            .pipe(debounceTime(30000),
-                mergeMap((val: GeolocationPositionError): Observable&lt;GeolocationPosition&gt; &#x3D;&gt;
-                    this.createPositionRequest()),
-                catchError((err: any): Observable&lt;any&gt; &#x3D;&gt; {
+            .pipe(
+                debounceTime(30000),
+                mergeMap((val: GeolocationPositionError): Observable&lt;GeolocationPosition&gt; &#x3D;&gt; this.createPositionRequest()),
+                catchError((err: GeolocationPositionError): Observable&lt;never&gt; &#x3D;&gt; {
                     this.locationErrorSubject.next(err);
                     return EMPTY;
-                }))
+                })
+            )
             .subscribe((val: GeolocationPosition): void &#x3D;&gt; {
                 this.locationErrorSubject.next(undefined);
                 this.locationSubject.next(val);
             });
     }
 
-    public createPositionRequest(timeout: number &#x3D; 10000, highAccuracy: boolean &#x3D; false): Observable&lt;GeolocationPosition&gt; {
-        return new Observable&lt;any&gt;((subscriber: Subscriber&lt;GeolocationPosition&gt;): void &#x3D;&gt; {
-
+    public createPositionRequest(timeout &#x3D; 10000, highAccuracy &#x3D; false): Observable&lt;GeolocationPosition&gt; {
+        return new Observable&lt;GeolocationPosition&gt;((subscriber: Subscriber&lt;GeolocationPosition&gt;): void &#x3D;&gt; {
             const geoSuccess: (position: GeolocationPosition) &#x3D;&gt; void &#x3D; (position: GeolocationPosition): void &#x3D;&gt; {
                 subscriber.next(position);
                 subscriber.complete();
@@ -477,7 +475,6 @@ export class UserLocationService {
             });
         });
     }
-
 }
 </code></pre>
     </div>

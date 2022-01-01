@@ -209,7 +209,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/app.component.ts:25</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/app.component.ts:26</a></div>
                             </td>
                         </tr>
 
@@ -310,7 +310,7 @@
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>onVoted(agreed: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                    <code>onVoted(agreed: TripInfoWithId)</code>
                 </td>
             </tr>
 
@@ -341,7 +341,7 @@
                                 <tr>
                                     <td>agreed</td>
                                     <td>
-                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            <code>TripInfoWithId</code>
                                     </td>
 
                                     <td>
@@ -430,7 +430,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/app.component.ts:18</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/app.component.ts:19</a></div>
                         </td>
                     </tr>
 
@@ -456,7 +456,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/app.component.ts:24</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/app.component.ts:25</a></div>
                         </td>
                     </tr>
 
@@ -491,7 +491,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/app.component.ts:23</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/app.component.ts:24</a></div>
                         </td>
                     </tr>
 
@@ -526,7 +526,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/app.component.ts:21</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/app.component.ts:22</a></div>
                         </td>
                     </tr>
 
@@ -552,7 +552,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/app.component.ts:25</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/app.component.ts:26</a></div>
                         </td>
                     </tr>
 
@@ -581,7 +581,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/app.component.ts:15</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/app.component.ts:16</a></div>
                                 </td>
                             </tr>
 
@@ -594,6 +594,7 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, ViewChild } from &#x27;@angular/core&#x27;;
 import { MatSidenav, MatSidenavContainer } from &#x27;@angular/material/sidenav&#x27;;
+import { TripInfoWithId } from &#x27;@manniwatch/client-types&#x27;;
 import { SidebarService } from &#x27;src/app/modules/sidebar&#x27;;
 @Component({
     selector: &#x27;app-root&#x27;,
@@ -601,7 +602,6 @@ import { SidebarService } from &#x27;src/app/modules/sidebar&#x27;;
     templateUrl: &#x27;./app.component.html&#x27;,
 })
 export class AppComponent implements OnInit {
-
     public get isSidenavOpen(): boolean {
         return this.sidenav.opened;
     }
@@ -613,17 +613,15 @@ export class AppComponent implements OnInit {
     sidenav: MatSidenav;
     predictions: any;
     tripId: string;
-    constructor(private sidebarService: SidebarService) {
-    }
+    constructor(private sidebarService: SidebarService) {}
     public ngOnInit(): void {
-        this.sidebarService.sidebarObservable
-            .subscribe((open: boolean): void &#x3D;&gt; {
-                if (open) {
-                    this.sidenav.open();
-                } else {
-                    this.sidenav.close();
-                }
-            });
+        this.sidebarService.sidebarObservable.subscribe((open: boolean): void &#x3D;&gt; {
+            if (open) {
+                void this.sidenav.open();
+            } else {
+                void this.sidenav.close();
+            }
+        });
         this.sidenav.openedChange.subscribe((open: boolean): void &#x3D;&gt; {
             if (open) {
                 this.sidebarService.openSidebar();
@@ -632,20 +630,33 @@ export class AppComponent implements OnInit {
             }
         });
     }
-    public onVoted(agreed: any): void {
+
+    public onVoted(agreed: TripInfoWithId): void {
         this.tripId &#x3D; agreed.tripId;
     }
 
     public toggleSidebar(): void {
-        this.sidenav.toggle();
+        void this.sidenav.toggle();
     }
-
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;mat-sidenav-container class&#x3D;&quot;main-container&quot; #sidenavContainer [hasBackdrop]&#x3D;&quot;true&quot;&gt;&lt;mat-sidenav class&#x3D;&quot;main-nav&quot; #sidenav mode&#x3D;&quot;over&quot;&gt;&lt;app-sidebar&gt;&lt;/app-sidebar&gt;&lt;/mat-sidenav&gt;&lt;mat-sidenav-content&gt;&lt;map appOlMainMap&gt;&lt;/map&gt;&lt;div class&#x3D;&quot;overlay-box&quot;&gt;&lt;div class&#x3D;&quot;router-box&quot;&gt;&lt;router-outlet&gt;&lt;/router-outlet&gt;&lt;/div&gt;&lt;app-main-toolbar&gt;&lt;/app-main-toolbar&gt;&lt;/div&gt;&lt;/mat-sidenav-content&gt;&lt;/mat-sidenav-container&gt;</code></pre>
+        <pre class="line-numbers"><code class="language-html">
+&lt;mat-sidenav-container class&#x3D;&quot;main-container&quot; #sidenavContainer [hasBackdrop]&#x3D;&quot;true&quot;&gt;
+  &lt;mat-sidenav class&#x3D;&quot;main-nav&quot; #sidenav mode&#x3D;&quot;over&quot;&gt;
+    &lt;app-sidebar&gt;&lt;/app-sidebar&gt;
+  &lt;/mat-sidenav&gt;
+  &lt;mat-sidenav-content&gt;&lt;map appOlMainMap&gt;&lt;/map&gt;
+    &lt;div class&#x3D;&quot;overlay-box&quot;&gt;
+      &lt;div class&#x3D;&quot;router-box&quot;&gt;
+        &lt;router-outlet&gt;&lt;/router-outlet&gt;
+      &lt;/div&gt;
+      &lt;app-main-toolbar&gt;&lt;/app-main-toolbar&gt;
+    &lt;/div&gt;
+  &lt;/mat-sidenav-content&gt;
+&lt;/mat-sidenav-container&gt;</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
@@ -653,7 +664,7 @@ export class AppComponent implements OnInit {
                     <code>./app.component.scss</code>
                 </p>
                 <pre class="line-numbers"><code class="language-scss">@use &#x27;sass:math&#x27;;
-@use &#x27;~@angular/material&#x27; as mat;
+@use &#x27;@angular/material&#x27; as mat;
 
 :host {
     position: absolute;
@@ -670,7 +681,7 @@ export class AppComponent implements OnInit {
     display: flex;
 }
 
-@import &quot;./box-settings.scss&quot;;
+@import &#x27;./box-settings.scss&#x27;;
 mat-sidenav-container {
     flex: 1 1 auto;
     display: flex;
@@ -858,7 +869,7 @@ app-main-toolbar {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><mat-sidenav-container class="main-container" #sidenavContainer [hasBackdrop]="true"><mat-sidenav class="main-nav" #sidenav mode="over"><app-sidebar></app-sidebar></mat-sidenav><mat-sidenav-content><map appOlMainMap></map><div class="overlay-box"><div class="router-box"><router-outlet></router-outlet></div><app-main-toolbar></app-main-toolbar></div></mat-sidenav-content></mat-sidenav-container></div>'
+        var COMPONENT_TEMPLATE = '<div><mat-sidenav-container class="main-container" #sidenavContainer [hasBackdrop]="true">  <mat-sidenav class="main-nav" #sidenav mode="over">    <app-sidebar></app-sidebar>  </mat-sidenav>  <mat-sidenav-content><map appOlMainMap></map>    <div class="overlay-box">      <div class="router-box">        <router-outlet></router-outlet>      </div>      <app-main-toolbar></app-main-toolbar>    </div>  </mat-sidenav-content></mat-sidenav-container></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CommonErrorComponent', 'selector': 'app-common-error'},{'name': 'DepartureListComponent', 'selector': 'app-departure-list'},{'name': 'DepartureListItemComponent', 'selector': 'app-departure-list-item'},{'name': 'HeaderBoxComponent', 'selector': 'app-header-box'},{'name': 'MainToolbarComponent', 'selector': 'app-main-toolbar'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'NotFoundMessageSwitchComponent', 'selector': 'app-not-found-msg-switch'},{'name': 'RequestUpdateDialogComponent', 'selector': 'app-request-update-dialog'},{'name': 'RetryDialogComponent', 'selector': 'app-retry-dialog'},{'name': 'RouteListComponent', 'selector': 'app-route-list'},{'name': 'RouteLoadingIndicatorComponent', 'selector': 'app-route-loading-indicator'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'StopInfoComponent', 'selector': 'app-stop-info'},{'name': 'StopPointInfoComponent', 'selector': 'app-stop-point-info'},{'name': 'StopsInfoComponent', 'selector': 'app-stops-info'},{'name': 'ThemeSelectorComponent', 'selector': 'app-theme-selector'},{'name': 'ToolbarSearchBoxComponent', 'selector': 'app-toolbar-search'},{'name': 'TripPassagesComponent', 'selector': 'app-trip-passages'},{'name': 'TripPassagesListComponent', 'selector': 'app-trip-passages-list'},{'name': 'TripPassagesListItemComponent', 'selector': 'app-trip-passages-list-item'}];
     var DIRECTIVES = [{'name': 'BaseOlMapDirective', 'selector': ''},{'name': 'CountdownTimerDirective', 'selector': 'span[appCountdownTimer]'},{'name': 'OlMainMapDirective', 'selector': 'map[appOlMainMap]'},{'name': 'OlStaticMapDirective', 'selector': 'map[appOlStatic]'},{'name': 'OsmOlMapDirective', 'selector': ''},{'name': 'VectorOlMapDirective', 'selector': ''}];
     var ACTUAL_COMPONENT = {'name': 'AppComponent'};

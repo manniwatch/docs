@@ -145,24 +145,6 @@
     </table>
 </section>
 
-    <section>
-    <h3 id="constructor">Constructor</h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-<code>constructor()</code>
-                    </td>
-                </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/routes/error/not-found.component.ts:32</a></div>
-                            </td>
-                        </tr>
-
-            </tbody>
-        </table>
-</section>
 
 
 
@@ -195,15 +177,18 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>[{
-        icon: &#x27;home&#x27;,
-        path: &#x27;/&#x27;,
-        title: &#x27;Home&#x27;,
-    }, {
-        icon: &#x27;place&#x27;,
-        path: &#x27;/stops&#x27;,
-        title: &#x27;Stops&#x27;,
-    }]</code>
+                        <i>Default value : </i><code>[
+        {
+            icon: &#x27;home&#x27;,
+            path: &#x27;/&#x27;,
+            title: &#x27;Home&#x27;,
+        },
+        {
+            icon: &#x27;place&#x27;,
+            path: &#x27;/stops&#x27;,
+            title: &#x27;Stops&#x27;,
+        },
+    ]</code>
                     </td>
                 </tr>
                     <tr>
@@ -238,7 +223,6 @@
  * Offers links to common entry points
  */
 export class NotFoundComponent {
-
     /**
      * List of entry points
      */
@@ -246,23 +230,39 @@ export class NotFoundComponent {
         icon: string;
         path: string;
         title: string;
-    }[] &#x3D; [{
-        icon: &#x27;home&#x27;,
-        path: &#x27;/&#x27;,
-        title: &#x27;Home&#x27;,
-    }, {
-        icon: &#x27;place&#x27;,
-        path: &#x27;/stops&#x27;,
-        title: &#x27;Stops&#x27;,
-    }];
-    constructor() {
-    }
+    }[] &#x3D; [
+        {
+            icon: &#x27;home&#x27;,
+            path: &#x27;/&#x27;,
+            title: &#x27;Home&#x27;,
+        },
+        {
+            icon: &#x27;place&#x27;,
+            path: &#x27;/stops&#x27;,
+            title: &#x27;Stops&#x27;,
+        },
+    ];
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;header&quot;&gt;&lt;mat-icon&gt;help_outline&lt;/mat-icon&gt;&lt;/div&gt;&lt;div class&#x3D;&quot;content&quot;&gt;&lt;h3&gt;Not Found&lt;/h3&gt;&lt;app-not-found-msg-switch&gt;&lt;/app-not-found-msg-switch&gt;&lt;mat-divider&gt;&lt;/mat-divider&gt;&lt;h5&gt;You might want to go to:&lt;/h5&gt;&lt;mat-nav-list role&#x3D;&quot;list&quot;&gt;&lt;mat-list-item *ngFor&#x3D;&quot;let endpoint of endpoints&quot; role&#x3D;&quot;listitem&quot; [routerLink]&#x3D;&quot;[endpoint.path]&quot;&gt;&lt;mat-icon matListIcon&gt;{{endpoint.icon}}&lt;/mat-icon&gt;&lt;h3 matLine&gt;{{endpoint.title}}&lt;/h3&gt;&lt;/mat-list-item&gt;&lt;/mat-nav-list&gt;&lt;/div&gt;</code></pre>
+        <pre class="line-numbers"><code class="language-html">
+&lt;div class&#x3D;&quot;header&quot;&gt;
+  &lt;mat-icon&gt;help_outline&lt;/mat-icon&gt;
+&lt;/div&gt;
+&lt;div class&#x3D;&quot;content&quot;&gt;
+  &lt;h3&gt;Not Found&lt;/h3&gt;
+  &lt;app-not-found-msg-switch&gt;&lt;/app-not-found-msg-switch&gt;
+  &lt;mat-divider&gt;&lt;/mat-divider&gt;
+  &lt;h5&gt;You might want to go to:&lt;/h5&gt;
+  &lt;mat-nav-list role&#x3D;&quot;list&quot;&gt;
+    &lt;mat-list-item *ngFor&#x3D;&quot;let endpoint of endpoints&quot; role&#x3D;&quot;listitem&quot; [routerLink]&#x3D;&quot;[endpoint.path]&quot;&gt;
+      &lt;mat-icon matListIcon&gt;{{endpoint.icon}}&lt;/mat-icon&gt;
+      &lt;h3 matLine&gt;{{endpoint.title}}&lt;/h3&gt;
+    &lt;/mat-list-item&gt;
+  &lt;/mat-nav-list&gt;
+&lt;/div&gt;</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
@@ -274,31 +274,32 @@ export class NotFoundComponent {
     flex-direction: column;
     flex-flow: column;
     height: 100%;
-    background: #F9F9F9;
+    background: #f9f9f9;
 }
 
-.header{
+.header {
     position: relative;
-    height:calc(100vw / 4 * 3);
-    width:100%;
+    height: calc(100vw / 4 * 3);
+    width: 100%;
     max-height: 250px;
-    min-height:150px;
-    background:#999999;
-    mat-icon{
+    min-height: 150px;
+    background: #999999;
+    mat-icon {
         position: absolute;
-        top:0px;
-        right:0px;
-        bottom:0px;
-        left:0px;
-        margin:auto;
-        width:64px;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+        margin: auto;
+        width: 64px;
         height: 64px;
         font-size: 64px;
     }
 }
-div.content{
-    margin:10px 20px 10px 20px;
-}</code></pre>
+div.content {
+    margin: 10px 20px 10px 20px;
+}
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -326,7 +327,7 @@ div.content{
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="header"><mat-icon>help_outline</mat-icon></div><div class="content"><h3>Not Found</h3><app-not-found-msg-switch></app-not-found-msg-switch><mat-divider></mat-divider><h5>You might want to go to:</h5><mat-nav-list role="list"><mat-list-item *ngFor="let endpoint of endpoints" role="listitem" [routerLink]="[endpoint.path]"><mat-icon matListIcon>{{endpoint.icon}}</mat-icon><h3 matLine>{{endpoint.title}}</h3></mat-list-item></mat-nav-list></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="header">  <mat-icon>help_outline</mat-icon></div><div class="content">  <h3>Not Found</h3>  <app-not-found-msg-switch></app-not-found-msg-switch>  <mat-divider></mat-divider>  <h5>You might want to go to:</h5>  <mat-nav-list role="list">    <mat-list-item *ngFor="let endpoint of endpoints" role="listitem" [routerLink]="[endpoint.path]">      <mat-icon matListIcon>{{endpoint.icon}}</mat-icon>      <h3 matLine>{{endpoint.title}}</h3>    </mat-list-item>  </mat-nav-list></div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CommonErrorComponent', 'selector': 'app-common-error'},{'name': 'DepartureListComponent', 'selector': 'app-departure-list'},{'name': 'DepartureListItemComponent', 'selector': 'app-departure-list-item'},{'name': 'HeaderBoxComponent', 'selector': 'app-header-box'},{'name': 'MainToolbarComponent', 'selector': 'app-main-toolbar'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'NotFoundMessageSwitchComponent', 'selector': 'app-not-found-msg-switch'},{'name': 'RequestUpdateDialogComponent', 'selector': 'app-request-update-dialog'},{'name': 'RetryDialogComponent', 'selector': 'app-retry-dialog'},{'name': 'RouteListComponent', 'selector': 'app-route-list'},{'name': 'RouteLoadingIndicatorComponent', 'selector': 'app-route-loading-indicator'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'StopInfoComponent', 'selector': 'app-stop-info'},{'name': 'StopPointInfoComponent', 'selector': 'app-stop-point-info'},{'name': 'StopsInfoComponent', 'selector': 'app-stops-info'},{'name': 'ThemeSelectorComponent', 'selector': 'app-theme-selector'},{'name': 'ToolbarSearchBoxComponent', 'selector': 'app-toolbar-search'},{'name': 'TripPassagesComponent', 'selector': 'app-trip-passages'},{'name': 'TripPassagesListComponent', 'selector': 'app-trip-passages-list'},{'name': 'TripPassagesListItemComponent', 'selector': 'app-trip-passages-list-item'}];
     var DIRECTIVES = [{'name': 'BaseOlMapDirective', 'selector': ''},{'name': 'CountdownTimerDirective', 'selector': 'span[appCountdownTimer]'},{'name': 'OlMainMapDirective', 'selector': 'map[appOlMainMap]'},{'name': 'OlStaticMapDirective', 'selector': 'map[appOlStatic]'},{'name': 'OsmOlMapDirective', 'selector': ''},{'name': 'VectorOlMapDirective', 'selector': ''}];
     var ACTUAL_COMPONENT = {'name': 'NotFoundComponent'};

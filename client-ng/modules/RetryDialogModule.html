@@ -56,13 +56,13 @@
 <title>cluster_RetryDialogModule</title>
 <polygon fill="none" stroke="black" stroke-dasharray="1,5" points="8,-32.8 8,-230.8 194,-230.8 194,-32.8 8,-32.8"/>
 </g>
-<g id="clust2" class="cluster">
-<title>cluster_RetryDialogModule_declarations</title>
-<polygon fill="none" stroke="black" points="18,-40.8 18,-92.8 184,-92.8 184,-40.8 18,-40.8"/>
-</g>
 <g id="clust5" class="cluster">
 <title>cluster_RetryDialogModule_exports</title>
 <polygon fill="none" stroke="black" points="16,-170.8 16,-222.8 186,-222.8 186,-170.8 16,-170.8"/>
+</g>
+<g id="clust2" class="cluster">
+<title>cluster_RetryDialogModule_declarations</title>
+<polygon fill="none" stroke="black" points="18,-40.8 18,-92.8 184,-92.8 184,-40.8 18,-40.8"/>
 </g>
 <!-- RetryDialogComponent -->
 <g id="node1" class="node">
@@ -143,15 +143,6 @@
                     </ul>
                 </div>
                 <div class="col-sm-3">
-                    <h3>EntryComponents<a href="https://angular.io/api/core/NgModule#entryComponents" target="_blank"
-                            title="Official documentation about module entryComponents"><span class="icon ion-ios-information-circle-outline"></span></a></h3>
-                    <ul class="list-group">
-                        <li class="list-group-item">
-                            <a href="../components/RetryDialogComponent.html">RetryDialogComponent</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-sm-3">
                     <h3>Exports<a href="https://angular.io/api/core/NgModule#exports" target="_blank" title="Official documentation about module exports"><span
                                 class="icon ion-ios-information-circle-outline"></a></h3>
                     <ul class="list-group">
@@ -168,8 +159,9 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">/*!
- * Source https://github.com/manniwatch/manniwatch Package: client-ng
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">/*
+ * Package @manniwatch/client-ng
+ * Source https://manniwatch.github.io/manniwatch/
  */
 
 import { CommonModule } from &#x27;@angular/common&#x27;;
@@ -180,29 +172,12 @@ import { MatIconModule } from &#x27;@angular/material/icon&#x27;;
 import { RetryDialogComponent } from &#x27;./retry-dialog.component&#x27;;
 
 @NgModule({
-    declarations: [
-        RetryDialogComponent,
-    ],
-    entryComponents: [
-        RetryDialogComponent,
-    ],
-    exports: [
-        CommonModule,
-        MatIconModule,
-        MatButtonModule,
-        MatDialogModule,
-        RetryDialogComponent,
-    ],
-    imports: [
-        CommonModule,
-        MatIconModule,
-        MatButtonModule,
-        MatDialogModule,
-    ],
-    providers: [
-    ],
+    declarations: [RetryDialogComponent],
+    exports: [CommonModule, MatIconModule, MatButtonModule, MatDialogModule, RetryDialogComponent],
+    imports: [CommonModule, MatIconModule, MatButtonModule, MatDialogModule],
+    providers: [],
 })
-export class RetryDialogModule { }
+export class RetryDialogModule {}
 </code></pre>
     </div>
 </div>

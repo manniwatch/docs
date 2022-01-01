@@ -194,8 +194,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="34"
-                            class="link-to-prism">src/app/modules/request-update-dialog/request-update-dialog.service.ts:34</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="36"
+                            class="link-to-prism">src/app/modules/request-update-dialog/request-update-dialog.service.ts:36</a></div>
                 </td>
             </tr>
 
@@ -317,7 +317,6 @@ export enum SW_STATUS {
 }
 @Injectable()
 export class RequestUpdateDialogService {
-
     public readonly statusObservable: Observable&lt;SW_STATUS&gt;;
     private readonly statusSubject: BehaviorSubject&lt;SW_STATUS&gt;;
     constructor(public swService: SwUpdate) {
@@ -327,9 +326,11 @@ export class RequestUpdateDialogService {
             this.statusSubject.next(SW_STATUS.NO_SERVICE_WORKER);
             return;
         }
-        this.swService.checkForUpdate().then((): void &#x3D;&gt; {
-            this.statusSubject.next(SW_STATUS.UPDATE_AVAILABLE);
-        })
+        this.swService
+            .checkForUpdate()
+            .then((): void &#x3D;&gt; {
+                this.statusSubject.next(SW_STATUS.UPDATE_AVAILABLE);
+            })
             .catch((err: any): void &#x3D;&gt; {
                 this.statusSubject.next(SW_STATUS.UNKNOWN_ERROR);
             });

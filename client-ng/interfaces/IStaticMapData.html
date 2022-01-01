@@ -241,9 +241,9 @@ export interface IStaticMapData {
     stops?: IStopLocation[];
     vehicles?: IVehicleLocation[];
     map: {
-        blur?: boolean,
-        center?: TrapezeCoord,
-        zoomLevel?: number,
+        blur?: boolean;
+        center?: TrapezeCoord;
+        zoomLevel?: number;
     };
 }
 /**
@@ -253,18 +253,15 @@ export interface IStaticMapData {
     selector: &#x27;map[appOlStatic]&#x27;,
 })
 export class OlStaticMapDirective extends AbstractOlMapDirective implements OnChanges {
-
     private readonly KEY_MAP_DATA: string &#x3D; &#x27;mapData&#x27;;
     @HostBinding(&#x27;class.no-location&#x27;)
-    public blur: boolean &#x3D; false;
+    public blur &#x3D; false;
     protected readonly markerVectorSource: VectorSource&lt;Point&gt; &#x3D; undefined;
     protected readonly markerLayer: VectorLayer&lt;VectorSource&lt;Point&gt;&gt; &#x3D; undefined;
 
     @Input()
     public mapData: IStaticMapData;
-    constructor(elRef: ElementRef,
-        zone: NgZone,
-        settingsService: SettingsService) {
+    constructor(elRef: ElementRef, zone: NgZone, settingsService: SettingsService) {
         super(elRef, zone, settingsService);
         this.markerVectorSource &#x3D; new VectorSource();
         this.markerLayer &#x3D; new VectorLayer({
@@ -284,7 +281,7 @@ export class OlStaticMapDirective extends AbstractOlMapDirective implements OnCh
 
     public ngOnChanges(changes: SimpleChanges): void {
         if (this.KEY_MAP_DATA in changes) {
-            this.updateMapData(changes[this.KEY_MAP_DATA].currentValue);
+            this.updateMapData(changes[this.KEY_MAP_DATA].currentValue as IStaticMapData);
         }
     }
 

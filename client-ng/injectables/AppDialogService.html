@@ -28,7 +28,7 @@
                    <compodoc-menu mode="normal"></compodoc-menu>
                </div>
                <!-- START CONTENT -->
-               <div class="content guard">
+               <div class="content injectable">
                    <div class="content-data">
 
 
@@ -37,11 +37,9 @@
 
 
 
-
-
 <ol class="breadcrumb">
-    <li>Guards</li>
-    <li >StopInfoResolver</li>
+  <li>Injectables</li>
+  <li >AppDialogService</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -54,31 +52,38 @@
 </ul>
 
 <div class="tab-content">
-        <div class="tab-pane fade active in" id="c-info">
-            <p class="comment">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
             <h3>File</h3>
-            </p>
-            <p class="comment">
-                <code>src/app/routes/stop/stop-info.resolver.ts</code>
-            </p>
-
-
-                <p class="comment">
-                <h3>Description</h3>
-                </p>
-                <p class="comment">
-                    <p>Resolves information for a stop provided in the route parameter &#39;stopId&#39;
-Redirects to /stops if the server responds with an 404 status</p>
-
-                </p>
+        </p>
+        <p class="comment">
+            <code>src/app/services/dialog.service.ts</code>
+        </p>
 
 
 
 
-                <section>
+
+            <section>
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Readonly</span>
+                                <a href="#dialog" >dialog</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -90,7 +95,11 @@ Redirects to /stops if the server responds with an 404 status</p>
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#resolve" >resolve</a>
+                                <a href="#getConfirmation" >getConfirmation</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#getRetryDialog" >getRetryDialog</a>
                             </li>
                         </ul>
                     </td>
@@ -104,26 +113,24 @@ Redirects to /stops if the server responds with an 404 status</p>
     </table>
 </section>
 
-                <section>
+            <section>
     <h3 id="constructor">Constructor</h3>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
                     <td class="col-md-4">
                                 <span class="modifier">Public</span>
-                        <code>constructor(api: <a href="../classes/ApiService.html" target="_self">ApiService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
+                        <code>constructor(dialog: MatDialog)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/routes/stop/stop-info.resolver.ts:18</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="61" class="link-to-prism">src/app/services/dialog.service.ts:61</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
-                            <div class="io-description"><p>Constructor</p>
-</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -132,41 +139,20 @@ Redirects to /stops if the server responds with an 404 status</p>
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
-                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>api</td>
+                                                        <td>dialog</td>
                                                   
                                                         <td>
-                                                                        <code><a href="../classes/ApiService.html" target="_self" >ApiService</a></code>
+                                                                    <code>MatDialog</code>
                                                         </td>
                                                   
                                                     <td>
                                                             No
                                                     </td>
                                                     
-                                                        <td>
-                                                                <p>the {@ApiService}</p>
-
-                                                        </td>
-                                                </tr>
-                                                <tr>
-                                                        <td>router</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                        <td>
-                                                                <p>the {@Router}</p>
-
-                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -177,7 +163,7 @@ Redirects to /stops if the server responds with an 404 status</p>
         </table>
 </section>
 
-                <section>
+            <section>
     
     <h3 id="methods">
         Methods
@@ -186,34 +172,42 @@ Redirects to /stops if the server responds with an 404 status</p>
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="resolve"></a>
+                    <a name="getConfirmation"></a>
                     <span class="name">
                         <span class="modifier">Public</span>
-                        <span ><b>resolve</b></span>
-                        <a href="#resolve"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>getConfirmation</b></span>
+                        <a href="#getConfirmation"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>resolve(route: <a href="https://angular.io/api/router/ActivatedRouteSnapshot" target="_blank">ActivatedRouteSnapshot</a>, state: <a href="https://angular.io/api/router/RouterStateSnapshot" target="_blank">RouterStateSnapshot</a>)</code>
+                    <code>getConfirmation(cfg: D, cmp: ComponentType<T>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="32"
-                            class="link-to-prism">src/app/routes/stop/stop-info.resolver.ts:32</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="68"
+                            class="link-to-prism">src/app/services/dialog.service.ts:68</a></div>
                 </td>
             </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <b>Type parameters :</b>
+                    <ul class="type-parameters">
+                        <li>T</li>
+                        <li>D</li>
+                        <li>R</li>
+                    </ul>
+                </td>
+            </tr>
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>Resolves the stop information via the stopId param inside the route</p>
-</div>
 
                     <div class="io-description">
                         <b>Parameters :</b>
@@ -224,14 +218,13 @@ Redirects to /stops if the server responds with an 404 status</p>
                                     <td>Name</td>
                                     <td>Type</td>
                                     <td>Optional</td>
-                                    <td>Description</td>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>route</td>
+                                    <td>cfg</td>
                                     <td>
-                                                <code><a href="https://angular.io/api/router/ActivatedRouteSnapshot" target="_blank" >ActivatedRouteSnapshot</a></code>
+                                            <code>D</code>
                                     </td>
 
                                     <td>
@@ -239,15 +232,11 @@ Redirects to /stops if the server responds with an 404 status</p>
                                     </td>
 
 
-                                    <td>
-                                        <p>The RouteSnapshot</p>
-
-                                    </td>
                                 </tr>
                                 <tr>
-                                    <td>state</td>
+                                    <td>cmp</td>
                                     <td>
-                                                <code><a href="https://angular.io/api/router/RouterStateSnapshot" target="_blank" >RouterStateSnapshot</a></code>
+                                            <code>ComponentType&lt;T&gt;</code>
                                     </td>
 
                                     <td>
@@ -255,10 +244,6 @@ Redirects to /stops if the server responds with an 404 status</p>
                                     </td>
 
 
-                                    <td>
-                                        <p>The RouterState</p>
-
-                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -266,7 +251,78 @@ Redirects to /stops if the server responds with an 404 status</p>
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>    <code>Observable&lt;IStopPassage&gt;</code>
+                        <b>Returns : </b>    <code>Observable&lt;R&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getRetryDialog"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>getRetryDialog</b></span>
+                        <a href="#getRetryDialog"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getRetryDialog(cfg: <a href="../interfaces/IConfirmationDialogSettings.html" target="_self">IConfirmationDialogSettings</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="64"
+                            class="link-to-prism">src/app/services/dialog.service.ts:64</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>cfg</td>
+                                    <td>
+                                                <code><a href="../interfaces/IConfirmationDialogSettings.html" target="_self" >IConfirmationDialogSettings</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;boolean&gt;</code>
 
                     </div>
                     <div class="io-description">
@@ -277,51 +333,121 @@ Redirects to /stops if the server responds with an 404 status</p>
         </tbody>
     </table>
 </section>
-        </div>
+            <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="dialog"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                            <span class="modifier">Readonly</span>
+                        <span ><b>dialog</b></span>
+                        <a href="#dialog"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>MatDialog</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">src/app/services/dialog.service.ts:62</a></div>
+                        </td>
+                    </tr>
 
 
-        <div class="tab-pane fade  tab-source-code" id="c-source">
-            <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { HttpErrorResponse } from &#x27;@angular/common/http&#x27;;
+        </tbody>
+    </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ComponentType } from &#x27;@angular/cdk/portal&#x27;;
 import { Injectable } from &#x27;@angular/core&#x27;;
-import { ActivatedRouteSnapshot, Resolve, Router, RouterStateSnapshot } from &#x27;@angular/router&#x27;;
-import { IStopPassage } from &#x27;@manniwatch/api-types&#x27;;
-import { EMPTY, Observable } from &#x27;rxjs&#x27;;
-import { catchError } from &#x27;rxjs/operators&#x27;;
-import { ApiService } from &#x27;src/app/services&#x27;;
+import { MatDialog } from &#x27;@angular/material/dialog&#x27;;
+import { defaultIfEmpty, Observable, Subject } from &#x27;rxjs&#x27;;
+import { RetryDialogComponent } from &#x27;../modules/common/retry-dialog&#x27;;
 
 /**
- * Resolves information for a stop provided in the route parameter &#x27;stopId&#x27;
- * Redirects to /stops if the server responds with an 404 status
+ * Notification Type
  */
-@Injectable()
-export class StopInfoResolver implements Resolve&lt;IStopPassage&gt; {
-
+export enum AppNotificationType {
     /**
-     * Constructor
-     * @param api the {@ApiService}
-     * @param router the {@Router}
+     * Alert
      */
-    public constructor(private api: ApiService, private router: Router) { }
-
+    ALERT &#x3D; 1,
     /**
-     * Resolves the stop information via the stopId param inside the route
-     * @param route The RouteSnapshot
-     * @param state The RouterState
+     * Info
      */
-    public resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable&lt;IStopPassage&gt; {
-        return this.api
-            .getStopPassages(route.params.stopId)
-            .pipe(catchError((err: any | HttpErrorResponse): Observable&lt;any&gt; &#x3D;&gt; {
-                if (err.status &#x3D;&#x3D;&#x3D; 404) {
-                    this.router.navigate([&#x27;stops&#x27;]);
-                }
-                return EMPTY;
-            }));
+    INFO &#x3D; 2,
+    /**
+     * Error
+     */
+    ERROR &#x3D; 3,
+}
+
+export interface IAppNotification {
+    /**
+     * Notification Type
+     */
+    type?: AppNotificationType;
+    /**
+     * Notification Title
+     */
+    title: string;
+    /**
+     * Notification Message
+     */
+    message?: string;
+    /**
+     * Reportable
+     */
+    reportable?: boolean;
+}
+
+export interface IAppNotificationDismiss {
+    dismissedByAction: boolean;
+    notification: IAppNotification;
+}
+
+export interface IConfirmationDialogSettings {
+    msg: string;
+}
+
+@Injectable({
+    providedIn: &#x27;root&#x27;,
+})
+export class AppDialogService {
+    public constructor(public readonly dialog: MatDialog) {}
+
+    public getRetryDialog(cfg: IConfirmationDialogSettings): Observable&lt;boolean&gt; {
+        return this.getConfirmation(cfg, RetryDialogComponent).pipe(defaultIfEmpty(false));
+    }
+
+    public getConfirmation&lt;T, D &#x3D; any, R &#x3D; boolean&gt;(cfg: D, cmp: ComponentType&lt;T&gt;): Observable&lt;R&gt; {
+        return this.dialog
+            .open&lt;T, D, R&gt;(cmp, {
+                data: cfg,
+            })
+            .afterClosed();
     }
 }
 </code></pre>
-        </div>
+    </div>
+
 </div>
+
+
 
 
 
@@ -357,8 +483,8 @@ export class StopInfoResolver implements Resolve&lt;IStopPassage&gt; {
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'guard';
-            var COMPODOC_CURRENT_PAGE_URL = 'StopInfoResolver.html';
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'AppDialogService.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

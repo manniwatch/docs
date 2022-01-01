@@ -14,6 +14,10 @@
 <title>cluster_RequestUpdateDialogModule</title>
 <polygon fill="none" stroke="black" stroke-dasharray="1,5" points="8,-32.8 8,-295.8 290,-295.8 290,-32.8 8,-32.8"/>
 </g>
+<g id="clust5" class="cluster">
+<title>cluster_RequestUpdateDialogModule_exports</title>
+<polygon fill="none" stroke="black" points="37,-235.8 37,-287.8 261,-287.8 261,-235.8 37,-235.8"/>
+</g>
 <g id="clust2" class="cluster">
 <title>cluster_RequestUpdateDialogModule_declarations</title>
 <polygon fill="none" stroke="black" points="39,-105.8 39,-157.8 259,-157.8 259,-105.8 39,-105.8"/>
@@ -21,10 +25,6 @@
 <g id="clust3" class="cluster">
 <title>cluster_RequestUpdateDialogModule_RequestUpdateDialogComponent_providers</title>
 <polygon fill="none" stroke="black" points="16,-40.8 16,-92.8 282,-92.8 282,-40.8 16,-40.8"/>
-</g>
-<g id="clust5" class="cluster">
-<title>cluster_RequestUpdateDialogModule_exports</title>
-<polygon fill="none" stroke="black" points="37,-235.8 37,-287.8 261,-287.8 261,-235.8 37,-235.8"/>
 </g>
 <!-- RequestUpdateDialogComponent -->
 <g id="node1" class="node">

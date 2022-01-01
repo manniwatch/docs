@@ -136,14 +136,17 @@
 /**
  * Common Error component
  */
-export class CommonErrorComponent {
-
-}
+export class CommonErrorComponent {}
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;header&quot;&gt;&lt;mat-icon&gt;help_outline&lt;/mat-icon&gt;&lt;/div&gt;&lt;h3&gt;Error Occured&lt;/h3&gt;&lt;p&gt;An error occured while performing an action.&lt;/p&gt;</code></pre>
+        <pre class="line-numbers"><code class="language-html">
+&lt;div class&#x3D;&quot;header&quot;&gt;
+  &lt;mat-icon&gt;help_outline&lt;/mat-icon&gt;
+&lt;/div&gt;
+&lt;h3&gt;Error Occured&lt;/h3&gt;
+&lt;p&gt;An error occured while performing an action.&lt;/p&gt;</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
@@ -155,28 +158,29 @@ export class CommonErrorComponent {
     flex-direction: column;
     flex-flow: column;
     height: 100%;
-    background: #F9F9F9;
+    background: #f9f9f9;
 }
 
-.header{
+.header {
     position: relative;
-    height:calc(100vw / 4 * 3);
-    width:100%;
+    height: calc(100vw / 4 * 3);
+    width: 100%;
     max-height: 250px;
-    min-height:150px;
-    background:#999999;
-    mat-icon{
+    min-height: 150px;
+    background: #999999;
+    mat-icon {
         position: absolute;
-        top:0px;
-        right:0px;
-        bottom:0px;
-        left:0px;
-        margin:auto;
-        width:64px;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+        margin: auto;
+        width: 64px;
         height: 64px;
         font-size: 64px;
     }
-}</code></pre>
+}
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -204,7 +208,7 @@ export class CommonErrorComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="header"><mat-icon>help_outline</mat-icon></div><h3>Error Occured</h3><p>An error occured while performing an action.</p></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="header">  <mat-icon>help_outline</mat-icon></div><h3>Error Occured</h3><p>An error occured while performing an action.</p></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CommonErrorComponent', 'selector': 'app-common-error'},{'name': 'DepartureListComponent', 'selector': 'app-departure-list'},{'name': 'DepartureListItemComponent', 'selector': 'app-departure-list-item'},{'name': 'HeaderBoxComponent', 'selector': 'app-header-box'},{'name': 'MainToolbarComponent', 'selector': 'app-main-toolbar'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'NotFoundMessageSwitchComponent', 'selector': 'app-not-found-msg-switch'},{'name': 'RequestUpdateDialogComponent', 'selector': 'app-request-update-dialog'},{'name': 'RetryDialogComponent', 'selector': 'app-retry-dialog'},{'name': 'RouteListComponent', 'selector': 'app-route-list'},{'name': 'RouteLoadingIndicatorComponent', 'selector': 'app-route-loading-indicator'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'StopInfoComponent', 'selector': 'app-stop-info'},{'name': 'StopPointInfoComponent', 'selector': 'app-stop-point-info'},{'name': 'StopsInfoComponent', 'selector': 'app-stops-info'},{'name': 'ThemeSelectorComponent', 'selector': 'app-theme-selector'},{'name': 'ToolbarSearchBoxComponent', 'selector': 'app-toolbar-search'},{'name': 'TripPassagesComponent', 'selector': 'app-trip-passages'},{'name': 'TripPassagesListComponent', 'selector': 'app-trip-passages-list'},{'name': 'TripPassagesListItemComponent', 'selector': 'app-trip-passages-list-item'}];
     var DIRECTIVES = [{'name': 'BaseOlMapDirective', 'selector': ''},{'name': 'CountdownTimerDirective', 'selector': 'span[appCountdownTimer]'},{'name': 'OlMainMapDirective', 'selector': 'map[appOlMainMap]'},{'name': 'OlStaticMapDirective', 'selector': 'map[appOlStatic]'},{'name': 'OsmOlMapDirective', 'selector': ''},{'name': 'VectorOlMapDirective', 'selector': ''}];
     var ACTUAL_COMPONENT = {'name': 'CommonErrorComponent'};

@@ -28,7 +28,7 @@
                    <compodoc-menu mode="normal"></compodoc-menu>
                </div>
                <!-- START CONTENT -->
-               <div class="content class">
+               <div class="content guard">
                    <div class="content-data">
 
 
@@ -39,11 +39,9 @@
 
 
 
-
-
 <ol class="breadcrumb">
-  <li>Classes</li>
-  <li >StopPointLoadSubscriber</li>
+    <li>Guards</li>
+    <li >RetryResolver</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -56,29 +54,48 @@
 </ul>
 
 <div class="tab-content">
-    <div class="tab-pane fade active in" id="c-info">
-        <p class="comment">
+        <div class="tab-pane fade active in" id="c-info">
+            <p class="comment">
             <h3>File</h3>
-        </p>
-        <p class="comment">
-            <code>src/app/services/stop-point.service.ts</code>
-        </p>
-
-
-
-            <p class="comment">
-                <h3>Extends</h3>
             </p>
             <p class="comment">
-                    <code>Subscriber</code>
+                <code>src/app/util/retry-resolver.ts</code>
             </p>
 
 
 
-            <section>
+
+                <p class="comment">
+                <h3>Implements</h3>
+                </p>
+                <p class="comment">
+                                <code><a href="https://angular.io/api/router/Resolve" target="_blank" >Resolve</a></code>
+                </p>
+
+
+                <section>
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#dialog" >dialog</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#router" >router</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -90,15 +107,16 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#complete" >complete</a>
+                                    <span class="modifier">Abstract</span>
+                                <a href="#createLoader" >createLoader</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#error" >error</a>
+                                <a href="#navigate" >navigate</a>
                             </li>
                             <li>
                                     <span class="modifier">Public</span>
-                                <a href="#next" >next</a>
+                                <a href="#resolve" >resolve</a>
                             </li>
                         </ul>
                     </td>
@@ -112,19 +130,19 @@
     </table>
 </section>
 
-            <section>
+                <section>
     <h3 id="constructor">Constructor</h3>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
                     <td class="col-md-4">
                                 <span class="modifier">Public</span>
-                        <code>constructor(service: <a href="../injectables/StopPointService.html" target="_self">StopPointService</a>)</code>
+                        <code>constructor(router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, dialog: <a href="../injectables/AppDialogService.html" target="_self">AppDialogService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/services/stop-point.service.ts:13</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/util/retry-resolver.ts:12</a></div>
                             </td>
                         </tr>
 
@@ -142,10 +160,22 @@
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>service</td>
+                                                        <td>router</td>
                                                   
                                                         <td>
-                                                                        <code><a href="../injectables/StopPointService.html" target="_self" >StopPointService</a></code>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>dialog</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AppDialogService.html" target="_self" >AppDialogService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -162,8 +192,7 @@
         </table>
 </section>
 
-
-            <section>
+                <section>
     
     <h3 id="methods">
         Methods
@@ -172,65 +201,27 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="complete"></a>
+                    <a name="createLoader"></a>
                     <span class="name">
                         <span class="modifier">Public</span>
-                        <span ><b>complete</b></span>
-                        <a href="#complete"><span class="icon ion-ios-link"></span></a>
+                        <span class="modifier">Abstract</span>
+                        <span ><b>createLoader</b></span>
+                        <a href="#createLoader"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>complete()</code>
+                    <code>createLoader(route: <a href="https://angular.io/api/router/ActivatedRouteSnapshot" target="_blank">ActivatedRouteSnapshot</a>, state: <a href="https://angular.io/api/router/RouterStateSnapshot" target="_blank">RouterStateSnapshot</a>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="26"
-                            class="link-to-prism">src/app/services/stop-point.service.ts:26</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="error"></a>
-                    <span class="name">
-                        <span class="modifier">Public</span>
-                        <span ><b>error</b></span>
-                        <a href="#error"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-                    <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>error(err: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="23"
-                            class="link-to-prism">src/app/services/stop-point.service.ts:23</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="49"
+                            class="link-to-prism">src/app/util/retry-resolver.ts:49</a></div>
                 </td>
             </tr>
 
@@ -251,9 +242,21 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>err</td>
+                                    <td>route</td>
                                     <td>
-                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                <code><a href="https://angular.io/api/router/ActivatedRouteSnapshot" target="_blank" >ActivatedRouteSnapshot</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>state</td>
+                                    <td>
+                                                <code><a href="https://angular.io/api/router/RouterStateSnapshot" target="_blank" >RouterStateSnapshot</a></code>
                                     </td>
 
                                     <td>
@@ -268,7 +271,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+                        <b>Returns : </b>    <code>Observable&lt;T&gt;</code>
 
                     </div>
                     <div class="io-description">
@@ -282,26 +285,26 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="next"></a>
+                    <a name="navigate"></a>
                     <span class="name">
                         <span class="modifier">Public</span>
-                        <span ><b>next</b></span>
-                        <a href="#next"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>navigate</b></span>
+                        <a href="#navigate"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
                     <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>next(stops: IStopLocation[])</code>
+                    <code>navigate(...args: Parameters<>)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="19"
-                            class="link-to-prism">src/app/services/stop-point.service.ts:19</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="45"
+                            class="link-to-prism">src/app/util/retry-resolver.ts:45</a></div>
                 </td>
             </tr>
 
@@ -322,9 +325,9 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>stops</td>
+                                    <td>args</td>
                                     <td>
-                                            <code>IStopLocation[]</code>
+                                            <code>Parameters&lt;&gt;</code>
                                     </td>
 
                                     <td>
@@ -339,7 +342,90 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+                        <b>Returns : </b>    <code>Observable&lt;boolean&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="resolve"></a>
+                    <span class="name">
+                        <span class="modifier">Public</span>
+                        <span ><b>resolve</b></span>
+                        <a href="#resolve"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>resolve(route: <a href="https://angular.io/api/router/ActivatedRouteSnapshot" target="_blank">ActivatedRouteSnapshot</a>, state: <a href="https://angular.io/api/router/RouterStateSnapshot" target="_blank">RouterStateSnapshot</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="14"
+                            class="link-to-prism">src/app/util/retry-resolver.ts:14</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>route</td>
+                                    <td>
+                                                <code><a href="https://angular.io/api/router/ActivatedRouteSnapshot" target="_blank" >ActivatedRouteSnapshot</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>state</td>
+                                    <td>
+                                                <code><a href="https://angular.io/api/router/RouterStateSnapshot" target="_blank" >RouterStateSnapshot</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Observable&lt;T&gt;</code>
 
                     </div>
                     <div class="io-description">
@@ -350,122 +436,60 @@
         </tbody>
     </table>
 </section>
+        </div>
 
 
+        <div class="tab-pane fade  tab-source-code" id="c-source">
+            <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { HttpErrorResponse } from &#x27;@angular/common/http&#x27;;
+import { ActivatedRouteSnapshot, Resolve, Router, RouterStateSnapshot } from &#x27;@angular/router&#x27;;
+import { EMPTY, filter, from, mergeMap, NEVER, Observable, of, retryWhen, tap, throwError } from &#x27;rxjs&#x27;;
+import { AppDialogService } from &#x27;../services&#x27;;
 
-
-
-    </div>
-
-
-    <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
-import { IStopLocation, IStopLocations, IStopPointLocation, IStopPointLocations } from &#x27;@manniwatch/api-types&#x27;;
-import { Observable, Subscriber } from &#x27;rxjs&#x27;;
-import { debounceTime, map, retryWhen, shareReplay, tap, withLatestFrom } from &#x27;rxjs/operators&#x27;;
-import { ApiService } from &#x27;./api.service&#x27;;
-import { AppNotificationService } from &#x27;./app-notification.service&#x27;;
-
-// tslint:disable:max-classes-per-file
-export class StopPointLoadSubscriber extends Subscriber&lt;IStopLocation[]&gt; {
-
-    public constructor(private service: StopPointService) {
-        super();
-    }
-
-    public next(stops: IStopLocation[]): void {
-        (this.service as any).mStopLocations &#x3D; stops;
-    }
-
-    public error(err: any): void {
-    }
-
-    public complete(): void {
-    }
-}
-
-/**
- * Service for caching and retrieving Stop Locations
- */
-@Injectable({
-    providedIn: &#x27;root&#x27;,
-})
-export class StopPointService {
-
-    private mStopPointObservable: Observable&lt;IStopPointLocation[]&gt;;
-    private mStopObservable: Observable&lt;IStopLocation[]&gt;;
-    constructor(private api: ApiService,
-        private notificationService: AppNotificationService) {
-        this.mStopObservable &#x3D; this.setupLocationsPoll(this.api.getStopLocations()
-            .pipe(map((stops: IStopLocations): IStopLocation[] &#x3D;&gt;
-                stops.stops)));
-        this.mStopPointObservable &#x3D; this.setupLocationsPoll(this.api.getStopPointLocations()
-            .pipe(map((stops: IStopPointLocations): IStopPointLocation[] &#x3D;&gt;
-                stops.stopPoints)));
-    }
-
-    public setupLocationsPoll&lt;T extends IStopLocation | IStopPointLocation&gt;(pollObservable: Observable&lt;T[]&gt;): Observable&lt;T[]&gt; {
-        return pollObservable
-            .pipe(retryWhen((errors: Observable&lt;any&gt;): Observable&lt;any&gt; &#x3D;&gt;
-                errors
-                    .pipe(tap((err: any): void &#x3D;&gt; this.notificationService.report(err)),
-                        debounceTime(5000))), shareReplay(1));
-    }
-
-    public filterByObservable(filter: Observable&lt;string&gt;): Observable&lt;IStopLocation&gt; {
-        return this.stopObservable
-            .pipe(withLatestFrom(filter),
-                map((value: [IStopLocation[], string]): IStopLocation &#x3D;&gt; {
-                    if (value[0] &amp;&amp; value[1]) {
-                        const idx: number &#x3D; value[0].findIndex((stop: IStopLocation): boolean &#x3D;&gt;
-                            stop.shortName &#x3D;&#x3D;&#x3D; value[1]);
-                        if (idx &gt;&#x3D; 0) {
-                            return value[0][idx];
+export type ErrorTypes &#x3D; any | Error | HttpErrorResponse;
+export abstract class RetryResolver&lt;T&gt; implements Resolve&lt;T&gt; {
+    public constructor(public router: Router, public dialog: AppDialogService) {}
+    public resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable&lt;T&gt; {
+        return this.createLoader(route, state).pipe(
+            retryWhen((obs: Observable&lt;ErrorTypes&gt;): Observable&lt;boolean&gt; &#x3D;&gt; {
+                return obs.pipe(
+                    mergeMap((err: ErrorTypes) &#x3D;&gt; {
+                        if (err instanceof HttpErrorResponse) {
+                            if (err.status &#x3D;&#x3D;&#x3D; 404) {
+                                return this.navigate([&#x27;error&#x27;, &#x27;not-found&#x27;]).pipe(
+                                    mergeMap((navigated: boolean): Observable&lt;never&gt; &#x3D;&gt; {
+                                        return EMPTY;
+                                    })
+                                );
+                            } else if (err.status &gt;&#x3D; 500 &amp;&amp; err.status &lt; 600) {
+                                return this.dialog
+                                    .getRetryDialog({
+                                        msg: &#x27;Error&#x27;,
+                                    })
+                                    .pipe(
+                                        mergeMap((it: boolean): Observable&lt;true&gt; &#x3D;&gt; {
+                                            return it ? of(it) : throwError((): ErrorTypes &#x3D;&gt; err);
+                                        })
+                                    );
+                            }
                         }
-                    }
-                    return undefined;
-                }));
-    }
-    public filterStop(string: string): Observable&lt;IStopLocation&gt; {
-        return this.stopObservable
-            .pipe(map((stopLocations: IStopLocation[]): IStopLocation &#x3D;&gt; {
-                if (stopLocations) {
-                    const idx: number &#x3D; stopLocations.findIndex((stop: IStopLocation): boolean &#x3D;&gt;
-                        stop.shortName &#x3D;&#x3D;&#x3D; string);
-                    if (idx &gt;&#x3D; 0) {
-                        return stopLocations[idx];
-                    }
-                }
-                return undefined;
-            }));
+                        return throwError((): ErrorTypes &#x3D;&gt; err);
+                    })
+                );
+            })
+        );
     }
 
-    public watchStopPoint(stopPointId: string): Observable&lt;IStopPointLocation&gt; {
-        return this.stopPointObservable
-            .pipe(map((stopLocations: IStopPointLocation[]): IStopPointLocation &#x3D;&gt; {
-                if (stopLocations) {
-                    const idx: number &#x3D; stopLocations.findIndex((stop: IStopPointLocation): boolean &#x3D;&gt;
-                        stop.stopPoint &#x3D;&#x3D;&#x3D; stopPointId);
-                    if (idx &gt;&#x3D; 0) {
-                        return stopLocations[idx];
-                    }
-                }
-                return undefined;
-            }));
+    public navigate(...args: Parameters&lt;Router[&#x27;navigate&#x27;]&gt;): Observable&lt;boolean&gt; {
+        return from(this.router.navigate(...args));
     }
 
-    public get stopObservable(): Observable&lt;IStopLocation[]&gt; {
-        return this.mStopObservable;
-    }
-
-    public get stopPointObservable(): Observable&lt;IStopPointLocation[]&gt; {
-        return this.mStopPointObservable;
-    }
-
+    public abstract createLoader(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable&lt;T&gt;;
 }
 </code></pre>
-    </div>
+        </div>
 </div>
+
+
 
 
 
@@ -499,8 +523,8 @@ export class StopPointService {
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
-            var COMPODOC_CURRENT_PAGE_URL = 'StopPointLoadSubscriber.html';
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'guard';
+            var COMPODOC_CURRENT_PAGE_URL = 'RetryResolver.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

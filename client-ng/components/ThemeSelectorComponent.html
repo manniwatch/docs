@@ -267,8 +267,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="41"
-                            class="link-to-prism">src/app/routes/settings/theme-selector/theme-selector.component.ts:41</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="37"
+                            class="link-to-prism">src/app/routes/settings/theme-selector/theme-selector.component.ts:37</a></div>
                 </td>
             </tr>
 
@@ -306,8 +306,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="31"
-                            class="link-to-prism">src/app/routes/settings/theme-selector/theme-selector.component.ts:31</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="29"
+                            class="link-to-prism">src/app/routes/settings/theme-selector/theme-selector.component.ts:29</a></div>
                 </td>
             </tr>
 
@@ -345,8 +345,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="26"
-                            class="link-to-prism">src/app/routes/settings/theme-selector/theme-selector.component.ts:26</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="24"
+                            class="link-to-prism">src/app/routes/settings/theme-selector/theme-selector.component.ts:24</a></div>
                 </td>
             </tr>
 
@@ -416,8 +416,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="22"
-                            class="link-to-prism">src/app/routes/settings/theme-selector/theme-selector.component.ts:22</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="20"
+                            class="link-to-prism">src/app/routes/settings/theme-selector/theme-selector.component.ts:20</a></div>
                 </td>
             </tr>
 
@@ -569,29 +569,24 @@ import { SettingsService, Theme } from &#x27;src/app/services&#x27;;
     templateUrl: &#x27;./theme-selector.component.html&#x27;,
 })
 export class ThemeSelectorComponent implements OnInit, OnDestroy {
-
     public theme: Theme;
     private themeSubscription: Subscription;
-    public constructor(public settingsService: SettingsService) {
-
-    }
+    public constructor(public settingsService: SettingsService) {}
     public selectTheme(theme: Theme): void {
         this.settingsService.theme &#x3D; theme;
     }
 
     public onSelectionChange(change: MatSelectionListChange): void {
-        const value: Theme &#x3D; change.options[0].value;
+        const value: Theme &#x3D; change.options[0].value as Theme;
         this.settingsService.theme &#x3D; value;
     }
 
     public ngOnInit(): void {
-        this.themeSubscription &#x3D; this.settingsService
-            .themeObservable
-            .subscribe({
-                next: (theme: Theme): void &#x3D;&gt; {
-                    this.theme &#x3D; theme;
-                },
-            });
+        this.themeSubscription &#x3D; this.settingsService.themeObservable.subscribe({
+            next: (theme: Theme): void &#x3D;&gt; {
+                this.theme &#x3D; theme;
+            },
+        });
     }
 
     public ngOnDestroy(): void {
@@ -604,7 +599,24 @@ export class ThemeSelectorComponent implements OnInit, OnDestroy {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;mat-selection-list multiple&#x3D;&quot;false&quot; (selectionChange)&#x3D;&quot;onSelectionChange($event)&quot;&gt;&lt;mat-list-option [value]&#x3D;&quot;1&quot; [selected]&#x3D;&quot;theme &#x3D;&#x3D; 1&quot;&gt;&lt;mat-icon matListIcon&gt;bedtime&lt;/mat-icon&gt;&lt;h3 matLine&gt;Dark&lt;/h3&gt;&lt;p matLine&gt;Applies a darker theme&lt;/p&gt;&lt;/mat-list-option&gt;&lt;mat-list-option [value]&#x3D;&quot;2&quot; [selected]&#x3D;&quot;theme &#x3D;&#x3D; 2&quot;&gt;&lt;mat-icon matListIcon&gt;wb_sunny&lt;/mat-icon&gt;&lt;h3 matLine&gt;Light&lt;/h3&gt;&lt;p matLine&gt;Applies a lighter theme&lt;/p&gt;&lt;/mat-list-option&gt;&lt;mat-list-option [value]&#x3D;&quot;0&quot; [selected]&#x3D;&quot;theme &#x3D;&#x3D; 0&quot;&gt;&lt;mat-icon matListIcon&gt;{{theme &#x3D;&#x3D; 1 ? &#x27;bedtime&#x27; : &#x27;wb_sunny&#x27;}}&lt;/mat-icon&gt;&lt;h3 matLine&gt;System Default ({{theme &#x3D;&#x3D; 1 ? &#x27;Dark&#x27; : &#x27;Light&#x27;}})&lt;/h3&gt;&lt;p matLine&gt;Applies your system default theme.&lt;/p&gt;&lt;/mat-list-option&gt;&lt;/mat-selection-list&gt;</code></pre>
+        <pre class="line-numbers"><code class="language-html">
+&lt;mat-selection-list multiple&#x3D;&quot;false&quot; (selectionChange)&#x3D;&quot;onSelectionChange($event)&quot;&gt;
+  &lt;mat-list-option [value]&#x3D;&quot;1&quot; [selected]&#x3D;&quot;theme &#x3D;&#x3D;&#x3D; 1&quot;&gt;
+    &lt;mat-icon matListIcon&gt;bedtime&lt;/mat-icon&gt;
+    &lt;h3 matLine&gt;Dark&lt;/h3&gt;
+    &lt;p matLine&gt;Applies a darker theme&lt;/p&gt;
+  &lt;/mat-list-option&gt;
+  &lt;mat-list-option [value]&#x3D;&quot;2&quot; [selected]&#x3D;&quot;theme &#x3D;&#x3D;&#x3D; 2&quot;&gt;
+    &lt;mat-icon matListIcon&gt;wb_sunny&lt;/mat-icon&gt;
+    &lt;h3 matLine&gt;Light&lt;/h3&gt;
+    &lt;p matLine&gt;Applies a lighter theme&lt;/p&gt;
+  &lt;/mat-list-option&gt;
+  &lt;mat-list-option [value]&#x3D;&quot;0&quot; [selected]&#x3D;&quot;theme &#x3D;&#x3D;&#x3D; 0&quot;&gt;
+    &lt;mat-icon matListIcon&gt;{{theme &#x3D;&#x3D;&#x3D; 1 ? &#x27;bedtime&#x27; : &#x27;wb_sunny&#x27;}}&lt;/mat-icon&gt;
+    &lt;h3 matLine&gt;System Default ({{theme &#x3D;&#x3D;&#x3D; 1 ? &#x27;Dark&#x27; : &#x27;Light&#x27;}})&lt;/h3&gt;
+    &lt;p matLine&gt;Applies your system default theme.&lt;/p&gt;
+  &lt;/mat-list-option&gt;
+&lt;/mat-selection-list&gt;</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
@@ -639,7 +651,7 @@ export class ThemeSelectorComponent implements OnInit, OnDestroy {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><mat-selection-list multiple="false" (selectionChange)="onSelectionChange($event)"><mat-list-option [value]="1" [selected]="theme == 1"><mat-icon matListIcon>bedtime</mat-icon><h3 matLine>Dark</h3><p matLine>Applies a darker theme</p></mat-list-option><mat-list-option [value]="2" [selected]="theme == 2"><mat-icon matListIcon>wb_sunny</mat-icon><h3 matLine>Light</h3><p matLine>Applies a lighter theme</p></mat-list-option><mat-list-option [value]="0" [selected]="theme == 0"><mat-icon matListIcon>{{theme == 1 ? \'bedtime\' : \'wb_sunny\'}}</mat-icon><h3 matLine>System Default ({{theme == 1 ? \'Dark\' : \'Light\'}})</h3><p matLine>Applies your system default theme.</p></mat-list-option></mat-selection-list></div>'
+        var COMPONENT_TEMPLATE = '<div><mat-selection-list multiple="false" (selectionChange)="onSelectionChange($event)">  <mat-list-option [value]="1" [selected]="theme === 1">    <mat-icon matListIcon>bedtime</mat-icon>    <h3 matLine>Dark</h3>    <p matLine>Applies a darker theme</p>  </mat-list-option>  <mat-list-option [value]="2" [selected]="theme === 2">    <mat-icon matListIcon>wb_sunny</mat-icon>    <h3 matLine>Light</h3>    <p matLine>Applies a lighter theme</p>  </mat-list-option>  <mat-list-option [value]="0" [selected]="theme === 0">    <mat-icon matListIcon>{{theme === 1 ? \'bedtime\' : \'wb_sunny\'}}</mat-icon>    <h3 matLine>System Default ({{theme === 1 ? \'Dark\' : \'Light\'}})</h3>    <p matLine>Applies your system default theme.</p>  </mat-list-option></mat-selection-list></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CommonErrorComponent', 'selector': 'app-common-error'},{'name': 'DepartureListComponent', 'selector': 'app-departure-list'},{'name': 'DepartureListItemComponent', 'selector': 'app-departure-list-item'},{'name': 'HeaderBoxComponent', 'selector': 'app-header-box'},{'name': 'MainToolbarComponent', 'selector': 'app-main-toolbar'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'NotFoundMessageSwitchComponent', 'selector': 'app-not-found-msg-switch'},{'name': 'RequestUpdateDialogComponent', 'selector': 'app-request-update-dialog'},{'name': 'RetryDialogComponent', 'selector': 'app-retry-dialog'},{'name': 'RouteListComponent', 'selector': 'app-route-list'},{'name': 'RouteLoadingIndicatorComponent', 'selector': 'app-route-loading-indicator'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'StopInfoComponent', 'selector': 'app-stop-info'},{'name': 'StopPointInfoComponent', 'selector': 'app-stop-point-info'},{'name': 'StopsInfoComponent', 'selector': 'app-stops-info'},{'name': 'ThemeSelectorComponent', 'selector': 'app-theme-selector'},{'name': 'ToolbarSearchBoxComponent', 'selector': 'app-toolbar-search'},{'name': 'TripPassagesComponent', 'selector': 'app-trip-passages'},{'name': 'TripPassagesListComponent', 'selector': 'app-trip-passages-list'},{'name': 'TripPassagesListItemComponent', 'selector': 'app-trip-passages-list-item'}];
     var DIRECTIVES = [{'name': 'BaseOlMapDirective', 'selector': ''},{'name': 'CountdownTimerDirective', 'selector': 'span[appCountdownTimer]'},{'name': 'OlMainMapDirective', 'selector': 'map[appOlMainMap]'},{'name': 'OlStaticMapDirective', 'selector': 'map[appOlStatic]'},{'name': 'OsmOlMapDirective', 'selector': ''},{'name': 'VectorOlMapDirective', 'selector': ''}];
     var ACTUAL_COMPONENT = {'name': 'ThemeSelectorComponent'};

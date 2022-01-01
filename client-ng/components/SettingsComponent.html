@@ -134,13 +134,18 @@
     styleUrls: [&#x27;./settings.component.scss&#x27;],
     templateUrl: &#x27;./settings.component.html&#x27;,
 })
-export class SettingsComponent {
-}
+export class SettingsComponent {}
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;mat-nav-list&gt;&lt;h3 matSubheader&gt;Appearance&lt;/h3&gt;&lt;a mat-list-item [routerLink]&#x3D;&quot;[&#x27;/settings&#x27;,&#x27;theme&#x27;]&quot; role&#x3D;&quot;navigation&quot;&gt;&lt;mat-icon matListIcon&gt;color_lense&lt;/mat-icon&gt;&lt;h4 matLine&gt;Theme&lt;/h4&gt;&lt;p matLine&gt;Select your theme preference&lt;/p&gt;&lt;/a&gt;&lt;/mat-nav-list&gt;</code></pre>
+        <pre class="line-numbers"><code class="language-html">
+&lt;mat-nav-list&gt;
+  &lt;h3 matSubheader&gt;Appearance&lt;/h3&gt;&lt;a mat-list-item [routerLink]&#x3D;&quot;[&#x27;/settings&#x27;,&#x27;theme&#x27;]&quot; role&#x3D;&quot;navigation&quot;&gt;
+    &lt;mat-icon matListIcon&gt;color_lense&lt;/mat-icon&gt;
+    &lt;h4 matLine&gt;Theme&lt;/h4&gt;
+    &lt;p matLine&gt;Select your theme preference&lt;/p&gt;&lt;/a&gt;
+&lt;/mat-nav-list&gt;</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
@@ -175,7 +180,7 @@ export class SettingsComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><mat-nav-list><h3 matSubheader>Appearance</h3><a mat-list-item [routerLink]="[\'/settings\',\'theme\']" role="navigation"><mat-icon matListIcon>color_lense</mat-icon><h4 matLine>Theme</h4><p matLine>Select your theme preference</p></a></mat-nav-list></div>'
+        var COMPONENT_TEMPLATE = '<div><mat-nav-list>  <h3 matSubheader>Appearance</h3><a mat-list-item [routerLink]="[\'/settings\',\'theme\']" role="navigation">    <mat-icon matListIcon>color_lense</mat-icon>    <h4 matLine>Theme</h4>    <p matLine>Select your theme preference</p></a></mat-nav-list></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CommonErrorComponent', 'selector': 'app-common-error'},{'name': 'DepartureListComponent', 'selector': 'app-departure-list'},{'name': 'DepartureListItemComponent', 'selector': 'app-departure-list-item'},{'name': 'HeaderBoxComponent', 'selector': 'app-header-box'},{'name': 'MainToolbarComponent', 'selector': 'app-main-toolbar'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'NotFoundMessageSwitchComponent', 'selector': 'app-not-found-msg-switch'},{'name': 'RequestUpdateDialogComponent', 'selector': 'app-request-update-dialog'},{'name': 'RetryDialogComponent', 'selector': 'app-retry-dialog'},{'name': 'RouteListComponent', 'selector': 'app-route-list'},{'name': 'RouteLoadingIndicatorComponent', 'selector': 'app-route-loading-indicator'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'StopInfoComponent', 'selector': 'app-stop-info'},{'name': 'StopPointInfoComponent', 'selector': 'app-stop-point-info'},{'name': 'StopsInfoComponent', 'selector': 'app-stops-info'},{'name': 'ThemeSelectorComponent', 'selector': 'app-theme-selector'},{'name': 'ToolbarSearchBoxComponent', 'selector': 'app-toolbar-search'},{'name': 'TripPassagesComponent', 'selector': 'app-trip-passages'},{'name': 'TripPassagesListComponent', 'selector': 'app-trip-passages-list'},{'name': 'TripPassagesListItemComponent', 'selector': 'app-trip-passages-list-item'}];
     var DIRECTIVES = [{'name': 'BaseOlMapDirective', 'selector': ''},{'name': 'CountdownTimerDirective', 'selector': 'span[appCountdownTimer]'},{'name': 'OlMainMapDirective', 'selector': 'map[appOlMainMap]'},{'name': 'OlStaticMapDirective', 'selector': 'map[appOlStatic]'},{'name': 'OsmOlMapDirective', 'selector': ''},{'name': 'VectorOlMapDirective', 'selector': ''}];
     var ACTUAL_COMPONENT = {'name': 'SettingsComponent'};

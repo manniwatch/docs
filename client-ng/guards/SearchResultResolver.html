@@ -108,7 +108,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/routes/search/search-result.resolver.ts:13</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/routes/search/search-result.resolver.ts:14</a></div>
                             </td>
                         </tr>
 
@@ -248,18 +248,19 @@ import { StopPointService } from &#x27;src/app/services/stop-point.service&#x27;
 
 @Injectable()
 export class SearchResultResolver implements Resolve&lt;any&gt; {
-
-    public constructor(private stopService: StopPointService) { }
+    public constructor(private stopService: StopPointService) {}
     public resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable&lt;IStopLocation[]&gt; {
-        return this.stopService.stopObservable
-            .pipe(take(1),
-                map((stops: IStopLocation[]): IStopLocation[] &#x3D;&gt;
-                    stops
-                        /**
-                         * Filter by search term
-                         */
-                        .filter((option: IStopLocation): boolean &#x3D;&gt; option.name.toLowerCase().includes(route.queryParams.q))
-                        .sort((a: IStopLocation, b: IStopLocation): number &#x3D;&gt; a.name.localeCompare(b.name))));
+        return this.stopService.stopObservable.pipe(
+            take(1),
+            map((stops: IStopLocation[]): IStopLocation[] &#x3D;&gt;
+                stops
+                    /**
+                     * Filter by search term
+                     */
+                    .filter((option: IStopLocation): boolean &#x3D;&gt; option.name.toLowerCase().includes(route.queryParams.q as string))
+                    .sort((a: IStopLocation, b: IStopLocation): number &#x3D;&gt; a.name.localeCompare(b.name))
+            )
+        );
     }
 }
 </code></pre>

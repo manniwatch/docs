@@ -303,8 +303,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="59"
-                            class="link-to-prism">src/app/modules/main-toolbar/search-box.component.ts:59</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="57"
+                            class="link-to-prism">src/app/modules/main-toolbar/search-box.component.ts:57</a></div>
                 </td>
             </tr>
 
@@ -342,8 +342,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="32"
-                            class="link-to-prism">src/app/modules/main-toolbar/search-box.component.ts:32</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="31"
+                            class="link-to-prism">src/app/modules/main-toolbar/search-box.component.ts:31</a></div>
                 </td>
             </tr>
 
@@ -381,8 +381,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="28"
-                            class="link-to-prism">src/app/modules/main-toolbar/search-box.component.ts:28</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="27"
+                            class="link-to-prism">src/app/modules/main-toolbar/search-box.component.ts:27</a></div>
                 </td>
             </tr>
 
@@ -420,8 +420,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="50"
-                            class="link-to-prism">src/app/modules/main-toolbar/search-box.component.ts:50</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="48"
+                            class="link-to-prism">src/app/modules/main-toolbar/search-box.component.ts:48</a></div>
                 </td>
             </tr>
 
@@ -555,17 +555,15 @@ import { debounceTime, filter, startWith } from &#x27;rxjs/operators&#x27;;
     templateUrl: &#x27;./search-box.component.html&#x27;,
 })
 export class ToolbarSearchBoxComponent implements OnInit, OnDestroy {
-
     public searchControl: FormControl &#x3D; new FormControl();
 
     @ViewChild(&#x27;searchInput&#x27;)
     public searchInput: ElementRef;
 
     @Output()
-    public readonly focusSearch: EventEmitter&lt;boolean&gt; &#x3D; new EventEmitter();
+    public readonly focusSearch: EventEmitter&lt;boolean&gt; &#x3D; new EventEmitter&lt;boolean&gt;();
     private updateSubscription: Subscription;
-    constructor(private router: Router) {
-    }
+    constructor(private router: Router) {}
 
     public onLoseFocus(): void {
         this.focusSearch.next(false);
@@ -575,12 +573,11 @@ export class ToolbarSearchBoxComponent implements OnInit, OnDestroy {
         this.updateSubscription &#x3D; this.searchControl.valueChanges
             .pipe(
                 startWith(&#x27;&#x27;),
-                filter((value: string): boolean &#x3D;&gt;
-                    value.length &gt; 0),
-                debounceTime(200),
+                filter((value: string): boolean &#x3D;&gt; value.length &gt; 0),
+                debounceTime(200)
             )
             .subscribe((value: string): void &#x3D;&gt; {
-                this.router.navigate([&#x27;search&#x27;], {
+                void this.router.navigate([&#x27;search&#x27;], {
                     queryParams: {
                         q: value,
                     },
@@ -590,9 +587,9 @@ export class ToolbarSearchBoxComponent implements OnInit, OnDestroy {
     }
 
     public onSubmit(): void {
-        this.router.navigate([&#x27;search&#x27;], {
+        void this.router.navigate([&#x27;search&#x27;], {
             queryParams: {
-                q: this.searchControl.value,
+                q: this.searchControl.value as string,
             },
             skipLocationChange: false,
         });
@@ -603,25 +600,31 @@ export class ToolbarSearchBoxComponent implements OnInit, OnDestroy {
             this.updateSubscription.unsubscribe();
         }
     }
-
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;form role&#x3D;&quot;search&quot;&gt;&lt;mat-form-field&gt;&lt;input #searchInput (blur)&#x3D;&quot;onLoseFocus()&quot; type&#x3D;&quot;search&quot; aria-label&#x3D;&quot;Number&quot; placeholder&#x3D;&quot;Stopname&quot; matInput [formControl]&#x3D;&quot;searchControl&quot; i18n-placeholder&#x3D;&quot;Stopname to search@@stopnameToSearch&quot; i18n-aria-placeholder&#x3D;&quot;Stopname to search@@stopnameToSearch&quot; (ngSubmit)&#x3D;&quot;onSubmit()&quot; (keyup.enter)&#x3D;&quot;onSubmit()&quot;&gt;&lt;/mat-form-field&gt;&lt;/form&gt;</code></pre>
+        <pre class="line-numbers"><code class="language-html">
+&lt;form role&#x3D;&quot;search&quot;&gt;
+  &lt;mat-form-field&gt;
+    &lt;input #searchInput (blur)&#x3D;&quot;onLoseFocus()&quot; type&#x3D;&quot;search&quot; aria-label&#x3D;&quot;Number&quot; placeholder&#x3D;&quot;Stopname&quot; matInput [formControl]&#x3D;&quot;searchControl&quot; i18n-placeholder&#x3D;&quot;Stopname to search@@stopnameToSearch&quot; i18n-aria-placeholder&#x3D;&quot;Stopname to search@@stopnameToSearch&quot; (ngSubmit)&#x3D;&quot;onSubmit()&quot; (keyup.enter)&#x3D;&quot;onSubmit()&quot;&gt;
+  &lt;/mat-form-field&gt;
+&lt;/form&gt;</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
                 <p class="comment">
                     <code>./search-box.component.scss</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss">:host{
-    display:block;
+                <pre class="line-numbers"><code class="language-scss">:host {
+    display: block;
 }
-form,mat-form-field{
-    width:100%;
-}</code></pre>
+form,
+mat-form-field {
+    width: 100%;
+}
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -649,7 +652,7 @@ form,mat-form-field{
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><form role="search"><mat-form-field><input #searchInput (blur)="onLoseFocus()" type="search" aria-label="Number" placeholder="Stopname" matInput [formControl]="searchControl" i18n-placeholder="Stopname to search@@stopnameToSearch" i18n-aria-placeholder="Stopname to search@@stopnameToSearch" (ngSubmit)="onSubmit()" (keyup.enter)="onSubmit()"></mat-form-field></form></div>'
+        var COMPONENT_TEMPLATE = '<div><form role="search">  <mat-form-field>    <input #searchInput (blur)="onLoseFocus()" type="search" aria-label="Number" placeholder="Stopname" matInput [formControl]="searchControl" i18n-placeholder="Stopname to search@@stopnameToSearch" i18n-aria-placeholder="Stopname to search@@stopnameToSearch" (ngSubmit)="onSubmit()" (keyup.enter)="onSubmit()">  </mat-form-field></form></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CommonErrorComponent', 'selector': 'app-common-error'},{'name': 'DepartureListComponent', 'selector': 'app-departure-list'},{'name': 'DepartureListItemComponent', 'selector': 'app-departure-list-item'},{'name': 'HeaderBoxComponent', 'selector': 'app-header-box'},{'name': 'MainToolbarComponent', 'selector': 'app-main-toolbar'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'NotFoundMessageSwitchComponent', 'selector': 'app-not-found-msg-switch'},{'name': 'RequestUpdateDialogComponent', 'selector': 'app-request-update-dialog'},{'name': 'RetryDialogComponent', 'selector': 'app-retry-dialog'},{'name': 'RouteListComponent', 'selector': 'app-route-list'},{'name': 'RouteLoadingIndicatorComponent', 'selector': 'app-route-loading-indicator'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'StopInfoComponent', 'selector': 'app-stop-info'},{'name': 'StopPointInfoComponent', 'selector': 'app-stop-point-info'},{'name': 'StopsInfoComponent', 'selector': 'app-stops-info'},{'name': 'ThemeSelectorComponent', 'selector': 'app-theme-selector'},{'name': 'ToolbarSearchBoxComponent', 'selector': 'app-toolbar-search'},{'name': 'TripPassagesComponent', 'selector': 'app-trip-passages'},{'name': 'TripPassagesListComponent', 'selector': 'app-trip-passages-list'},{'name': 'TripPassagesListItemComponent', 'selector': 'app-trip-passages-list-item'}];
     var DIRECTIVES = [{'name': 'BaseOlMapDirective', 'selector': ''},{'name': 'CountdownTimerDirective', 'selector': 'span[appCountdownTimer]'},{'name': 'OlMainMapDirective', 'selector': 'map[appOlMainMap]'},{'name': 'OlStaticMapDirective', 'selector': 'map[appOlStatic]'},{'name': 'OsmOlMapDirective', 'selector': ''},{'name': 'VectorOlMapDirective', 'selector': ''}];
     var ACTUAL_COMPONENT = {'name': 'ToolbarSearchBoxComponent'};

@@ -167,8 +167,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="22"
-                            class="link-to-prism">src/app/services/api.service.ts:22</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="23"
+                            class="link-to-prism">src/app/services/api.service.ts:23</a></div>
                 </td>
             </tr>
 
@@ -238,8 +238,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="21"
-                            class="link-to-prism">src/app/services/api.service.ts:21</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="22"
+                            class="link-to-prism">src/app/services/api.service.ts:22</a></div>
                 </td>
             </tr>
 
@@ -309,8 +309,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="36"
-                            class="link-to-prism">src/app/services/api.service.ts:36</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="31"
+                            class="link-to-prism">src/app/services/api.service.ts:31</a></div>
                 </td>
             </tr>
 
@@ -348,8 +348,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="23"
-                            class="link-to-prism">src/app/services/api.service.ts:23</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="24"
+                            class="link-to-prism">src/app/services/api.service.ts:24</a></div>
                 </td>
             </tr>
 
@@ -419,8 +419,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="34"
-                            class="link-to-prism">src/app/services/api.service.ts:34</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="29"
+                            class="link-to-prism">src/app/services/api.service.ts:29</a></div>
                 </td>
             </tr>
 
@@ -490,8 +490,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="24"
-                            class="link-to-prism">src/app/services/api.service.ts:24</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="25"
+                            class="link-to-prism">src/app/services/api.service.ts:25</a></div>
                 </td>
             </tr>
 
@@ -597,8 +597,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="35"
-                            class="link-to-prism">src/app/services/api.service.ts:35</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="30"
+                            class="link-to-prism">src/app/services/api.service.ts:30</a></div>
                 </td>
             </tr>
 
@@ -668,8 +668,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="28"
-                            class="link-to-prism">src/app/services/api.service.ts:28</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="26"
+                            class="link-to-prism">src/app/services/api.service.ts:26</a></div>
                 </td>
             </tr>
 
@@ -775,8 +775,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="20"
-                            class="link-to-prism">src/app/services/api.service.ts:20</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="21"
+                            class="link-to-prism">src/app/services/api.service.ts:21</a></div>
                 </td>
             </tr>
 
@@ -858,8 +858,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="33"
-                            class="link-to-prism">src/app/services/api.service.ts:33</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="28"
+                            class="link-to-prism">src/app/services/api.service.ts:28</a></div>
                 </td>
             </tr>
 
@@ -941,8 +941,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="32"
-                            class="link-to-prism">src/app/services/api.service.ts:32</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="27"
+                            class="link-to-prism">src/app/services/api.service.ts:27</a></div>
                 </td>
             </tr>
 
@@ -1019,14 +1019,8 @@ export abstract class ApiService {
     abstract getRouteByVehicleId(vehicleId: string): Observable&lt;IVehiclePathInfo&gt;;
     abstract getRouteByTripId(tripId: string): Observable&lt;IVehiclePathInfo&gt;;
     abstract getStopInfo(stopId: string): Observable&lt;IStopInfo&gt;;
-    abstract getStopPassages(stopId: string,
-        mode?: StopMode,
-        startTime?: number,
-        timeFrame?: number): Observable&lt;IStopPassage&gt;;
-    abstract getStopPointPassages(stopPointId: string,
-        mode?: StopMode,
-        startTime?: number,
-        timeFrame?: number): Observable&lt;IStopPassage&gt;;
+    abstract getStopPassages(stopId: string, mode?: StopMode, startTime?: number, timeFrame?: number): Observable&lt;IStopPassage&gt;;
+    abstract getStopPointPassages(stopPointId: string, mode?: StopMode, startTime?: number, timeFrame?: number): Observable&lt;IStopPassage&gt;;
     abstract getVehicleLocations(lastUpdate: number): Observable&lt;IVehicleLocationList&gt;;
     abstract getVehicleLocation(vehicleId: string, lastUpdate: number): Observable&lt;IVehicleLocation&gt;;
     abstract getStopLocations(bounds?: IBounds): Observable&lt;IStopLocations&gt;;

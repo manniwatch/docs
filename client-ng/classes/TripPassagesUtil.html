@@ -131,8 +131,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="28"
-                            class="link-to-prism">src/app/routes/trip-passages/trip-util.ts:28</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="30"
+                            class="link-to-prism">src/app/routes/trip-passages/trip-util.ts:30</a></div>
                 </td>
             </tr>
 
@@ -202,11 +202,19 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="38"
-                            class="link-to-prism">src/app/routes/trip-passages/trip-util.ts:38</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="41"
+                            class="link-to-prism">src/app/routes/trip-passages/trip-util.ts:41</a></div>
                 </td>
             </tr>
 
+            <tr>
+                <td class="col-md-4">
+                    <b>Type parameters :</b>
+                    <ul class="type-parameters">
+                        <li>T</li>
+                    </ul>
+                </td>
+            </tr>
 
             <tr>
                 <td class="col-md-4">
@@ -241,7 +249,7 @@
                     <div>
                     </div>
                     <div class="io-description">
-                        <b>Returns : </b>        <code><a href="../interfaces/IPassageStatus.html" target="_self" >OperatorFunction&lt;any, IPassageStatus&gt;</a></code>
+                        <b>Returns : </b>        <code><a href="../interfaces/IPassageStatus.html" target="_self" >OperatorFunction&lt;T, IPassageStatus&gt;</a></code>
 
                     </div>
                     <div class="io-description">
@@ -261,7 +269,8 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { TripInfoWithId } from &#x27;@manniwatch/client-types&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { HttpErrorResponse } from &#x27;@angular/common/http&#x27;;
+import { TripInfoWithId } from &#x27;@manniwatch/client-types&#x27;;
 import { of, Observable, OperatorFunction } from &#x27;rxjs&#x27;;
 import { catchError, map } from &#x27;rxjs/operators&#x27;;
 
@@ -285,22 +294,23 @@ export interface IPassageStatus {
 
 export class TripPassagesUtil {
     public static convertResponse(tripId: string): OperatorFunction&lt;TripInfoWithId, IPassageStatus&gt; {
-        return map((tripPassages: TripInfoWithId): IPassageStatus &#x3D;&gt;
-        ({
-            failures: 0,
-            status: UpdateStatus.LOADED,
-            timestamp: Date.now(),
-            tripId: tripPassages.tripId,
-            tripInfo: tripPassages,
-        }));
+        return map(
+            (tripPassages: TripInfoWithId): IPassageStatus &#x3D;&gt; ({
+                failures: 0,
+                status: UpdateStatus.LOADED,
+                timestamp: Date.now(),
+                tripId: tripPassages.tripId,
+                tripInfo: tripPassages,
+            })
+        );
     }
-    public static handleError(tripId: string): OperatorFunction&lt;any, IPassageStatus&gt; {
-        return catchError((err: any): Observable&lt;IPassageStatus&gt; &#x3D;&gt; {
+    public static handleError&lt;T extends IPassageStatus &#x3D; IPassageStatus&gt;(tripId: string): OperatorFunction&lt;T, IPassageStatus&gt; {
+        return catchError((err: HttpErrorResponse): Observable&lt;IPassageStatus&gt; &#x3D;&gt; {
             if (err &amp;&amp; err.status) {
                 return of({
                     failures: 1,
                     passages: undefined,
-                    status: (err.status &gt;&#x3D; 500 &amp;&amp; err.status &lt; 600) ? UpdateStatus.SERVER_ERROR : err.status,
+                    status: err.status &gt;&#x3D; 500 &amp;&amp; err.status &lt; 600 ? UpdateStatus.SERVER_ERROR : err.status,
                     timestamp: Date.now(),
                     tripId,
                 });

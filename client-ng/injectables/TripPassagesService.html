@@ -137,7 +137,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/routes/trip-passages/trip-passages.service.ts:16</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/routes/trip-passages/trip-passages.service.ts:17</a></div>
                             </td>
                         </tr>
 
@@ -238,8 +238,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="53"
-                            class="link-to-prism">src/app/routes/trip-passages/trip-passages.service.ts:53</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="60"
+                            class="link-to-prism">src/app/routes/trip-passages/trip-passages.service.ts:60</a></div>
                 </td>
             </tr>
 
@@ -321,8 +321,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="43"
-                            class="link-to-prism">src/app/routes/trip-passages/trip-passages.service.ts:43</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="51"
+                            class="link-to-prism">src/app/routes/trip-passages/trip-passages.service.ts:51</a></div>
                 </td>
             </tr>
 
@@ -392,8 +392,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="25"
-                            class="link-to-prism">src/app/routes/trip-passages/trip-passages.service.ts:25</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="28"
+                            class="link-to-prism">src/app/routes/trip-passages/trip-passages.service.ts:28</a></div>
                 </td>
             </tr>
 
@@ -463,8 +463,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="61"
-                            class="link-to-prism">src/app/routes/trip-passages/trip-passages.service.ts:61</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="69"
+                            class="link-to-prism">src/app/routes/trip-passages/trip-passages.service.ts:69</a></div>
                 </td>
             </tr>
 
@@ -507,7 +507,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/routes/trip-passages/trip-passages.service.ts:15</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/routes/trip-passages/trip-passages.service.ts:16</a></div>
                         </td>
                     </tr>
 
@@ -535,7 +535,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/routes/trip-passages/trip-passages.service.ts:16</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/routes/trip-passages/trip-passages.service.ts:17</a></div>
                         </td>
                     </tr>
 
@@ -560,59 +560,67 @@ import { IPassageStatus, TripPassagesUtil, UpdateStatus } from &#x27;./trip-util
 export class TripPassagesService {
     public readonly statusObservable: Observable&lt;IPassageStatus&gt;;
     private readonly statusSubject: BehaviorSubject&lt;IPassageStatus&gt;;
-    constructor(private route: ActivatedRoute,
+    constructor(
+        private route: ActivatedRoute,
         private apiService: ApiService,
         private vehicleService: VehicleService,
-        private appRef: ApplicationRef) {
-        this.statusSubject &#x3D; new BehaviorSubject(route.snapshot.data.tripPassages);
+        private appRef: ApplicationRef
+    ) {
+        this.statusSubject &#x3D; new BehaviorSubject&lt;IPassageStatus&gt;(route.snapshot.data.tripPassages as IPassageStatus);
         this.statusObservable &#x3D; this.createStatusObservable(this.statusSubject);
     }
 
     public createStatusObservable(statusSubject: Subject&lt;IPassageStatus&gt;): Observable&lt;IPassageStatus&gt; {
         const refreshObservable: Observable&lt;IPassageStatus&gt; &#x3D; this.createRefreshPollObservable(statusSubject);
-        return this.appRef.isStable
-            .pipe(first(),
-                mergeMap((): Observable&lt;IPassageStatus&gt; &#x3D;&gt; {
-                    return merge(this.route.data.pipe(map((data: Data): ITripPassages &#x3D;&gt; data.tripPassages)), refreshObservable)
-                        .pipe(scan((acc: IPassageStatus, val: IPassageStatus, idx: number): IPassageStatus &#x3D;&gt; {
-                            if (val.failures &gt; 0) {
-                                const newVal: IPassageStatus &#x3D; Object.assign({}, val);
-                                newVal.failures &#x3D; val.failures + acc.failures;
-                                return newVal;
-                            }
-                            return val;
-                        }),
-                            tap((newStatus: IPassageStatus): void &#x3D;&gt; statusSubject.next(newStatus)));
-                }));
+        return this.appRef.isStable.pipe(
+            first(),
+            mergeMap((): Observable&lt;IPassageStatus&gt; &#x3D;&gt; {
+                return merge(
+                    this.route.data.pipe(map((data: Data): ITripPassages &#x3D;&gt; data.tripPassages as ITripPassages)),
+                    refreshObservable
+                ).pipe(
+                    scan((acc: IPassageStatus, val: IPassageStatus, idx: number): IPassageStatus &#x3D;&gt; {
+                        if (val.failures &gt; 0) {
+                            const newVal: IPassageStatus &#x3D; Object.assign({}, val);
+                            newVal.failures &#x3D; val.failures + acc.failures;
+                            return newVal;
+                        }
+                        return val;
+                    }),
+                    tap((newStatus: IPassageStatus): void &#x3D;&gt; statusSubject.next(newStatus))
+                );
+            })
+        );
     }
 
     public createRefreshPollObservable(statusSubject: Subject&lt;IPassageStatus&gt;): Observable&lt;IPassageStatus&gt; {
         return statusSubject.pipe(
             switchMap((status: IPassageStatus): Observable&lt;IPassageStatus&gt; &#x3D;&gt; {
-                const refreshDelay: number &#x3D; (status.status &#x3D;&#x3D;&#x3D; UpdateStatus.LOADED) ?
-                    10000 :
-                    20000;
+                const refreshDelay: number &#x3D; status.status &#x3D;&#x3D;&#x3D; UpdateStatus.LOADED ? 10000 : 20000;
                 return this.createDelayedPassageRequest(status.tripId, refreshDelay);
-            }));
+            })
+        );
     }
 
     public createDelayedPassageRequest(tripId: string, refreshDelay: number): Observable&lt;IPassageStatus&gt; {
-        return timer(refreshDelay)
-            .pipe(take(1),
-                mergeMap((): Observable&lt;ITripPassages&gt; &#x3D;&gt; this.apiService.getTripPassages(tripId)),
-                TripPassagesUtil.convertResponse(tripId),
-                TripPassagesUtil.handleError(tripId));
+        return timer(refreshDelay).pipe(
+            take(1),
+            mergeMap((): Observable&lt;ITripPassages&gt; &#x3D;&gt; this.apiService.getTripPassages(tripId)),
+            TripPassagesUtil.convertResponse(tripId),
+            TripPassagesUtil.handleError(tripId)
+        );
     }
 
     public createStopLocationObservable(): Observable&lt;TimestampedVehicleLocation&gt; {
-        return this.route.data
-            .pipe(map((data: any): IPassageStatus &#x3D;&gt; {
-                return data.tripPassages;
-            }), switchMap((tripStatus: IPassageStatus): Observable&lt;TimestampedVehicleLocation&gt; &#x3D;&gt; {
+        return this.route.data.pipe(
+            map((data: Data): IPassageStatus &#x3D;&gt; {
+                return data.tripPassages as IPassageStatus;
+            }),
+            switchMap((tripStatus: IPassageStatus): Observable&lt;TimestampedVehicleLocation&gt; &#x3D;&gt; {
                 return this.vehicleService.getVehicleByTripId(tripStatus.tripId);
-            }));
+            })
+        );
     }
-
 }
 </code></pre>
     </div>

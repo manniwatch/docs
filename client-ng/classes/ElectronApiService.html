@@ -151,12 +151,12 @@
                 <tr>
                     <td class="col-md-4">
                                 <span class="modifier">Public</span>
-                        <code>constructor(service: <a href="../classes/ApiService.html" target="_self">ApiService</a>)</code>
+                        <code>constructor(service?: <a href="../classes/ApiService.html" target="_self">ApiService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/services/electron-api.service.ts:28</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/services/electron-api.service.ts:29</a></div>
                             </td>
                         </tr>
 
@@ -181,7 +181,7 @@
                                                         </td>
                                                   
                                                     <td>
-                                                            No
+                                                            Yes
                                                     </td>
                                                     
                                                 </tr>
@@ -364,8 +364,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="83"
-                            class="link-to-prism">src/app/services/electron-api.service.ts:83</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="82"
+                            class="link-to-prism">src/app/services/electron-api.service.ts:82</a></div>
                 </td>
             </tr>
 
@@ -474,8 +474,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="75"
-                            class="link-to-prism">src/app/services/electron-api.service.ts:75</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="74"
+                            class="link-to-prism">src/app/services/electron-api.service.ts:74</a></div>
                 </td>
             </tr>
 
@@ -662,8 +662,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="79"
-                            class="link-to-prism">src/app/services/electron-api.service.ts:79</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="78"
+                            class="link-to-prism">src/app/services/electron-api.service.ts:78</a></div>
                 </td>
             </tr>
 
@@ -733,8 +733,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="60"
-                            class="link-to-prism">src/app/services/electron-api.service.ts:60</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="57"
+                            class="link-to-prism">src/app/services/electron-api.service.ts:57</a></div>
                 </td>
             </tr>
 
@@ -939,8 +939,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="71"
-                            class="link-to-prism">src/app/services/electron-api.service.ts:71</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="70"
+                            class="link-to-prism">src/app/services/electron-api.service.ts:70</a></div>
                 </td>
             </tr>
 
@@ -1028,8 +1028,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="67"
-                            class="link-to-prism">src/app/services/electron-api.service.ts:67</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="66"
+                            class="link-to-prism">src/app/services/electron-api.service.ts:66</a></div>
                 </td>
             </tr>
 
@@ -1091,8 +1091,11 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Inject, InjectionToken } from &#x27;@angular/core&#x27;;
-import {
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Inject, InjectionToken, Optional } from &#x27;@angular/core&#x27;;
+import { from, EMPTY, Observable } from &#x27;rxjs&#x27;;
+import { getManniwatchDesktopApi } from &#x27;../util/electron&#x27;;
+import { ApiService as RootApiService } from &#x27;./api.service&#x27;;
+import type {
     ISettings,
     IStopInfo,
     IStopLocations,
@@ -1103,10 +1106,7 @@ import {
     IVehiclePathInfo,
     StopMode,
 } from &#x27;@manniwatch/api-types&#x27;;
-import { ApiService, IBounds, TripInfoWithId } from &#x27;@manniwatch/client-types&#x27;;
-import { from, EMPTY, Observable } from &#x27;rxjs&#x27;;
-import { getManniwatchDesktopApi } from &#x27;../util/electron&#x27;;
-import { ApiService as RootApiService } from &#x27;./api.service&#x27;;
+import type { ApiService, IBounds, TripInfoWithId } from &#x27;@manniwatch/client-types&#x27;;
 
 export const ELECTRON_API: InjectionToken&lt;ApiService&gt; &#x3D; new InjectionToken&lt;ApiService&gt;(&#x27;app.electron-api&#x27;, {
     factory: (): ApiService &#x3D;&gt; {
@@ -1115,8 +1115,7 @@ export const ELECTRON_API: InjectionToken&lt;ApiService&gt; &#x3D; new Injection
     providedIn: &#x27;root&#x27;,
 });
 export class ElectronApiService implements RootApiService {
-
-    public constructor(@Inject(ELECTRON_API) private readonly service: ApiService) {
+    public constructor(@Optional() @Inject(ELECTRON_API) private readonly service?: ApiService) {
         // tslint:disable-next-line:triple-equals
         if (service &#x3D;&#x3D; undefined) {
             throw new Error(&#x27;No electron config provided&#x27;);
@@ -1139,25 +1138,24 @@ export class ElectronApiService implements RootApiService {
         return from(this.service.getStopInfo(stopId));
     }
 
-    public getStopPassages(stopId: string,
-        mode: StopMode &#x3D; &#x27;departure&#x27;,
-        startTime?: number,
-        timeFrame?: number): Observable&lt;IStopPassage&gt; {
+    public getStopPassages(stopId: string, mode: StopMode &#x3D; &#x27;departure&#x27;, startTime?: number, timeFrame?: number): Observable&lt;IStopPassage&gt; {
         return from(this.service.getStopPassages(stopId, mode, startTime, timeFrame));
     }
 
-    public getStopPointPassages(stopPointId: string,
+    public getStopPointPassages(
+        stopPointId: string,
         mode: StopMode &#x3D; &#x27;departure&#x27;,
         startTime?: number,
-        timeFrame?: number): Observable&lt;IStopPassage&gt; {
+        timeFrame?: number
+    ): Observable&lt;IStopPassage&gt; {
         return from(this.service.getStopPointPassages(stopPointId, mode, startTime, timeFrame));
     }
 
-    public getVehicleLocations(lastUpdate: number &#x3D; 0): Observable&lt;IVehicleLocationList&gt; {
+    public getVehicleLocations(lastUpdate &#x3D; 0): Observable&lt;IVehicleLocationList&gt; {
         return from(this.service.getVehicleLocations(&#x27;RAW&#x27;, lastUpdate));
     }
 
-    public getVehicleLocation(vehicleId: string, lastUpdate: number &#x3D; 0): Observable&lt;IVehicleLocation&gt; {
+    public getVehicleLocation(vehicleId: string, lastUpdate &#x3D; 0): Observable&lt;IVehicleLocation&gt; {
         return EMPTY; // from(this.service.getVehicleLocation(vehicleId, lastUpdate));
     }
 

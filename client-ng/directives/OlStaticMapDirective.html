@@ -345,8 +345,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="60"
-                            class="link-to-prism">src/app/modules/openlayers/ol-static-map.directive.ts:60</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="58"
+                            class="link-to-prism">src/app/modules/openlayers/ol-static-map.directive.ts:58</a></div>
                 </td>
             </tr>
 
@@ -416,8 +416,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="49"
-                            class="link-to-prism">src/app/modules/openlayers/ol-static-map.directive.ts:49</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="47"
+                            class="link-to-prism">src/app/modules/openlayers/ol-static-map.directive.ts:47</a></div>
                 </td>
             </tr>
 
@@ -487,8 +487,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="66"
-                            class="link-to-prism">src/app/modules/openlayers/ol-static-map.directive.ts:66</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="64"
+                            class="link-to-prism">src/app/modules/openlayers/ol-static-map.directive.ts:64</a></div>
                 </td>
             </tr>
 
@@ -554,12 +554,6 @@
                     </span>
                 </td>
             </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-
-                    </td>
-                </tr>
                 <tr>
                     <td class="col-md-4">
                         <i>Default value : </i><code>false</code>
@@ -703,9 +697,9 @@ export interface IStaticMapData {
     stops?: IStopLocation[];
     vehicles?: IVehicleLocation[];
     map: {
-        blur?: boolean,
-        center?: TrapezeCoord,
-        zoomLevel?: number,
+        blur?: boolean;
+        center?: TrapezeCoord;
+        zoomLevel?: number;
     };
 }
 /**
@@ -715,18 +709,15 @@ export interface IStaticMapData {
     selector: &#x27;map[appOlStatic]&#x27;,
 })
 export class OlStaticMapDirective extends AbstractOlMapDirective implements OnChanges {
-
     private readonly KEY_MAP_DATA: string &#x3D; &#x27;mapData&#x27;;
     @HostBinding(&#x27;class.no-location&#x27;)
-    public blur: boolean &#x3D; false;
+    public blur &#x3D; false;
     protected readonly markerVectorSource: VectorSource&lt;Point&gt; &#x3D; undefined;
     protected readonly markerLayer: VectorLayer&lt;VectorSource&lt;Point&gt;&gt; &#x3D; undefined;
 
     @Input()
     public mapData: IStaticMapData;
-    constructor(elRef: ElementRef,
-        zone: NgZone,
-        settingsService: SettingsService) {
+    constructor(elRef: ElementRef, zone: NgZone, settingsService: SettingsService) {
         super(elRef, zone, settingsService);
         this.markerVectorSource &#x3D; new VectorSource();
         this.markerLayer &#x3D; new VectorLayer({
@@ -746,7 +737,7 @@ export class OlStaticMapDirective extends AbstractOlMapDirective implements OnCh
 
     public ngOnChanges(changes: SimpleChanges): void {
         if (this.KEY_MAP_DATA in changes) {
-            this.updateMapData(changes[this.KEY_MAP_DATA].currentValue);
+            this.updateMapData(changes[this.KEY_MAP_DATA].currentValue as IStaticMapData);
         }
     }
 

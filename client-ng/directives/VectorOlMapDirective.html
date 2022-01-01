@@ -61,6 +61,12 @@
 
 
 
+            <p class="comment">
+                <h3>Implements</h3>
+            </p>
+            <p class="comment">
+                            <code><a href="https://angular.io/api/core/AfterViewInit" target="_blank" >AfterViewInit</a></code>
+            </p>
 
 
 
@@ -120,7 +126,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/modules/openlayers/vector-ol-map.directive.ts:25</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/modules/openlayers/vector-ol-map.directive.ts:22</a></div>
                             </td>
                         </tr>
 
@@ -213,8 +219,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="87"
-                            class="link-to-prism">src/app/modules/openlayers/vector-ol-map.directive.ts:87</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="80"
+                            class="link-to-prism">src/app/modules/openlayers/vector-ol-map.directive.ts:80</a></div>
                 </td>
             </tr>
 
@@ -291,8 +297,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="94"
-                            class="link-to-prism">src/app/modules/openlayers/vector-ol-map.directive.ts:94</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="86"
+                            class="link-to-prism">src/app/modules/openlayers/vector-ol-map.directive.ts:86</a></div>
                 </td>
             </tr>
 
@@ -362,8 +368,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="56"
-                            class="link-to-prism">src/app/modules/openlayers/vector-ol-map.directive.ts:56</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="48"
+                            class="link-to-prism">src/app/modules/openlayers/vector-ol-map.directive.ts:48</a></div>
                 </td>
             </tr>
 
@@ -401,8 +407,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="32"
-                            class="link-to-prism">src/app/modules/openlayers/vector-ol-map.directive.ts:32</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="26"
+                            class="link-to-prism">src/app/modules/openlayers/vector-ol-map.directive.ts:26</a></div>
                 </td>
             </tr>
 
@@ -440,8 +446,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="71"
-                            class="link-to-prism">src/app/modules/openlayers/vector-ol-map.directive.ts:71</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="63"
+                            class="link-to-prism">src/app/modules/openlayers/vector-ol-map.directive.ts:63</a></div>
                 </td>
             </tr>
 
@@ -508,11 +514,7 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
-    Directive,
-    ElementRef,
-    NgZone,
-} from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { AfterViewInit, Directive, ElementRef, NgZone } from &#x27;@angular/core&#x27;;
 import { Map, View } from &#x27;ol&#x27;;
 import stylefunction from &#x27;ol-mapbox-style/dist/stylefunction&#x27;;
 import { Coordinate } from &#x27;ol/coordinate&#x27;;
@@ -528,11 +530,8 @@ import { BaseOlMapDirective } from &#x27;./base-ol-map.directive&#x27;;
 import { DARK_THEME, LIGHT_THEME } from &#x27;./theme&#x27;;
 
 @Directive()
-export abstract class VectorOlMapDirective extends BaseOlMapDirective&lt;VectorTile&gt; {
-
-    constructor(elRef: ElementRef,
-        zone: NgZone,
-        settings: SettingsService) {
+export abstract class VectorOlMapDirective extends BaseOlMapDirective&lt;VectorTile&gt; implements AfterViewInit {
+    constructor(elRef: ElementRef, zone: NgZone, settings: SettingsService) {
         super(elRef, zone, settings);
     }
     public ngAfterViewInit(): void {
@@ -541,10 +540,8 @@ export abstract class VectorOlMapDirective extends BaseOlMapDirective&lt;VectorT
             this.mBackgroundMapLayer &#x3D; this.createMapLayer();
             this.map &#x3D; new Map({
                 interactions: defaults(),
-                layers: [
-                    this.mBackgroundMapLayer,
-                ],
-                target: this.elRef.nativeElement,
+                layers: [this.mBackgroundMapLayer],
+                target: this.elRef.nativeElement as HTMLElement,
                 view: new View({
                     // projection: &#x27;EPSG:3857&#x27;, // &#x27;EPSG:4326&#x27;,
                     center: this.settings.getInitialMapCenter(),
@@ -588,17 +585,16 @@ export abstract class VectorOlMapDirective extends BaseOlMapDirective&lt;VectorT
 
     /**
      * Selected theme
+     *
      * @param theme theme to set
      */
     public applyTheme(theme: Theme): void {
         NgZone.assertNotInAngularZone();
-        stylefunction(this.mBackgroundMapLayer,
-            theme &#x3D;&#x3D;&#x3D; Theme.DARK ? DARK_THEME : LIGHT_THEME,
-            &#x27;openmaptiles&#x27;);
+        stylefunction(this.mBackgroundMapLayer, theme &#x3D;&#x3D;&#x3D; Theme.DARK ? DARK_THEME : LIGHT_THEME, &#x27;openmaptiles&#x27;);
     }
 
-    public applyVectorTheme(theme: Theme): void {
-    }
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
+    public applyVectorTheme(theme: Theme): void {}
 }
 </code></pre>
     </div>

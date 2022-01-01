@@ -222,20 +222,16 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ApplicationRef, Injectable } from &#x27;@angular/core&#x27;;
-import {
-    IVehicleLocation,
-    IVehicleLocationList,
-    VehicleLocations,
-} from &#x27;@manniwatch/api-types&#x27;;
+import { IVehicleLocation, IVehicleLocationList, VehicleLocations } from &#x27;@manniwatch/api-types&#x27;;
 import { concat, from, of, BehaviorSubject, Observable } from &#x27;rxjs&#x27;;
 import { catchError, debounceTime, first, map, mergeMap } from &#x27;rxjs/operators&#x27;;
 import { ApiService } from &#x27;./api.service&#x27;;
 
 export type TimestampedVehicleLocation &#x3D; IVehicleLocation &amp; {
-    lastUpdate: number,
+    lastUpdate: number;
 };
 export type TimestampedVehicles &#x3D; VehicleLocations &amp; {
-    lastUpdate: number,
+    lastUpdate: number;
 };
 export interface IData {
     error?: any;
@@ -243,73 +239,87 @@ export interface IData {
     vehicles: TimestampedVehicleLocation[];
 }
 
-enum DiffKey { UNCHANGED &#x3D; &#x27;unchanged&#x27;, CHANGED &#x3D; &#x27;changed&#x27;, ADDED &#x3D; &#x27;added&#x27;, REMOVED &#x3D; &#x27;removed&#x27; }
+enum DiffKey {
+    UNCHANGED &#x3D; &#x27;unchanged&#x27;,
+    CHANGED &#x3D; &#x27;changed&#x27;,
+    ADDED &#x3D; &#x27;added&#x27;,
+    REMOVED &#x3D; &#x27;removed&#x27;,
+}
 export interface IVehicleDiff {
     added: TimestampedVehicleLocation[];
     changed: TimestampedVehicleLocation[];
     removed: TimestampedVehicleLocation[];
     unchanged: TimestampedVehicleLocation[];
 }
-interface IInKeysResult { key?: DiffKey; idx: number; vehicle?: TimestampedVehicleLocation; }
-export const findInKeys: (inp: IVehicleDiff, keys: DiffKey[], id: string) &#x3D;&gt; IInKeysResult &#x3D;
-    (inp: IVehicleDiff, keys: DiffKey[], id: string): IInKeysResult &#x3D;&gt; {
-        for (const key of keys) {
-            const idx: number &#x3D; inp[key].findIndex((searchElement: TimestampedVehicleLocation): boolean &#x3D;&gt;
-                searchElement.id &#x3D;&#x3D;&#x3D; id);
-            if (idx &gt;&#x3D; 0) {
-                return {
-                    idx,
-                    key,
-                    vehicle: inp[key][idx],
-                };
-            }
+interface IInKeysResult {
+    key?: DiffKey;
+    idx: number;
+    vehicle?: TimestampedVehicleLocation;
+}
+export const findInKeys: (inp: IVehicleDiff, keys: DiffKey[], id: string) &#x3D;&gt; IInKeysResult &#x3D; (
+    inp: IVehicleDiff,
+    keys: DiffKey[],
+    id: string
+): IInKeysResult &#x3D;&gt; {
+    for (const key of keys) {
+        const idx: number &#x3D; inp[key].findIndex((searchElement: TimestampedVehicleLocation): boolean &#x3D;&gt; searchElement.id &#x3D;&#x3D;&#x3D; id);
+        if (idx &gt;&#x3D; 0) {
             return {
                 idx,
+                key,
+                vehicle: inp[key][idx],
             };
         }
-        return undefined;
-    };
-export const createVehicleDiff: &lt;T extends TimestampedVehicleLocation[]&gt;(previousState: IVehicleDiff, newVehicles: T) &#x3D;&gt; IVehicleDiff
-    &#x3D; &lt;T extends TimestampedVehicleLocation[]&gt;(previousState: IVehicleDiff, newVehicles: T): IVehicleDiff &#x3D;&gt; {
-        const newDiff: IVehicleDiff &#x3D; {
-            added: [],
-            changed: [],
-            removed: [],
-            unchanged: [],
+        return {
+            idx,
         };
-        // tslint:disable-next-line:triple-equals
-        const oldDiff: IVehicleDiff &#x3D; (previousState &#x3D;&#x3D; undefined) ? {
-            added: [],
-            changed: [],
-            removed: [],
-            unchanged: [],
-        } : previousState;
-        for (const newVehicle of newVehicles) {
-            const key: IInKeysResult &#x3D; findInKeys(oldDiff, [
-                DiffKey.ADDED,
-                DiffKey.UNCHANGED,
-                DiffKey.CHANGED,
-            ], newVehicle.id);
-            if (newVehicle.isDeleted &#x3D;&#x3D;&#x3D; true) {
-                if (key.idx &gt;&#x3D; 0) {
-                    newDiff.removed.push(newVehicle);
-                    continue;
-                }
-            }
-            if (key.idx &lt; 0) {
-                newDiff.added.push(newVehicle);
-                continue;
-            }
-            if (key.vehicle.lastUpdate &gt;&#x3D; newVehicle.lastUpdate) {
-                newDiff.unchanged.push(newVehicle);
-                continue;
-            } else if (key.vehicle.lastUpdate &lt; newVehicle.lastUpdate) {
-                newDiff.changed.push(newVehicle);
+    }
+    return undefined;
+};
+export const createVehicleDiff: &lt;T extends TimestampedVehicleLocation[]&gt;(previousState: IVehicleDiff, newVehicles: T) &#x3D;&gt; IVehicleDiff &#x3D; &lt;
+    T extends TimestampedVehicleLocation[]
+&gt;(
+    previousState: IVehicleDiff,
+    newVehicles: T
+): IVehicleDiff &#x3D;&gt; {
+    const newDiff: IVehicleDiff &#x3D; {
+        added: [],
+        changed: [],
+        removed: [],
+        unchanged: [],
+    };
+    // tslint:disable-next-line:triple-equals
+    const oldDiff: IVehicleDiff &#x3D;
+        previousState &#x3D;&#x3D; undefined
+            ? {
+                  added: [],
+                  changed: [],
+                  removed: [],
+                  unchanged: [],
+              }
+            : previousState;
+    for (const newVehicle of newVehicles) {
+        const key: IInKeysResult &#x3D; findInKeys(oldDiff, [DiffKey.ADDED, DiffKey.UNCHANGED, DiffKey.CHANGED], newVehicle.id);
+        if (newVehicle.isDeleted &#x3D;&#x3D;&#x3D; true) {
+            if (key.idx &gt;&#x3D; 0) {
+                newDiff.removed.push(newVehicle);
                 continue;
             }
         }
-        return newDiff;
-    };
+        if (key.idx &lt; 0) {
+            newDiff.added.push(newVehicle);
+            continue;
+        }
+        if (key.vehicle.lastUpdate &gt;&#x3D; newVehicle.lastUpdate) {
+            newDiff.unchanged.push(newVehicle);
+            continue;
+        } else if (key.vehicle.lastUpdate &lt; newVehicle.lastUpdate) {
+            newDiff.changed.push(newVehicle);
+            continue;
+        }
+    }
+    return newDiff;
+};
 
 type VehicleMap &#x3D; Map&lt;string, TimestampedVehicles&gt;;
 @Injectable({
@@ -317,11 +327,12 @@ type VehicleMap &#x3D; Map&lt;string, TimestampedVehicles&gt;;
 })
 export class VehicleService {
     private state: BehaviorSubject&lt;IData&gt; &#x3D; new BehaviorSubject({ lastUpdate: 0, vehicles: [] });
-    constructor(private api: ApiService,
-        appRef: ApplicationRef) {
+    constructor(private api: ApiService, appRef: ApplicationRef) {
         appRef.isStable
-            .pipe(first((item: boolean): boolean &#x3D;&gt; item),
-                mergeMap((): Observable&lt;IData&gt; &#x3D;&gt; this.createPoll()))
+            .pipe(
+                first((item: boolean): boolean &#x3D;&gt; item),
+                mergeMap((): Observable&lt;IData&gt; &#x3D;&gt; this.createPoll())
+            )
             .subscribe((data: IData): void &#x3D;&gt; {
                 this.state.next(data);
             });
@@ -332,49 +343,62 @@ export class VehicleService {
             lastUpdate: 0,
             vehicles: [],
         };
-        return concat(from([startValue]), this.state.pipe(debounceTime(10000)))
-            .pipe(mergeMap((previousData: IData): Observable&lt;IData&gt; &#x3D;&gt;
-                this.api.getVehicleLocations(previousData.lastUpdate)
-                    .pipe(map((value: IVehicleLocationList): IData &#x3D;&gt; {/*
+        return concat(from([startValue]), this.state.pipe(debounceTime(10000))).pipe(
+            mergeMap(
+                (previousData: IData): Observable&lt;IData&gt; &#x3D;&gt;
+                    this.api.getVehicleLocations(previousData.lastUpdate).pipe(
+                        map((value: IVehicleLocationList): IData &#x3D;&gt; {
+                            /*
                     if(previousData.lastUpdate!&#x3D;&#x3D;value.lastUpdate){
                         console.log(&quot;New location data acquired&quot;,value.lastUpdate)
                     }*/
-                        const timestampedNewLocations: TimestampedVehicles[] &#x3D;
-                            value.vehicles
-                                .map((veh: IVehicleLocation): TimestampedVehicles &#x3D;&gt;
-                                    Object.assign({
-                                        lastUpdate: value.lastUpdate,
-                                    }, veh));
-                        const reducedVehicles: VehicleMap &#x3D;
-                            timestampedNewLocations.concat(previousData.vehicles)
+                            const timestampedNewLocations: TimestampedVehicles[] &#x3D; value.vehicles.map(
+                                (veh: IVehicleLocation): TimestampedVehicles &#x3D;&gt;
+                                    Object.assign(
+                                        {
+                                            lastUpdate: value.lastUpdate,
+                                        },
+                                        veh
+                                    )
+                            );
+                            const reducedVehicles: VehicleMap &#x3D; timestampedNewLocations
+                                .concat(previousData.vehicles)
                                 .reduce((prev: VehicleMap, cur: TimestampedVehicles): VehicleMap &#x3D;&gt; {
                                     if (prev.has(cur.id) &amp;&amp; prev.get(cur.id).lastUpdate &gt;&#x3D; cur.lastUpdate) {
                                         return prev;
                                     }
                                     prev.set(cur.id, cur);
                                     return prev;
-                                }, new Map());
-                        const filterInvalid: TimestampedVehicleLocation[] &#x3D;
-                            Array.from(reducedVehicles.values())
-                                .filter((vehState: any): boolean &#x3D;&gt; {
-                                    if (vehState) {
-                                        if (vehState.isDeleted &#x3D;&#x3D;&#x3D; true) {
-                                            return false;
-                                        }
-                                        if (vehState.latitude &amp;&amp; vehState.longitude) {
-                                            return true;
-                                        }
-                                    }
+                                }, new Map&lt;string, TimestampedVehicles&gt;());
+                            const filterInvalid: TimestampedVehicleLocation[] &#x3D; Array.from&lt;TimestampedVehicles&gt;(
+                                reducedVehicles.values()
+                            ).filter((vehState: TimestampedVehicles): boolean &#x3D;&gt; {
+                                if (&#x27;latitude&#x27; in vehState &amp;&amp; &#x27;longitude&#x27; in vehState) {
+                                    return true;
+                                }
+                                if (vehState?.isDeleted &#x3D;&#x3D;&#x3D; true) {
                                     return false;
-                                }) as any;
-                        return {
-                            lastUpdate: value.lastUpdate,
-                            vehicles: filterInvalid,
-                        };
-                    }), catchError((err: any): Observable&lt;IData&gt; &#x3D;&gt;
-                        of(Object.assign({
-                            error: err,
-                        }, previousData))))));
+                                } else return false;
+                            }) as TimestampedVehicleLocation[];
+                            return {
+                                lastUpdate: value.lastUpdate,
+                                vehicles: filterInvalid,
+                            };
+                        }),
+                        catchError(
+                            (err: any): Observable&lt;IData&gt; &#x3D;&gt;
+                                of(
+                                    Object.assign(
+                                        {
+                                            error: err as Error,
+                                        },
+                                        previousData
+                                    )
+                                )
+                        )
+                    )
+            )
+        );
     }
 
     public get getVehicles(): Observable&lt;IData&gt; {
@@ -382,15 +406,13 @@ export class VehicleService {
     }
 
     public getVehicleByTripId(tripId: string): Observable&lt;TimestampedVehicleLocation&gt; {
-        return this.state
-            .pipe(map((status: IData): TimestampedVehicleLocation &#x3D;&gt; {
-                const idx: number &#x3D; status.vehicles
-                    .findIndex((veh: TimestampedVehicleLocation): boolean &#x3D;&gt;
-                        veh.tripId &#x3D;&#x3D;&#x3D; tripId);
+        return this.state.pipe(
+            map((status: IData): TimestampedVehicleLocation &#x3D;&gt; {
+                const idx: number &#x3D; status.vehicles.findIndex((veh: TimestampedVehicleLocation): boolean &#x3D;&gt; veh.tripId &#x3D;&#x3D;&#x3D; tripId);
                 return idx &gt;&#x3D; 0 ? status.vehicles[idx] : undefined;
-            }));
+            })
+        );
     }
-
 }
 </code></pre>
     </div>

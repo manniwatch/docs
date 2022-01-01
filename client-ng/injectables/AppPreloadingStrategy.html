@@ -125,8 +125,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="20"
-                            class="link-to-prism">src/app/app-preloading-strategy.ts:20</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="22"
+                            class="link-to-prism">src/app/app-preloading-strategy.ts:22</a></div>
                 </td>
             </tr>
 
@@ -213,15 +213,16 @@ import { EMPTY, Observable } from &#x27;rxjs&#x27;;
  */
 @Injectable()
 export class AppPreloadingStrategy implements PreloadingStrategy {
-  /**
-   * Function to preload
-   * @param route route to preload
-   * @param load callback
-   * @returns to preload
-   */
-  preload(route: Route, load: () &#x3D;&gt; Observable&lt;any&gt;): Observable&lt;any&gt; {
-    return route.path.startsWith(&#x27;error&#x27;) ? load() : EMPTY;
-  }
+    /**
+     * Function to preload
+     *
+     * @param route route to preload
+     * @param load callback
+     * @returns to preload
+     */
+    preload(route: Route, load: () &#x3D;&gt; Observable&lt;any&gt;): Observable&lt;any&gt; {
+        return route.path.startsWith(&#x27;error&#x27;) ? load() : EMPTY;
+    }
 }
 </code></pre>
     </div>

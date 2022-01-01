@@ -134,8 +134,9 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">/*!
- * Source https://github.com/manniwatch/manniwatch Package: client-ng
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">/*
+ * Package @manniwatch/client-ng
+ * Source https://manniwatch.github.io/manniwatch/
  */
 
 import { NgModule } from &#x27;@angular/core&#x27;;
@@ -179,32 +180,30 @@ const appRoutes: Routes &#x3D; [
         path: &#x27;settings&#x27;,
     },
     {
-        children: [
-        ],
+        children: [],
         path: &#x27;&#x27;,
     },
     {
-        path: &#x27;**&#x27;, redirectTo: &#x27;/error/not-found&#x27;,
+        path: &#x27;**&#x27;,
+        redirectTo: &#x27;/error/not-found&#x27;,
     },
 ];
 
 @NgModule({
-    exports: [
-        RouterModule,
-    ],
+    exports: [RouterModule],
     imports: [
         RouterModule.forRoot(
             appRoutes,
             {
-    enableTracing: false,
-    preloadingStrategy: AppPreloadingStrategy,
-    relativeLinkResolution: &#x27;legacy&#x27;,
-}, // &lt;-- debugging purposes only
+                enableTracing: false,
+                preloadingStrategy: AppPreloadingStrategy,
+                relativeLinkResolution: &#x27;legacy&#x27;,
+            } // &lt;-- debugging purposes only
         ),
     ],
     providers: [AppPreloadingStrategy],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
 </code></pre>
     </div>
 </div>

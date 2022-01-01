@@ -285,8 +285,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="42"
-                            class="link-to-prism">src/app/routes/search/search.component.ts:42</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="37"
+                            class="link-to-prism">src/app/routes/search/search.component.ts:37</a></div>
                 </td>
             </tr>
 
@@ -324,8 +324,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="28"
-                            class="link-to-prism">src/app/routes/search/search.component.ts:28</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="26"
+                            class="link-to-prism">src/app/routes/search/search.component.ts:26</a></div>
                 </td>
             </tr>
 
@@ -483,30 +483,24 @@ import { map } from &#x27;rxjs/operators&#x27;;
     templateUrl: &#x27;./search.component.html&#x27;,
 })
 export class SearchComponent implements OnInit, OnDestroy {
-
     public get results(): Observable&lt;IStopLocation[]&gt; {
         return this.resultObservable;
     }
-    public data: string &#x3D; &#x27;&#x27;;
+    public data &#x3D; &#x27;&#x27;;
     private searchParamSubscription: Subscription;
     private resultObservable: Observable&lt;IStopLocation[]&gt; &#x3D; NEVER;
-    public constructor(private activatedRoute: ActivatedRoute, private titleService: Title) {
-
-    }
+    public constructor(private activatedRoute: ActivatedRoute, private titleService: Title) {}
 
     public ngOnInit(): void {
-        this.searchParamSubscription &#x3D; this.activatedRoute
-            .queryParams.subscribe((value: Params): void &#x3D;&gt; {
-                this.data &#x3D; value.q ? value.q : &#x27;&#x27;;
-                this.titleService.setTitle(&#x60;Search - &quot;${this.data}&quot;&#x60;);
-            });
-        this.resultObservable &#x3D; this.activatedRoute.data
-            .pipe(map((val: Data): IStopLocation[] &#x3D;&gt; {
-                if (val.results) {
-                    return val.results;
-                }
-                return [];
-            }));
+        this.searchParamSubscription &#x3D; this.activatedRoute.queryParams.subscribe((value: Params &amp; { q?: string }): void &#x3D;&gt; {
+            this.data &#x3D; value.q || &#x27;&#x27;;
+            this.titleService.setTitle(&#x60;Search - &quot;${this.data}&quot;&#x60;);
+        });
+        this.resultObservable &#x3D; this.activatedRoute.data.pipe(
+            map((val: Data): IStopLocation[] &#x3D;&gt; {
+                return (val.results || []) as IStopLocation[];
+            })
+        );
     }
     public ngOnDestroy(): void {
         if (this.searchParamSubscription) {
@@ -518,7 +512,12 @@ export class SearchComponent implements OnInit, OnDestroy {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;mat-nav-list role&#x3D;&quot;navigation&quot;&gt;&lt;a *ngFor&#x3D;&quot;let item of results | async&quot; [routerLink]&#x3D;&quot;[&#x27;/stop&#x27;, item.shortName]&quot; role&#x3D;&quot;listitem&quot;&gt;&lt;mat-list-item&gt;&lt;mat-icon mat-list-icon&gt;place&lt;/mat-icon&gt;&lt;h4 mat-line&gt;{{item?.name}}&lt;/h4&gt;&lt;/mat-list-item&gt;&lt;/a&gt;&lt;/mat-nav-list&gt;</code></pre>
+        <pre class="line-numbers"><code class="language-html">
+&lt;mat-nav-list role&#x3D;&quot;navigation&quot;&gt;&lt;a *ngFor&#x3D;&quot;let item of results | async&quot; [routerLink]&#x3D;&quot;[&#x27;/stop&#x27;, item.shortName]&quot; role&#x3D;&quot;listitem&quot;&gt;
+    &lt;mat-list-item&gt;
+      &lt;mat-icon mat-list-icon&gt;place&lt;/mat-icon&gt;
+      &lt;h4 mat-line&gt;{{item?.name}}&lt;/h4&gt;
+    &lt;/mat-list-item&gt;&lt;/a&gt;&lt;/mat-nav-list&gt;</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
@@ -526,7 +525,7 @@ export class SearchComponent implements OnInit, OnDestroy {
                     <code>./search.component.scss</code>
                 </p>
                 <pre class="line-numbers"><code class="language-scss">@use &#x27;sass:math&#x27;;
-@import &quot;./../../box-settings.scss&quot;;
+@import &#x27;./../../box-settings.scss&#x27;;
 $toppadding: 100px;
 :host &gt; mat-nav-list {
     padding-top: 100px;
@@ -569,7 +568,7 @@ $toppadding: 100px;
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><mat-nav-list role="navigation"><a *ngFor="let item of results | async" [routerLink]="[\'/stop\', item.shortName]" role="listitem"><mat-list-item><mat-icon mat-list-icon>place</mat-icon><h4 mat-line>{{item?.name}}</h4></mat-list-item></a></mat-nav-list></div>'
+        var COMPONENT_TEMPLATE = '<div><mat-nav-list role="navigation"><a *ngFor="let item of results | async" [routerLink]="[\'/stop\', item.shortName]" role="listitem">    <mat-list-item>      <mat-icon mat-list-icon>place</mat-icon>      <h4 mat-line>{{item?.name}}</h4>    </mat-list-item></a></mat-nav-list></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CommonErrorComponent', 'selector': 'app-common-error'},{'name': 'DepartureListComponent', 'selector': 'app-departure-list'},{'name': 'DepartureListItemComponent', 'selector': 'app-departure-list-item'},{'name': 'HeaderBoxComponent', 'selector': 'app-header-box'},{'name': 'MainToolbarComponent', 'selector': 'app-main-toolbar'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'NotFoundMessageSwitchComponent', 'selector': 'app-not-found-msg-switch'},{'name': 'RequestUpdateDialogComponent', 'selector': 'app-request-update-dialog'},{'name': 'RetryDialogComponent', 'selector': 'app-retry-dialog'},{'name': 'RouteListComponent', 'selector': 'app-route-list'},{'name': 'RouteLoadingIndicatorComponent', 'selector': 'app-route-loading-indicator'},{'name': 'SearchComponent', 'selector': 'app-search'},{'name': 'SettingsComponent', 'selector': 'app-settings'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'StopInfoComponent', 'selector': 'app-stop-info'},{'name': 'StopPointInfoComponent', 'selector': 'app-stop-point-info'},{'name': 'StopsInfoComponent', 'selector': 'app-stops-info'},{'name': 'ThemeSelectorComponent', 'selector': 'app-theme-selector'},{'name': 'ToolbarSearchBoxComponent', 'selector': 'app-toolbar-search'},{'name': 'TripPassagesComponent', 'selector': 'app-trip-passages'},{'name': 'TripPassagesListComponent', 'selector': 'app-trip-passages-list'},{'name': 'TripPassagesListItemComponent', 'selector': 'app-trip-passages-list-item'}];
     var DIRECTIVES = [{'name': 'BaseOlMapDirective', 'selector': ''},{'name': 'CountdownTimerDirective', 'selector': 'span[appCountdownTimer]'},{'name': 'OlMainMapDirective', 'selector': 'map[appOlMainMap]'},{'name': 'OlStaticMapDirective', 'selector': 'map[appOlStatic]'},{'name': 'OsmOlMapDirective', 'selector': ''},{'name': 'VectorOlMapDirective', 'selector': ''}];
     var ACTUAL_COMPONENT = {'name': 'SearchComponent'};

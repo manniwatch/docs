@@ -133,25 +133,6 @@
     </table>
 </section>
 
-            <section>
-    <h3 id="constructor">Constructor</h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                                <span class="modifier">Public</span>
-                        <code>constructor()</code>
-                    </td>
-                </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/modules/sidebar/sidebar.service.ts:18</a></div>
-                            </td>
-                        </tr>
-
-            </tbody>
-        </table>
-</section>
 
             <section>
     
@@ -180,8 +161,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="29"
-                            class="link-to-prism">src/app/modules/sidebar/sidebar.service.ts:29</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="28"
+                            class="link-to-prism">src/app/modules/sidebar/sidebar.service.ts:28</a></div>
                 </td>
             </tr>
 
@@ -219,8 +200,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="25"
-                            class="link-to-prism">src/app/modules/sidebar/sidebar.service.ts:25</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="24"
+                            class="link-to-prism">src/app/modules/sidebar/sidebar.service.ts:24</a></div>
                 </td>
             </tr>
 
@@ -258,8 +239,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="21"
-                            class="link-to-prism">src/app/modules/sidebar/sidebar.service.ts:21</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="20"
+                            class="link-to-prism">src/app/modules/sidebar/sidebar.service.ts:20</a></div>
                 </td>
             </tr>
 
@@ -301,7 +282,7 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>new BehaviorSubject(false)</code>
+                        <i>Default value : </i><code>new BehaviorSubject&lt;boolean&gt;(false)</code>
                     </td>
                 </tr>
                     <tr>
@@ -374,15 +355,13 @@ import { BehaviorSubject, Observable } from &#x27;rxjs&#x27;;
     providedIn: &#x27;root&#x27;,
 })
 export class SidebarService {
-
     public get sidebarOpen(): boolean {
         return this.mSidebarStatusSubject.value;
     }
     public get sidebarObservable(): Observable&lt;boolean&gt; {
         return this.mSidebarStatusSubject.asObservable();
     }
-    private mSidebarStatusSubject: BehaviorSubject&lt;boolean&gt; &#x3D; new BehaviorSubject(false);
-    public constructor() { }
+    private mSidebarStatusSubject: BehaviorSubject&lt;boolean&gt; &#x3D; new BehaviorSubject&lt;boolean&gt;(false);
 
     public toggleSidebar(): void {
         this.mSidebarStatusSubject.next(!this.mSidebarStatusSubject.getValue());
@@ -395,7 +374,6 @@ export class SidebarService {
     public closeSidebar(): void {
         this.mSidebarStatusSubject.next(false);
     }
-
 }
 </code></pre>
     </div>
